@@ -1,0 +1,57 @@
+$grid-columns = 12
+$grid-gutter-width = 30px
+
+$grid-breakpoints = {
+  // Extra small screen / phone
+  xs: 0,
+  // Small screen / phone
+  sm: 576px,
+  // Medium screen / tablet
+  md: 768px,
+  // Large screen / desktop
+  lg: 992px,
+  // Extra large screen / wide desktop
+  xl: 1200px
+}
+
+$container-max-widths = {
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px
+}
+
+$sizes = {
+  '25': 25%,
+  '50': 50%,
+  '75': 75%,
+  '100': 100%,
+  auto: auto
+}
+
+// Typography and Vertical rythm
+$root = {
+  fontSize: 20px,
+  lineHeight: 1.2
+}
+$base-lines-count = 2
+$base-grid-unit = ($root.fontSize * $root.lineHeight) / $base-lines-count
+
+gu($unit = 1)
+  return $base-grid-unit * $unit
+
+
+// Spacer
+// stylelint-disable-next-line scss/dollar-variable-default
+$spacers = {
+  'none': 0,
+  'quarter': gu(1),
+  'half': gu(2),
+  'normal': gu(4),
+  'xl': gu(6),
+  'xxl': gu(8)
+}
+
+
+// Debugging
+$show-grid = false
