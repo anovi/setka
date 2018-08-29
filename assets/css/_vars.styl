@@ -32,10 +32,10 @@ $sizes = {
 // Typography and Vertical rythm
 $root = {
   fontSize: 20px,
-  lineHeight: 1.2
+  lineHeight: (24 / 20)rem
 }
 $base-lines-count = 2
-$base-grid-unit = ($root.fontSize * $root.lineHeight) / $base-lines-count
+$base-grid-unit = ($root.lineHeight / $base-lines-count)rem
 
 gu($unit = 1)
   return $base-grid-unit * $unit
@@ -45,13 +45,12 @@ gu($unit = 1)
 // stylelint-disable-next-line scss/dollar-variable-default
 $spacers = {
   'none': 0,
-  'quarter': gu(1),
-  'half': gu(2),
-  'normal': gu(4),
-  'xl': gu(6),
-  'xxl': gu(8)
+  'quarter': gu(0.5 * $base-lines-count),
+  'half':    gu(1 * $base-lines-count),
+  'normal':  gu(2 * $base-lines-count),
+  'xl':      gu(3 * $base-lines-count),
+  'xxl':     gu(4 * $base-lines-count)
 }
 
-
 // Debugging
-$show-grid = false
+$show-grid = true
