@@ -1,21 +1,10 @@
 {
-  "name": "nuxt-starter",
-  "version": "1.0.0",
-  "description": "Nuxt Starter Project",
-  "author": "Nuxt",
+  "name": "invisible",
+  "version": "0.0.1",
+  "description": "Invisible CSS Library",
+  "author": "Aleksei Novichkov",
   "private": true,
-  "dependencies": {
-    "axios": "0.16.1",
-    "moment": "2.18.1",
-    "nib": "1.1.2",
-    "normalize.css": "6.0.0",
-    "nuxt": "0.10.5",
-    "vue-awesome-swiper": "2.4.0",
-    "vue-carousel": "0.6.4",
-    "vue-easy-slider": "3.1.0",
-    "vue-headroom": "0.3.0",
-    "wpapi": "1.0.3"
-  },
+  "main": "index.js",
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
@@ -24,6 +13,13 @@
   },
   "devDependencies": {
     "stylus": "0.54.5",
-    "stylus-loader": "3.0.1"
+    "stylus-loader": "3.0.1",
+    "gulp": "3.9.1",
+    "gulp-rename": "1.4.0",
+    "gulp-stylus": "2.7.0",
+    "nib": "1.1.2",
+    "normalize.css": "6.0.0",
+    "nuxt": "0.10.5",
+    "vue-headroom": "0.3.0"
   }
 }
