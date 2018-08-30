@@ -1,4 +1,11 @@
+var path = require('path');
+console.log('DIR', __dirname);
+
 module.exports = {
+
+  srcDir: './site',
+  // rootDir: path.resolve(__dirname, '..'),
+
   /*
   ** Headers of the page
   */
@@ -19,7 +26,7 @@ module.exports = {
   ** Global CSS
   */
   css: [
-    { src: '~assets/css/result.styl', lang: 'stylus' }
+    { src: path.resolve(__dirname, 'lib/invisible/index.styl'), lang: 'stylus' }
   ],
   /*
   ** Customize the progress-bar color

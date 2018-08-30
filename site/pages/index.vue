@@ -355,25 +355,5 @@
   </div>
 </template>
 
-<style scoped lang="stylus">
+<style lang="stylus">
 </style>
-
-<script>
-  import config from '~/nuxt.config.js'
-  export default {
-    props: ['topTitle'],
-    data () {
-      return {
-        title: config.head.title + ' Hello World!'
-      }
-    },
-    head () {
-      return {
-        title: this.title,
-        meta: [
-          { hid: 'description', name: 'description', content: 'My custom description' }
-        ]
-      }
-    }
-  }
-</script>
