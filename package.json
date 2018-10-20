@@ -1,9 +1,9 @@
 {
-  "name": "invisible",
+  "name": "@anovi/invisible",
   "version": "0.0.1",
   "description": "Invisible CSS Library",
-  "author": "Aleksei Novichkov",
-  "private": true,
+  "author": "Alexey Novichkov",
+  "private": false,
   "main": "index.js",
   "scripts": {
     "dev": "nuxt",
