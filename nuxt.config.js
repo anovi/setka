@@ -26,7 +26,7 @@ module.exports = {
   ** Global CSS
   */
   css: [
-    { src: path.resolve(__dirname, 'lib/invisible/index.styl'), lang: 'stylus' }
+    { src: path.resolve(__dirname, 'lib/@anovi/invisible/index.styl'), lang: 'stylus' }
   ],
   /*
   ** Customize the progress-bar color

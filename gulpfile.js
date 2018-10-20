@@ -1,6 +1,6 @@
 var gulp = require('gulp');
 var nib = require('nib');
-var invisible = require('invisible');
+var invisible = require('@anovi/invisible');
 var stylus = require('gulp-stylus');
 var rename = require("gulp-rename");
 // var minifyCSS = require('gulp-csso');
