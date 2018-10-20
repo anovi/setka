@@ -22,8 +22,8 @@
     "nuxt": "0.10.5",
     "vue-headroom": "0.3.0"
   },
-  "dependencies": {
-    "invisible": "0.0.1"
+  "directories": {
+    "lib": "./lib"
   },
   "repository": {
     "type": "git",
