@@ -12,15 +12,14 @@
     "generate": "nuxt generate"
   },
   "devDependencies": {
-    "stylus": "0.54.5",
-    "stylus-loader": "3.0.1",
     "gulp": "3.9.1",
+    "gulp-autoprefixer": "6.0.0",
+    "gulp-csso": "3.0.1",
     "gulp-rename": "1.4.0",
+    "gulp-sourcemaps": "2.6.4",
     "gulp-stylus": "2.7.0",
-    "nib": "1.1.2",
-    "normalize.css": "6.0.0",
-    "nuxt": "0.10.5",
-    "vue-headroom": "0.3.0"
+    "nuxt": "2.2.0",
+    "stylus-loader": "3.0.2"
   },
   "directories": {
     "lib": "./lib"
@@ -39,5 +38,8 @@
   "bugs": {
     "url": "https://github.com/anovi/invisible/issues"
   },
-  "homepage": "https://github.com/anovi/invisible#readme"
+  "homepage": "https://github.com/anovi/invisible#readme",
+  "dependencies": {
+    "stylus": "0.54.5"
+  }
 }
