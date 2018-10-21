@@ -1,6 +1,3 @@
-var path = require('path');
-console.log('DIR', __dirname);
-
 module.exports = {
 
   srcDir: './site',
@@ -26,7 +23,7 @@ module.exports = {
   ** Global CSS
   */
   css: [
-    { src: path.resolve(__dirname, 'lib/@anovi/invisible/index.styl'), lang: 'stylus' }
+    { src: '~/assets/typography.styl', lang: 'stylus' }
   ],
   /*
   ** Customize the progress-bar color

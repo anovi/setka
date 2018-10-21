@@ -231,8 +231,8 @@
     <div class="container">
       <h2>No gutters</h2>
       <div class="row no-gutters">
-        <div class="col-12 col-sm-6 col-md-8">.col-12 .col-sm-6 .col-md-8</div>
-        <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+        <div class="col-12 col-sm-6 col-md-8 example">.col-12 .col-sm-6 .col-md-8</div>
+        <div class="col-6 col-md-4 example">.col-6 .col-md-4</div>
       </div>
     </div>
 
@@ -241,14 +241,14 @@
       <h2>Column breaks</h2>
       <p>Breaking columns to a new line in flexbox requires a small hack: add an element with width: 100% wherever you want to wrap your columns to a new line. Normally this is accomplished with multiple .rows, but not every implementation method can account for this.</p>
       <div class="row">
-        <div class="col-6 col-sm-3">.col-6 .col-sm-3</div>
-        <div class="col-6 col-sm-3">.col-6 .col-sm-3</div>
+        <div class="col-6 col-sm-3 example">.col-6 .col-sm-3</div>
+        <div class="col-6 col-sm-3 example">.col-6 .col-sm-3</div>
 
         <!-- Force next columns to break to new line -->
         <div class="w-100"></div>
 
-        <div class="col-6 col-sm-3">.col-6 .col-sm-3</div>
-        <div class="col-6 col-sm-3">.col-6 .col-sm-3</div>
+        <div class="col-6 col-sm-3 example">.col-6 .col-sm-3</div>
+        <div class="col-6 col-sm-3 example">.col-6 .col-sm-3</div>
       </div>
     </div>
 
@@ -262,10 +262,10 @@
         <div class="col example">
           First, but unordered
         </div>
-        <div class="col order-12">
+        <div class="col order-12 example">
           Second, but last
         </div>
-        <div class="col order-1">
+        <div class="col order-1 example">
           Third, but first
         </div>
       </div>
