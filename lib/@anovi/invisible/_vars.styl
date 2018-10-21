@@ -1,56 +1,72 @@
-$grid-columns = 12
-$grid-gutter-width = 30px
+if not lookup('$grid-columns')
+  $grid-columns = 12
 
-$grid-breakpoints = {
-  // Extra small screen / phone
-  xs: 0,
-  // Small screen / phone
-  sm: 576px,
-  // Medium screen / tablet
-  md: 768px,
-  // Large screen / desktop
-  lg: 992px,
-  // Extra large screen / wide desktop
-  xl: 1200px
-}
+if not lookup('$grid-gutter-width')
+  $grid-gutter-width = 30px
 
-$container-max-widths = {
-  sm: 540px,
-  md: 720px,
-  lg: 960px,
-  xl: 1140px
-}
+if not lookup('$grid-breakpoints')
+  $grid-breakpoints = {
+    // Extra small screen / phone
+    xs: 0,
+    // Small screen / phone
+    sm: 576px,
+    // Medium screen / tablet
+    md: 768px,
+    // Large screen / desktop
+    lg: 992px,
+    // Extra large screen / wide desktop
+    xl: 1200px
+  }
 
-$sizes = {
-  '25': 25%,
-  '50': 50%,
-  '75': 75%,
-  '100': 100%,
-  auto: auto
-}
+if not lookup('$container-max-widths')
+  $container-max-widths = {
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
+    xl: 1140px
+  }
+
+if not lookup('$sizes')
+  $sizes = {
+    '25': 25%,
+    '50': 50%,
+    '75': 75%,
+    '100': 100%,
+    auto: auto
+  }
+
 
 // Typography and Vertical rythm
-$root = {
-  fontSize: 20px,
-  lineHeight: (24 / 20)rem
-}
-$base-lines-count = 2
-$base-grid-unit = ($root.lineHeight / $base-lines-count)rem
+if not lookup('$root')
+  $root = {
+    fontSize: 20px,
+    lineHeight: (24 / 20)rem
+  }
+
+if not lookup('$base-lines-count')
+  $base-lines-count = 2
+
+if not lookup('$base-grid-unit')
+  $base-grid-unit = ($root.lineHeight / $base-lines-count)rem
 
 gu($unit = 1)
   return $base-grid-unit * $unit
 
 
 // Spacer
-// stylelint-disable-next-line scss/dollar-variable-default
-$spacers = {
-  'none': 0,
-  'quarter': gu(0.5 * $base-lines-count),
-  'half':    gu(1 * $base-lines-count),
-  'normal':  gu(2 * $base-lines-count),
-  'xl':      gu(3 * $base-lines-count),
-  'xxl':     gu(4 * $base-lines-count)
-}
+if not lookup('$spacers')
+  $spacers = {
+    'none': 0,
+    'quarter': gu(0.5 * $base-lines-count),
+    'half':    gu(1 * $base-lines-count),
+    'normal':  gu(2 * $base-lines-count),
+    'xl':      gu(3 * $base-lines-count),
+    'xxl':     gu(4 * $base-lines-count)
+  }
 
 // Debugging
-$show-grid = true
+if not lookup('$show-grid')
+  $show-grid = false
+
+
+
