@@ -3,13 +3,14 @@ var nib = require('nib');
 var invisible = require('@anovi/invisible');
 var stylus = require('gulp-stylus');
 var rename = require("gulp-rename");
+var src = './lib/@anovi/invisible/index.styl'
 // var minifyCSS = require('gulp-csso');
 // var concat = require('gulp-concat');
 // var sourcemaps = require('gulp-sourcemaps');
 
 // Get one .styl file and render
 gulp.task('stylus', function () {
-  return gulp.src('./src/css/index.styl')
+  return gulp.src(src)
     .pipe(stylus({
       use: nib()
     }))
@@ -18,7 +19,7 @@ gulp.task('stylus', function () {
 });
 
 gulp.task('compress', function () {
-  return gulp.src('./src/css/index.styl')
+  return gulp.src(src)
     .pipe(stylus({
       use: nib(),
       compress: true
