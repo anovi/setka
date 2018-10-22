@@ -1,3 +1,7 @@
+
+/*
+* > Grid
+*/
 if not lookup('$grid-columns')
   $grid-columns = 12
 
@@ -26,6 +30,10 @@ if not lookup('$container-max-widths')
     xl: 1140px
   }
 
+
+/*
+* > Sizes
+*/
 if not lookup('$sizes')
   $sizes = {
     '25': 25%,
@@ -36,24 +44,19 @@ if not lookup('$sizes')
   }
 
 
-// Typography and Vertical rythm
-if not lookup('$root')
-  $root = {
-    fontSize: 20px,
-    lineHeight: (24 / 20)rem
-  }
-
+/*
+* > Typography and Vertical rythm
+*/
 if not lookup('$base-lines-count')
   $base-lines-count = 2
 
-if not lookup('$base-grid-unit')
-  $base-grid-unit = ($root.lineHeight / $base-lines-count)rem
-
 gu($unit = 1)
-  return $base-grid-unit * $unit
+  return s('calc(var(--grid-unit) * %s)', $unit)
 
 
-// Spacer
+/*
+* > Spacers
+*/
 if not lookup('$spacers')
   $spacers = {
     'none': 0,
@@ -64,6 +67,9 @@ if not lookup('$spacers')
     'xxl':     gu(4 * $base-lines-count)
   }
 
-// Debugging
+
+/*
+* > Debugging
+*/
 if not lookup('$show-grid')
   $show-grid = false

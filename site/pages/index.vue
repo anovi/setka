@@ -360,7 +360,7 @@
 </template>
 
 <style lang="stylus">
-@import '../../index.styl'
+@import '~~@@/lib/@anovi/invisible/_vars.styl'
 
 .example.col, .example[class^=col-] {
   padding-top: gu(1);

@@ -12,16 +12,23 @@
   box-sizing: border-box
 }
 
-html {
-  font-size: $root.fontSize
-  line-height: $root.lineHeight
-}
+:root
+  --font-size: 16px
+  --line-height: (20 / 16)rem
+  --grid-unit: calc(var(--line-height) / 2)
+
+html
+  font-size: var(--font-size)
+
+body
+  font-size: 1rem
+  line-height: var(--line-height)
 
 .container
   make-container()
   make-container-max-widths()
   if $show-grid
-    background-image: linear-gradient(to bottom,#0ff 0,rgba(255,255,255,0)1px)
+    background-image: linear-gradient(to bottom, #0ff 0, rgba(255,255,255,0) 1px)
     background-repeat: repeat-y
     background-size: 100% gu(1)
 
