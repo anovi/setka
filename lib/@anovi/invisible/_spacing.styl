@@ -1,32 +1,33 @@
 // stylelint-disable declaration-no-important
 
 // Margin and Padding
-for $breakpoint in keys($grid-breakpoints)
-  +media-breakpoint-up($breakpoint)
-    $infix = breakpoint-infix($breakpoint, $grid-breakpoints)
-    params = {
-      margin: m,
-      padding: p
-    }
+make-spacing()
+  for $breakpoint in keys($grid-breakpoints)
+    +media-breakpoint-up($breakpoint)
+      $infix = breakpoint-infix($breakpoint, $grid-breakpoints)
+      params = {
+        margin: m,
+        padding: p
+      }
 
-    for $prop, $abbrev in params
-      for $size, $length in $spacers
-        .{$abbrev}{$infix}-{$size} {
-          {$prop}: $length !important;
-        }
-        .{$abbrev}t{$infix}-{$size},
-        .{$abbrev}y{$infix}-{$size} {
-          {$prop}-top: $length !important;
-        }
-        .{$abbrev}r{$infix}-{$size},
-        .{$abbrev}x{$infix}-{$size} {
-          {$prop}-right: $length !important;
-        }
-        .{$abbrev}b{$infix}-{$size},
-        .{$abbrev}y{$infix}-{$size} {
-          {$prop}-bottom: $length !important;
-        }
-        .{$abbrev}l{$infix}-{$size},
-        .{$abbrev}x{$infix}-{$size} {
-          {$prop}-left: $length !important;
-        }
+      for $prop, $abbrev in params
+        for $size, $length in $spacers
+          .{$abbrev}{$infix}-{$size} {
+            {$prop}: $length !important;
+          }
+          .{$abbrev}t{$infix}-{$size},
+          .{$abbrev}y{$infix}-{$size} {
+            {$prop}-top: $length !important;
+          }
+          .{$abbrev}r{$infix}-{$size},
+          .{$abbrev}x{$infix}-{$size} {
+            {$prop}-right: $length !important;
+          }
+          .{$abbrev}b{$infix}-{$size},
+          .{$abbrev}y{$infix}-{$size} {
+            {$prop}-bottom: $length !important;
+          }
+          .{$abbrev}l{$infix}-{$size},
+          .{$abbrev}x{$infix}-{$size} {
+            {$prop}-left: $length !important;
+          }

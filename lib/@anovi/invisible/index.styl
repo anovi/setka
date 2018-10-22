@@ -12,6 +12,11 @@
   box-sizing: border-box
 }
 
+html {
+  font-size: $root.fontSize
+  line-height: $root.lineHeight
+}
+
 .container
   make-container()
   make-container-max-widths()
@@ -44,3 +49,7 @@
 //
 // Common styles for small and large grid columns
 make-grid-columns()
+
+make-flex()
+make-sizing()
+make-spacing()
