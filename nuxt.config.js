@@ -3,6 +3,10 @@ module.exports = {
   srcDir: './site',
   // rootDir: path.resolve(__dirname, '..'),
 
+  generate: {
+    dir: 'docs'
+  },
+
   /*
   ** Headers of the page
   */
