@@ -47,10 +47,11 @@ if not lookup('$sizes')
 /*
 * > Typography and Vertical rythm
 */
-$root = {
-  fontSize: 16px,
-  lineHeight: (20 / 16)rem
-}
+if not lookup('$root')
+  $root = {
+    fontSize: 16px,
+    lineHeight: (20 / 16)rem
+  }
 
 if not lookup('$grid-unit-lines')
   $grid-unit-lines = 2
