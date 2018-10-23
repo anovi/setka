@@ -47,8 +47,13 @@ if not lookup('$sizes')
 /*
 * > Typography and Vertical rythm
 */
-if not lookup('$base-lines-count')
-  $base-lines-count = 2
+$root = {
+  fontSize: 16px,
+  lineHeight: (20 / 16)rem
+}
+
+if not lookup('$grid-unit-lines')
+  $grid-unit-lines = 2
 
 gu($unit = 1)
   return s('calc(var(--grid-unit) * %s)', $unit)
@@ -59,12 +64,13 @@ gu($unit = 1)
 */
 if not lookup('$spacers')
   $spacers = {
-    'none': 0,
-    'quarter': gu(0.5 * $base-lines-count),
-    'half':    gu(1 * $base-lines-count),
-    'normal':  gu(2 * $base-lines-count),
-    'xl':      gu(3 * $base-lines-count),
-    'xxl':     gu(4 * $base-lines-count)
+    '0': 0,
+    '01':   gu(1),
+    '1':    gu(s('var(--grid-unit-lines) * 1')),
+    '2':    gu(s('var(--grid-unit-lines) * 2')),
+    '3':    gu(s('var(--grid-unit-lines) * 3')),
+    '4':    gu(s('var(--grid-unit-lines) * 4')),
+    'auto': s('auto')
   }
 
 

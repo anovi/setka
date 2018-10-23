@@ -2,20 +2,22 @@ $show-grid = true
 @import '~~@@/lib/@anovi/invisible/index.styl'
 
 
-html
-  font-size: $root.fontSize
-  line-height: $root.lineHeight
+:root
+  --font-size: 15px !important
+  --line-height: 20px !important
+  +screen('sm')
+    --font-size: 20px !important
+    --line-height: 24px !important
 
-body
-  font-size: 1rem
-  line-height: $root.lineHeight
-
-h1
+// CSS
+h1 {
   font-size: 2.75rem
-  line-height: gu(4)
-  margin-top: gu(4)
-  margin-bottom: gu(4)
+  line-height: calc(var(--grid-unit) * 4)
+  margin-top: calc(var(--grid-unit) * 4)
+  margin-bottom: calc(var(--grid-unit) * 4)
+}
 
+// Stylus
 h2
   font-size: 2.1rem
   line-height: gu(3)
@@ -47,3 +49,7 @@ p, ul, ol, pre, table, blockquote
 ul ul, ol ol, ul ol, ol ul
   margin-top: 0
   margin-bottom: 0
+
+pre
+  max-width: 100%
+  overflow: auto

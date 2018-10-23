@@ -3,11 +3,23 @@
 
     <div class="container">
       <h1>Invisible framework</h1>
-      <h2 class="mt-xxl mb-xxl">Equal-width</h2>
+      <h1 class="mt-4 mb-4">Getting Started</h1>
+      If you use CSS only, set up variables:
+<pre>
+:root {
+  --font-size: 16px;         /* Basic font-size */
+  --line-height: 1.25rem;    /* Basic line-height */
+  --grid-unit-lines: 2;      /* Amount of grid units per row of basic text */
+  --grid-gutter-width: 30px; /* Grid gutter width */
+}
+</pre>
+
+      <h1 class="mt-4 mb-4">Grid</h1>
+      <h2>Equal-width</h2>
 
       <div class="row">
         <div class="col">
-          <p>For example, here are two grid layouts that apply to every device and viewport, from xs to xl. Add any number of unit-less classes for each breakpoint you need and every column will be the same width.</p>
+          <p class="mt-0">For example, here are two grid layouts that apply to every device and viewport, from xs to xl. Add any number of unit-less classes for each breakpoint you need and every column will be the same width.</p>
         </div>
       </div>
       
@@ -34,11 +46,6 @@
     </div>
 
     <div class="container">
-      <h3>
-        Lorem ipsum dolor sit amet consectetur
-      </h3>
-      <h4>H4 Lorem ipsum dolor sit amet consectetur adipisicing elit.</h4>
-      <h5>H4 Duper la la la</h5>
       <p>Equal-width columns can be broken into multiple lines, but there was a Safari flexbox bug that prevented this from working without an explicit flex-basis or border. There are workarounds for older browser versions, but they shouldn’t be necessary if you’re up-to-date.</p>
       <div class="row">
         <div class="col example">Column</div>

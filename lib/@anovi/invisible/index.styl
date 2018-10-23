@@ -13,9 +13,11 @@
 }
 
 :root
-  --font-size: 16px
-  --line-height: (20 / 16)rem
-  --grid-unit: calc(var(--line-height) / 2)
+  --font-size: $root.fontSize
+  --line-height: $root.lineHeight
+  --grid-unit-lines: $grid-unit-lines
+  --grid-unit: calc(var(--line-height) / var(--grid-unit-lines))
+  --grid-gutter-width: $grid-gutter-width
 
 html
   font-size: var(--font-size)
