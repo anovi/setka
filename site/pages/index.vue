@@ -2,15 +2,58 @@
   <div>
 
     <div class="container">
-      <h1>Invisible framework</h1>
-      <h1 class="mt-4 mb-4">Getting Started</h1>
-      If you use CSS only, set up variables:
+      <h1>Invisible CSS library</h1>
+      <h1 class="mt-4 mb-2">Getting Started</h1>
+      Install:
+<pre>
+npm i @anovi/invisible
+</pre>
+<p><strong>If you use CSS only</strong> connect this styles to your page:</p>
+<pre>
+@anovi/invisible/dist/invisible.css
+@anovi/invisible/dist/invisible.min.css
+</pre>
+<p>
+  Then, set up variables:
+</p>
 <pre>
 :root {
   --font-size: 16px;         /* Basic font-size */
   --line-height: 1.25rem;    /* Basic line-height */
   --grid-unit-lines: 2;      /* Amount of grid units per row of basic text */
   --grid-gutter-width: 30px; /* Grid gutter width */
+}
+</pre>
+
+<p><strong>If you use stylus</strong>, import the library:</p>
+<pre>
+@anovi/invisible/index.styl
+</pre>
+<p>
+  Then, set up Stylus variables.
+</p>
+<pre>
+$grid-columns = 12
+$grid-gutter-width = 30px
+
+$grid-breakpoints = {
+  // Extra small screen / phone
+  xs: 0,
+  // Small screen / phone
+  sm: 576px,
+  // Medium screen / tablet
+  md: 768px,
+  // Large screen / desktop
+  lg: 992px,
+  // Extra large screen / wide desktop
+  xl: 1200px
+}
+
+$container-max-widths = {
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px
 }
 </pre>
 
@@ -329,39 +372,66 @@
 
 
 
+    <div class="container">
+      <h1>Spacing</h1>
+      <p>The classes are named using the format <code>{property}{sides}-{size}</code> for <code>xs</code> and <code>{property}{sides}-{breakpoint}-{size}</code> for <code>sm</code>, <code>md</code>, <code>lg</code>, and <code>xl</code>.</p>
+      <p>Where sides is one of:</p>
+<p>
+<code>mt</code>, <code>pt</code> - for classes that set margin-top or padding-top<br>
+<code>mb</code>, <code>pb</code> - for classes that set margin-bottom or padding-bottom<br>
+<code>ml</code>, <code>pl</code> - for classes that set margin-left or padding-left<br>
+<code>mr</code>, <code>pr</code> - for classes that set margin-right or padding-right<br>
+<code>mx</code>, <code>px</code> - for classes that set both *-left and *-right<br>
+<code>my</code>, <code>py</code> - for classes that set both *-top and *-bottom
+</p>
+<p>
+<code>0</code> - for classes that eliminate the margin or padding by setting it to 0<br>
+<code>01</code> - (by default) for classes that set the margin or padding to 1 grid unit<br>
+<code>1</code> - (by default) for classes that set the margin or padding to 1 line-height<br>
+<code>2</code> - (by default) for classes that set the margin or padding to 2 line-height<br>
+<code>3</code> - (by default) for classes that set the margin or padding to 3 line-height<br>
+<code>4</code> - (by default) for classes that set the margin or padding to 4 line-height<br>
+<code>auto</code> - for classes that set the margin to auto
+</p>
+    </div>
+
+
+    <div class="container">
+      <h1>Sizing</h1>
+      <p>
+      Includes support for 25%, 50%, 75%, 100%, and auto by default. Modify those values as you need to generate different utilities here. Use like this <code>.w-25</code>, <code>.h-50</code> and so on.
+      </p>
+
+      <p>This:</p>
+      <pre>
+&lt;div class=&quot;w-25 p-01&quot; style=&quot;background-color: #eee;&quot;&gt;Width 25%&lt;/div&gt;
+&lt;div class=&quot;w-50 p-01&quot; style=&quot;background-color: #eee;&quot;&gt;Width 50%&lt;/div&gt;
+&lt;div class=&quot;w-75 p-01&quot; style=&quot;background-color: #eee;&quot;&gt;Width 75%&lt;/div&gt;
+&lt;div class=&quot;w-100 p-01&quot; style=&quot;background-color: #eee;&quot;&gt;Width 100%&lt;/div&gt;
+&lt;div class=&quot;w-auto p-01&quot; style=&quot;background-color: #eee;&quot;&gt;Width auto&lt;/div&gt;
+</pre>
+      <p>…will result to this:</p>
+      <div class="w-25 p-01" style="background-color: #eee;">Width 25%</div>
+      <div class="w-50 p-01" style="background-color: #eee;">Width 50%</div>
+      <div class="w-75 p-01" style="background-color: #eee;">Width 75%</div>
+      <div class="w-100 p-01" style="background-color: #eee;">Width 100%</div>
+      <div class="w-auto p-01" style="background-color: #eee;">Width auto</div>
+
+      <p>There is also max-width classes:</p>
+<pre>
+.mw-100 { max-width: 100% !important; }
+.mh-100 { max-height: 100% !important; }
+</pre>
+
+    </div>
+
+
+
   
 
 
 
-    <!-- <div class="container">
-      <div class="row">
-        <div class="col-sm-6">
-          <p>Привет. Меня зовут Алексей Новичков, я дизайнер продуктов. Мне интересны социальные сервисы, приложения для работы и продуктивности.
-  Специализируюсь на вебе. Помимо привычных дизайнерских навыков: прилично пишу текст, верстаю html, программирую. В свободное время пилю собственные проекты.</p>
-        </div>
-        <div class="col-sm-6">
-          <div style="marginTop:200px">
-            <div><nuxt-link to="/projects/zettaplan">Зеттаплан</nuxt-link></div>
-            <div><nuxt-link to="/projects/zettaplan-promo">Промо Зеттаплана №1</nuxt-link></div>
-            <div><nuxt-link to="/projects/zettaplan-promo2">Промо Зеттаплана №2</nuxt-link></div>
-            <div><nuxt-link to="/projects/megaplan-mobile">Мобильное приложение Мегаплана</nuxt-link></div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col example">
-          <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda voluptatum consequuntur error maiores natus, consectetur incidunt sit excepturi numquam cupiditate, perspiciatis doloremque magni quasi, laboriosam ipsam ullam. Unde, error ipsum?</div>
-        </div>
-        <div class="col example">
-          <div>Facebook</div>
-          <div>Instagram</div>
-        </div>
-        <div class="col example">
-          <div>Facebook</div>
-          <div>Instagram</div>
-        </div>
-      </div>
-    </div> -->
+    
 
   </div>
 </template>
@@ -381,3 +451,4 @@
   background: rgba(255,0,0,0.1)
 }
 </style>
+
