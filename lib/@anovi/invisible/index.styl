@@ -13,8 +13,8 @@
 }
 
 :root
-  --font-size: $root.fontSize
-  --line-height: $root.lineHeight
+  --font-size: 16px
+  --line-height: (20 / 16)rem
   --grid-unit-lines: $grid-unit-lines
   --grid-unit: calc(var(--line-height) / var(--grid-unit-lines))
   --grid-gutter-width: $grid-gutter-width
@@ -26,39 +26,36 @@ body
   font-size: 1rem
   line-height: var(--line-height)
 
-.container
-  make-container()
-  make-container-max-widths()
-  if $show-grid
-    background-image: linear-gradient(to bottom, #0ff 0, rgba(255,255,255,0) 1px)
-    background-repeat: repeat-y
-    background-size: 100% gu(1)
+make-grid()
+  .container
+    make-container()
+    make-container-max-widths()
+    if $show-grid
+      background-image: linear-gradient(to bottom, #0ff 0, rgba(255,255,255,0) 1px)
+      background-repeat: repeat-y
+      background-size: 100% gu(1)
 
-.container-fluid
-  make-container()
+  .container-fluid
+    make-container()
 
-// Row
-//
-// Rows contain and clear the floats of your columns.
-.row
-  make-row()
+  // Row
+  //
+  // Rows contain and clear the floats of your columns.
+  .row
+    make-row()
 
-// Remove the negative margin from default .row, then the horizontal padding
-// from all immediate children columns (to prevent runaway style inheritance).
-.no-gutters
-  margin-right: 0
-  margin-left: 0
-  > .col,
-  > [class*="col-"]
-    padding-right: 0
-    padding-left: 0
+  // Remove the negative margin from default .row, then the horizontal padding
+  // from all immediate children columns (to prevent runaway style inheritance).
+  .no-gutters
+    margin-right: 0
+    margin-left: 0
+    > .col,
+    > [class*="col-"]
+      padding-right: 0
+      padding-left: 0
 
 
-// Columns
-//
-// Common styles for small and large grid columns
-make-grid-columns()
-
-make-flex()
-make-sizing()
-make-spacing()
+  // Columns
+  //
+  // Common styles for small and large grid columns
+  make-grid-columns()

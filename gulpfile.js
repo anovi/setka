@@ -3,7 +3,7 @@ const invisible = require('./index.js');
 const stylus = require('gulp-stylus');
 const rename = require("gulp-rename");
 const autoprefixer = require('gulp-autoprefixer');
-const src = './lib/@anovi/invisible/index.styl'
+const src = './lib/@anovi/invisible/invisible.styl'
 const csso = require('gulp-csso');
 const sourcemaps = require('gulp-sourcemaps');
 
@@ -22,7 +22,7 @@ gulp.task('build', function () {
 });
 
 gulp.task('build-mini', function () {
-  return gulp.src('./dist/invisible.css')
+  return gulp.src(src)
     .pipe(sourcemaps.init())
     .pipe(stylus({}))
     .pipe(autoprefixer({
