@@ -1,16 +1,18 @@
 @import '~~@@/lib/@anovi/invisible/index.styl'
 $show-grid = true
 
-make-grid()
-make-flex()
-make-sizing()
-make-spacing()
+invisible({
+  grid: true,
+  spacing: true,
+  sizing: true,
+  flex: true
+})
 
 
 :root
   --font-size: 15px !important
   --line-height: 20px !important
-  +screen('sm')
+  +above('sm')
     --font-size: 20px !important
     --line-height: 24px !important
 

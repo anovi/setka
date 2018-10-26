@@ -1,0 +1,28 @@
+
+// Make base styles for grid
+make-base-styles()
+
+  * {
+    box-sizing: border-box
+  }
+
+  :root
+    --font-size: 16px
+    --line-height: (20 / 16)rem
+    --grid-unit-lines: $grid-unit-lines
+    --grid-unit: calc(var(--line-height) / var(--grid-unit-lines))
+    --grid-gutter-width: $grid-gutter-width
+    // Generate container sizes variables
+    for _name, _size in $container-max-widths
+      {('--container-' + _name)}: _size
+  
+
+// Make base font styles for vertical rythm
+make-base-font()
+
+  html
+    font-size: var(--font-size)
+
+  body
+    font-size: 1rem;
+    line-height: var(--line-height);

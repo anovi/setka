@@ -1,14 +1,13 @@
-
 /*
 * > Grid
 */
-if not lookup('$grid-columns')
+if $grid-columns is not defined
   $grid-columns = 12
 
-if not lookup('$grid-gutter-width')
+if $grid-gutter-width is not defined
   $grid-gutter-width = 30px
 
-if not lookup('$grid-breakpoints')
+if $grid-breakpoints is not defined
   $grid-breakpoints = {
     // Extra small screen / phone
     xs: 0,
@@ -22,7 +21,7 @@ if not lookup('$grid-breakpoints')
     xl: 1200px
   }
 
-if not lookup('$container-max-widths')
+if $container-max-widths is not defined
   $container-max-widths = {
     sm: 540px,
     md: 720px,
@@ -34,7 +33,7 @@ if not lookup('$container-max-widths')
 /*
 * > Sizes
 */
-if not lookup('$sizes')
+if $sizes is not defined
   $sizes = {
     '25': 25%,
     '50': 50%,
@@ -47,7 +46,7 @@ if not lookup('$sizes')
 /*
 * > Typography and Vertical rythm
 */
-if not lookup('$grid-unit-lines')
+if $grid-unit-lines is not defined
   $grid-unit-lines = 2
 
 gu($unit = 1)
@@ -57,7 +56,7 @@ gu($unit = 1)
 /*
 * > Spacers
 */
-if not lookup('$spacers')
+if $spacers is not defined
   $spacers = {
     '0': 0,
     '01':   gu(1),
@@ -72,5 +71,5 @@ if not lookup('$spacers')
 /*
 * > Debugging
 */
-if not lookup('$show-grid')
+if $show-grid is not defined
   $show-grid = false

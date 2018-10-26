@@ -425,19 +425,12 @@ $container-max-widths = {
 
     </div>
 
-
-
-  
-
-
-
-    
-
   </div>
 </template>
 
+
 <style lang="stylus">
-@import '~~@@/lib/@anovi/invisible/_vars.styl'
+@import '~~@@/lib/@anovi/invisible/index.styl'
 
 .example.col, .example[class^=col-] {
   padding-top: gu(1);
