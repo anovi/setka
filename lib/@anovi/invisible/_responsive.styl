@@ -2,13 +2,9 @@
 // Helper for responsive styles
 // Example:
 // .element
-//   +above('sm')
+//   +media-up('sm')
 //     margin: 10px
-above($breakpoint, $breakpoints = $grid-breakpoints)
-  $min = breakpoint-min($breakpoint, $grid-breakpoints)
-  if not $min
-    error('There is no "' + $breakpoint + '" breakpoint!')
-  else
-    @media (min-width: $min) {
-      {block}
-    }
+media-up = media-breakpoint-up
+media-down = media-breakpoint-down
+media-between = media-breakpoint-between
+media-only = media-breakpoint-only
