@@ -9,7 +9,7 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "generate": "nuxt generate && rm ./docs/.nojekyll"
   },
   "devDependencies": {
     "gulp": "3.9.1",

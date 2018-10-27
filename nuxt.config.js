@@ -33,5 +33,9 @@ module.exports = {
   ** Customize the progress-bar color
   */
   loading: false,
-  transition: false
+  transition: false,
+
+  modules: [
+    '~/modules/generate-after'
+  ]
 }
