@@ -3,7 +3,7 @@
 
     <div class="container">
       <h1>Invisible CSS library</h1>
-      <h1 class="mt-4 mb-2">Getting Started</h1>
+      <h1 class="mt-sm-1 mt-4">Getting Started</h1>
       Install:
 <pre>
 npm i @anovi/invisible

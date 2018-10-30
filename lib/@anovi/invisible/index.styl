@@ -7,6 +7,12 @@
 @import '_spacing.styl'
 @import '_responsive.styl'
 @require '_styles.styl'
+@import '_utilities.styl'
+@import '_display.styl'
+@import '_align.styl'
+@import '_float.styl'
+@import '_visibility.styl'
+@import '_text.styl'
 
 // Generated library styles
 // $options: {
@@ -17,6 +23,11 @@
 // }
 invisible($options = {grid: true, flex: true, sizing: true, spacing: true})
   make-base-styles()
+  make-display()
+  make-float()
+  make-visibility()
+  make-align()
+  make-text()
 
   if $options.spacing or $options.sizing
     make-base-font()
