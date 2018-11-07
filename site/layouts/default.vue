@@ -4,7 +4,8 @@
         <nav class="menu">
           <strong class="d-block mt-2 mb-2">Invisible CSS library</strong>
           <div v-for="(item, i) in menu" :key="i">
-            <nuxt-link class="menu__item" :to="item.url">{{item.title}}</nuxt-link>
+            <nuxt-link v-if="item.url" class="menu__item" :to="item.url">{{item.title}}</nuxt-link>
+            <div v-else class="menu__title">{{item.title}}</div>
           </div>
         </nav>
       </div>
@@ -22,6 +23,8 @@
           title: 'Getting started',
           url: '/'
         }, {
+          title: 'Use library'
+        }, {
           title: 'Grid',
           url: '/grid'
         }, {
@@ -34,8 +37,13 @@
           title: 'Display',
           url: '/display'
         }, {
+          title: 'Customize'
+        }, {
           title: 'CSS variables',
           url: '/css-vars'
+        }, {
+          title: 'Stylus variables',
+          url: '/vars'
         }]
       }
     }
@@ -62,6 +70,9 @@ $sidebar-width = 220px
   border-right: 1px solid #eee;
 
 .menu
+  line-height: gu(3)
+  font-family: 'Helvetica', 'Helvetica Neue', 'Arial', sans-serif
+  font-size: 0.8em
   +media-up('md')
     position: fixed
     top: 0
@@ -73,9 +84,17 @@ $sidebar-width = 220px
 
 .menu__item
   text-decoration: none
-  color: #444
+  color: #555
+  display: block
   &.nuxt-link-exact-active
-    color: blue
+    color: black
+    font-weight: bold
+
+.menu__title
+  color: #999
+  font-size: 1.2em
+  margin-top: gu(2)
+  font-weight: 300
 
 .layout__main
   +media-up('sm')
@@ -84,5 +103,6 @@ $sidebar-width = 220px
 body
   padding: 0;
   margin: 0;
+  // -webkit-font-smoothing: antialiased;
 
 </style>
