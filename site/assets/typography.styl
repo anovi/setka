@@ -1,5 +1,5 @@
 @import '~~@@/lib/@anovi/invisible/index.styl'
-$show-grid = false
+// $baseline-grid = true
 $container-max-widths = {
   sm: 100%,
   md: 100%,
@@ -11,6 +11,21 @@ $container-max-widths = {
 
 invisible()
 
+body
+  if $baseline-grid is true
+    &:after
+      content: ''
+      display: block
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      z-index: 9999
+      pointer-events: none
+      background-image: linear-gradient(to bottom, #0ff 0, rgba(255,255,255,0) 1px)
+      background-repeat: repeat-y
+      background-size: 100% gu(1)
 
 :root
   --font-size: 20px
