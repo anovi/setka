@@ -2,10 +2,12 @@
   <div class="layout">
       <div class="layout__sidebar">
         <nav class="menu">
-          <strong class="d-block mt-2 mb-2">Invisible CSS library</strong>
-          <div v-for="(item, i) in menu" :key="i">
-            <nuxt-link v-if="item.url" class="menu__item" :to="item.url">{{item.title}}</nuxt-link>
-            <div v-else class="menu__title">{{item.title}}</div>
+          <div class="container">
+            <strong class="d-block mt-2 mb-2">Invisible CSS library</strong>
+            <div v-for="(item, i) in menu" :key="i">
+              <nuxt-link v-if="item.url" class="menu__item" :to="item.url">{{item.title}}</nuxt-link>
+              <div v-else class="menu__title">{{item.title}}</div>
+            </div>
           </div>
         </nav>
       </div>
@@ -22,6 +24,12 @@
         menu: [{
           title: 'Getting started',
           url: '/'
+        }, {
+          title: 'Download',
+          url: '/install'
+        }, {
+          title: 'Baseline grid',
+          url: '/baseline'
         }, {
           title: 'Use library'
         }, {
@@ -44,6 +52,9 @@
         }, {
           title: 'Stylus variables',
           url: '/vars'
+        }, {
+          title: 'Mixins',
+          url: '/mixins'
         }]
       }
     }
@@ -56,7 +67,7 @@
 #__nuxt
   min-height: 100vh;
 
-$sidebar-width = 220px
+$sidebar-width = 200px
 .layout
   min-height: 100vh;
   max-width: 100vw;
@@ -72,15 +83,14 @@ $sidebar-width = 220px
 .menu
   line-height: gu(3)
   font-family: 'Helvetica', 'Helvetica Neue', 'Arial', sans-serif
-  font-size: 0.8em
   +media-up('md')
+    font-size: 0.8em
     position: fixed
     top: 0
     bottom: 0
     left: 0
     width: $sidebar-width
     overflow: auto
-    padding: 0 10px
 
 .menu__item
   text-decoration: none
@@ -97,7 +107,7 @@ $sidebar-width = 220px
   font-weight: 300
 
 .layout__main
-  +media-up('sm')
+  +media-up('md')
     padding: 0 30px
 
 body
