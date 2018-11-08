@@ -2,8 +2,67 @@
   <div>
 
     <div class="container">
+        <h1>Grid</h1>
 
-        <h1 class="mt-4 mb-4">Grid</h1>
+        <div class="row">
+            <div class="col-auto">
+                <table class="format mt-0">
+                    <tr>
+                        <td>
+                            <div><code>.container</code></div>
+                            <div><code>.container-fluid</code></div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-auto">
+                <table class="format mt-0">
+                    <tr>
+                        <td>
+                            <div><code>.row</code></div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col">
+                <table class="format mt-0">
+                    <tbody>
+                        <tr>
+                            <td class="text-right">
+                                <div><code>.col-</code></div>
+                            </td>
+                            <td class="text-left">
+                                <div><code class="empty"></code></div>
+                                <div><code>sm-</code></div>
+                                <div><code>md-</code></div>
+                                <div><code>lg-</code></div>
+                                <div><code>xl-</code></div>
+                            </td>
+                            <td>
+                                <div><code>1</code></div>
+                                <div><code>2</code></div>
+                                <div><code>3</code></div>
+                                <div><code>4</code></div>
+                                <div><code>5</code></div>
+                                <div><code>6</code></div>
+                                <div><code>7</code></div>
+                                <div><code>8</code></div>
+                                <div><code>9</code></div>
+                                <div><code>10</code></div>
+                                <div><code>11</code></div>
+                                <div><code>12</code></div>
+                            </td>
+                            <td class="format-additional">
+                                <div>Additional:</div>
+                                <div><code>.no-gutters</code></div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
         <h2>Equal-width</h2>
 
         <div class="row">

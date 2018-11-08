@@ -1,6 +1,79 @@
 <template>
     <div class="container">
         <h1>Spacing</h1>
+
+        <div class="row">
+            <div class="col-auto">
+                Margins
+                <table class="format">
+                    <tbody>
+                        <tr>
+                            <td class="text-right">
+                                <div><code>.mt-</code></div>
+                                <div><code>.mb-</code></div>
+                                <div><code>.ml-</code></div>
+                                <div><code>.mr-</code></div>
+                                <div><code>.mx-</code></div>
+                                <div><code>.my-</code></div>
+                                
+                            </td>
+                            <td class="text-center">
+                                <div><code class="empty"></code></div>
+                                <div><code>sm-</code></div>
+                                <div><code>md-</code></div>
+                                <div><code>lg-</code></div>
+                                <div><code>xl-</code></div>
+                            </td>
+                            <td>
+                                <div><code>0</code></div>
+                                <div><code>01</code></div>
+                                <div><code>1</code></div>
+                                <div><code>2</code></div>
+                                <div><code>3</code></div>
+                                <div><code>4</code></div>
+                                <div><code>auto</code></div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-auto">
+                Paddings
+                <table class="format">
+                    <tbody>
+                        <tr>
+                            <td class="text-right">
+                                <div><code>.pt-</code></div>
+                                <div><code>.pb-</code></div>
+                                <div><code>.pl-</code></div>
+                                <div><code>.pr-</code></div>
+                                <div><code>.px-</code></div>
+                                <div><code>.py-</code></div>
+                                
+                            </td>
+                            <td class="text-center">
+                                <div><code class="empty"></code></div>
+                                <div><code>sm-</code></div>
+                                <div><code>md-</code></div>
+                                <div><code>lg-</code></div>
+                                <div><code>xl-</code></div>
+                            </td>
+                            <td>
+                                <div><code>0</code></div>
+                                <div><code>01</code></div>
+                                <div><code>1</code></div>
+                                <div><code>2</code></div>
+                                <div><code>3</code></div>
+                                <div><code>4</code></div>
+                                <div><code>auto</code></div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
         <p>The classes are named using the format <code>{property}{sides}-{size}</code> for <code>xs</code> and <code>{property}{sides}-{breakpoint}-{size}</code> for <code>sm</code>, <code>md</code>, <code>lg</code>, and <code>xl</code>.</p>
         <p>Where sides is one of:</p>
         <p>

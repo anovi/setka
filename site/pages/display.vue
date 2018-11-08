@@ -1,6 +1,34 @@
 <template>
     <main class="container">
-        <h1 class="bd-title" id="content">Display property</h1>
+        <h1 id="content">Display property</h1>
+
+        <table class="format">
+          <tr>
+            <td>
+              <div><code>.d-</code></div>
+            </td>
+            <td>
+              <div><code class="empty"></code></div>
+              <div><code>sm-</code></div>
+              <div><code>md-</code></div>
+              <div><code>lg-</code></div>
+              <div><code>xl-</code></div>
+            </td>
+            <td>
+              <div><code>none</code></div>
+              <div><code>inline</code></div>
+              <div><code>inline-block</code></div>
+              <div><code>block</code></div>
+              <div><code>table</code></div>
+              <div><code>table-cell</code></div>
+              <div><code>table-row</code></div>
+              <div><code>flex</code></div>
+              <div><code>inline-flex</code></div>
+            </td>
+          </tr>
+        </table>
+
+
         <p class="bd-lead">Quickly and responsively toggle the display value of components and more with our display utilities. Includes support for some of the more common values, as well as some extras for controlling display when printing.</p>
     
 
@@ -125,7 +153,7 @@
 <pre><code class="language-html" data-lang="html">&lt;div class="d-lg-none"&gt;hide on screens wider than lg&lt;/div&gt;
 &lt;div class="d-none d-lg-block"&gt;hide on screens smaller than lg&lt;/div&gt;</code></pre>
 
-<h2 id="display-in-print">Display in print</h2>
+<!-- <h2 id="display-in-print">Display in print</h2>
 
 <p>Change the <code>display</code> value of elements when printing with our print display utility classes. Includes support for the same <code>display</code> values as our responsive <code>.d-*</code> utilities.</p>
 
@@ -150,7 +178,7 @@
 </div>
 <pre><code class="language-html" data-lang="html">&lt;div class="d-print-none"&gt;Screen Only (Hide on print only)&lt;/div&gt;
 &lt;div class="d-none d-print-block"&gt;Print Only (Hide on screen only)&lt;/div&gt;
-&lt;div class="d-none d-lg-block d-print-block"&gt;Hide up to large on screen, but always show on print&lt;/div&gt;</code></pre>
+&lt;div class="d-none d-lg-block d-print-block"&gt;Hide up to large on screen, but always show on print&lt;/div&gt;</code></pre> -->
 
 
     </main>

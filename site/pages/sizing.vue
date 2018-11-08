@@ -1,26 +1,67 @@
 <template>
     <div class="container">
-      <h1>Sizing</h1>
-      <p>
-      Includes support for 25%, 50%, 75%, 100%, and auto by default. Modify those values as you need to generate different utilities here. Use like this <code>.w-25</code>, <code>.h-50</code> and so on.
-      </p>
+        <h1>Sizing</h1>
 
-      <p>This:</p>
-      <pre><code>&lt;div class=&quot;w-25 p-01 example&quot;&gt;Width 25%&lt;/div&gt;
+        <div class="row">
+            <div class="col-auto">
+                width and height
+                <table class="format">
+                    <tbody>
+                        <tr>
+                            <td class="text-right">
+                                <div><code>.w-</code></div>
+                                <div><code>.h-</code></div>
+                                
+                            </td>
+                            <td>
+                                <div><code>25</code></div>
+                                <div><code>50</code></div>
+                                <div><code>75</code></div>
+                                <div><code>100</code></div>
+                                <div><code>auto</code></div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-auto">
+                max-width and max-height
+                <table class="format">
+                    <tbody>
+                        <tr>
+                            <td class="text-right">
+                                <div><code>.mw-100</code></div>
+                                <div><code>.mh-100</code></div>
+                                
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+
+        <p>
+        Includes support for 25%, 50%, 75%, 100%, and auto by default. Modify those values as you need to generate different utilities here. Use like this <code>.w-25</code>, <code>.h-50</code> and so on.
+        </p>
+
+        <p>This:</p>
+        <pre><code>&lt;div class=&quot;w-25 p-01 example&quot;&gt;Width 25%&lt;/div&gt;
 &lt;div class=&quot;w-50 p-01 example&quot;&gt;Width 50%&lt;/div&gt;
 &lt;div class=&quot;w-75 p-01 example&quot;&gt;Width 75%&lt;/div&gt;
 &lt;div class=&quot;w-100 p-01 example&quot;&gt;Width 100%&lt;/div&gt;
 &lt;div class=&quot;w-auto p-01 example&quot;&gt;Width auto&lt;/div&gt;
 </code></pre>
-      <p>…will result to this:</p>
-      <div class="w-25 p-01 example">Width 25%</div>
-      <div class="w-50 p-01 example">Width 50%</div>
-      <div class="w-75 p-01 example">Width 75%</div>
-      <div class="w-100 p-01 example">Width 100%</div>
-      <div class="w-auto p-01 example">Width auto</div>
+        <p>…will result to this:</p>
+        <div class="w-25 p-01 example">Width 25%</div>
+        <div class="w-50 p-01 example">Width 50%</div>
+        <div class="w-75 p-01 example">Width 75%</div>
+        <div class="w-100 p-01 example">Width 100%</div>
+        <div class="w-auto p-01 example">Width auto</div>
 
-      <p>There is also max-width classes:</p>
-<pre><code>.mw-100 { max-width: 100% !important; }
+         <p>There is also max-width classes:</p>
+        <pre><code>.mw-100 { max-width: 100% !important; }
 .mh-100 { max-height: 100% !important; }
 </code></pre>
 
