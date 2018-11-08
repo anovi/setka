@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <main class="container">
 
-    <div class="container">
-      <h1 class="mt-sm-1 mt-4">Getting Started</h1>
-      Install:
+    <h1>Getting Started</h1>
+
+    <p>Install:</p>
 <pre>
 npm i @anovi/invisible
 </pre>
@@ -23,39 +23,13 @@ npm i @anovi/invisible
 </code></pre>
 
 <p><strong>If you use stylus</strong>, import the library:</p>
-<pre><code>@anovi/invisible/index.styl
-</code></pre>
-<p>
-  Then, set up Stylus variables.
-</p>
-<pre><code>$grid-columns = 12
-$grid-gutter-width = 30px
+<pre><code>@import '~@anovi/invisible/index.styl'
 
-$grid-breakpoints = {
-  // Extra small screen / phone
-  xs: 0,
-  // Small screen / phone
-  sm: 576px,
-  // Medium screen / tablet
-  md: 768px,
-  // Large screen / desktop
-  lg: 992px,
-  // Extra large screen / wide desktop
-  xl: 1200px
-}
-
-$container-max-widths = {
-  sm: 540px,
-  md: 720px,
-  lg: 960px,
-  xl: 1140px
-}
+invisible()  
 </code></pre>
 
 
-    </div>
-
-  </div>
+  </main>
 </template>
 
 

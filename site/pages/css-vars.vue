@@ -1,6 +1,7 @@
 <template>
     <div class="container">
         <h1>CSS variables</h1>
+
         <p>With CSS variable you can custumize library to some decent level. You don't event need to use a preprocessor. Use Stylus only if you need an advanced control.</p>
         <!-- <p>Pros of using CSS variables. </p> -->
         
