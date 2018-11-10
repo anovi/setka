@@ -18,6 +18,10 @@
 </template>
 
 <script>
+  import Vue from 'vue'
+  import FormatTable from '~/components/format-table'
+  Vue.component('format-table', FormatTable)
+
   export default {
     data() {
       return {
@@ -44,6 +48,9 @@
         }, {
           title: 'Display',
           url: '/display'
+        }, {
+          title: 'Flex',
+          url: '/flex'
         }, {
           title: 'Customize'
         }, {
