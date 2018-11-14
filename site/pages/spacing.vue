@@ -4,72 +4,16 @@
 
         <div class="row">
             <div class="col-auto">
-                Margins
-                <table class="format">
-                    <tbody>
-                        <tr>
-                            <td class="text-right">
-                                <div><code>.mt-</code></div>
-                                <div><code>.mb-</code></div>
-                                <div><code>.ml-</code></div>
-                                <div><code>.mr-</code></div>
-                                <div><code>.mx-</code></div>
-                                <div><code>.my-</code></div>
-                                
-                            </td>
-                            <td class="text-center">
-                                <div><code class="empty"></code></div>
-                                <div><code>sm-</code></div>
-                                <div><code>md-</code></div>
-                                <div><code>lg-</code></div>
-                                <div><code>xl-</code></div>
-                            </td>
-                            <td>
-                                <div><code>0</code></div>
-                                <div><code>01</code></div>
-                                <div><code>1</code></div>
-                                <div><code>2</code></div>
-                                <div><code>3</code></div>
-                                <div><code>4</code></div>
-                                <div><code>auto</code></div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                <p class="mt-0">
+                    Margins
+                </p>
+                <format-table :items="margins" />
             </div>
             <div class="col-auto">
-                Paddings
-                <table class="format">
-                    <tbody>
-                        <tr>
-                            <td class="text-right">
-                                <div><code>.pt-</code></div>
-                                <div><code>.pb-</code></div>
-                                <div><code>.pl-</code></div>
-                                <div><code>.pr-</code></div>
-                                <div><code>.px-</code></div>
-                                <div><code>.py-</code></div>
-                                
-                            </td>
-                            <td class="text-center">
-                                <div><code class="empty"></code></div>
-                                <div><code>sm-</code></div>
-                                <div><code>md-</code></div>
-                                <div><code>lg-</code></div>
-                                <div><code>xl-</code></div>
-                            </td>
-                            <td>
-                                <div><code>0</code></div>
-                                <div><code>01</code></div>
-                                <div><code>1</code></div>
-                                <div><code>2</code></div>
-                                <div><code>3</code></div>
-                                <div><code>4</code></div>
-                                <div><code>auto</code></div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                <p class="mt-0">
+                    Paddings
+                </p>
+                <format-table :items="paddings" />
             </div>
         </div>
 
@@ -95,3 +39,23 @@
         </p>
     </div>
 </template>
+
+
+<script>
+export default {
+    data() {
+        return {
+            margins: [
+                {items: ['.mt-','.mb-','.ml-','.mr-','.mx-','.my-']},
+                {items: [null,'sm-','md-','lg-','xl-']},
+                {items: ['0','01','1','2','3','4','auto']}
+            ],
+            paddings: [
+                {items: ['.pt-','.pb-','.pl-','.pr-','.px-','.py-']},
+                {items: [null,'sm-','md-','lg-','xl-']},
+                {items: ['0','01','1','2','3','4','auto']}
+            ]
+        }
+    }
+}
+</script>

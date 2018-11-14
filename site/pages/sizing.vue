@@ -4,43 +4,18 @@
 
         <div class="row">
             <div class="col-auto">
-                width and height
-                <table class="format">
-                    <tbody>
-                        <tr>
-                            <td class="text-right">
-                                <div><code>.w-</code></div>
-                                <div><code>.h-</code></div>
-                                
-                            </td>
-                            <td>
-                                <div><code>25</code></div>
-                                <div><code>50</code></div>
-                                <div><code>75</code></div>
-                                <div><code>100</code></div>
-                                <div><code>auto</code></div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                <p class="mt-0">
+                    width and height
+                </p>
+                <format-table :items="widths" />
             </div>
             <div class="col-auto">
-                max-width and max-height
-                <table class="format">
-                    <tbody>
-                        <tr>
-                            <td class="text-right">
-                                <div><code>.mw-100</code></div>
-                                <div><code>.mh-100</code></div>
-                                
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                <p class="mt-0">
+                    max-width and max-height
+                </p>
+                <format-table :items="maxWidths" />
             </div>
         </div>
-
-
 
         <p>
         Includes support for 25%, 50%, 75%, 100%, and auto by default. Modify those values as you need to generate different utilities here. Use like this <code>.w-25</code>, <code>.h-50</code> and so on.
@@ -67,3 +42,20 @@
 
     </div>
 </template>
+
+
+<script>
+export default {
+    data() {
+        return {
+            widths: [
+                {items: ['.w-','.h-']},
+                {items: ['25','50','75','100','auto']}
+            ],
+            maxWidths: [
+                {items: ['.mw-100','.mh-100']}
+            ]
+        }
+    }
+}
+</script>

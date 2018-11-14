@@ -38,4 +38,5 @@ module.exports = {
   modules: [
     '~/modules/generate-after'
   ]
+
 }

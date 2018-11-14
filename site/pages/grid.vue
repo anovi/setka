@@ -6,59 +6,13 @@
 
         <div class="row">
             <div class="col-auto">
-                <table class="format mt-0">
-                    <tr>
-                        <td>
-                            <div><code>.container</code></div>
-                            <div><code>.container-fluid</code></div>
-                        </td>
-                    </tr>
-                </table>
+                <format-table :items="container" />
             </div>
             <div class="col-auto">
-                <table class="format mt-0">
-                    <tr>
-                        <td>
-                            <div><code>.row</code></div>
-                        </td>
-                    </tr>
-                </table>
+                <format-table :items="row" />
             </div>
             <div class="col">
-                <table class="format mt-0">
-                    <tbody>
-                        <tr>
-                            <td class="text-right">
-                                <div><code>.col-</code></div>
-                            </td>
-                            <td class="text-left">
-                                <div><code class="empty"></code></div>
-                                <div><code>sm-</code></div>
-                                <div><code>md-</code></div>
-                                <div><code>lg-</code></div>
-                                <div><code>xl-</code></div>
-                            </td>
-                            <td>
-                                <div><code>1</code></div>
-                                <div><code>2</code></div>
-                                <div><code>3</code></div>
-                                <div><code>4</code></div>
-                                <div><code>5</code></div>
-                                <div><code>6</code></div>
-                                <div><code>7</code></div>
-                                <div><code>8</code></div>
-                                <div><code>9</code></div>
-                                <div><code>10</code></div>
-                                <div><code>11</code></div>
-                                <div><code>12</code></div>
-                            </td>
-                            <td class="format-additional">
-                                <div>Additional:</div>
-                                <div><code>.no-gutters</code></div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                <format-table :items="cols" />
             </div>
         </div>
 
@@ -398,3 +352,23 @@
 }
 </style>
 
+<script>
+export default {
+    data() {
+        return {
+            container: [
+                {items: ['.container','.container-fluid']}
+            ],
+            row: [
+                {items: ['.row']}
+            ],
+            cols: [
+                {items: ['.col-']},
+                {items: [null,'sm-','md-','lg-','xl-']},
+                {items: ['1','2','3','4','5','6','7','8','9','10','11','12']},
+                {items: ['.no-gutters']}
+            ]
+        }
+    }
+}
+</script>

@@ -5,31 +5,41 @@
 
         <div class="row">
             <div class="col-12">
-                <h3>For flex container</h3>
+                <h3 class="mt-0">For flex container</h3>
             </div>
 
             <div class="col-auto">
-                Direction
+                <p class="mt-0">
+                    Direction
+                </p>
                 <format-table :items="flexOrder" />
             </div>
 
             <div class="col-auto">
-                Wrap
+                <p class="mt-0">
+                    Wrap
+                </p>
                 <format-table :items="flexWrap" />
             </div>
 
             <div class="col-auto">
-                Justify content
+                <p class="mt-0">
+                    Justify content
+                </p>
                 <format-table :items="flexJustify" />
             </div>
 
             <div class="col-auto">
-                Align items
+                <p class="mt-0">
+                    Align items
+                </p>
                 <format-table :items="flexAlign" />
             </div>
 
             <div class="col-auto">
-                Align content
+                <p class="mt-0">
+                    Align content
+                </p>
                 <format-table :items="flexAlignContent" />
             </div>
 
@@ -38,17 +48,23 @@
             </div>
 
             <div class="col-auto">
-                Fill
+                <p class="mt-0">
+                    Fill
+                </p>
                 <format-table :items="flexFill" />
             </div>
 
             <div class="col-auto">
-                Grow and shrink
+                <p class="mt-0">
+                    Grow and shrink
+                </p>
                 <format-table :items="flexGrow" />
             </div>
 
             <div class="col-auto">
-                Align self
+                <p class="mt-0">
+                    Align self
+                </p>
                 <format-table :items="flexAlignSelf" />
             </div>
             

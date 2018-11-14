@@ -5,17 +5,25 @@
 
         <p>Baseline grid originates from number of steps (2 by default) per one line-height of body text. I recommend use at least 2 steps or else you won't have enough options for choosing line heights.</p>
 
+        <div class="bg-1 p-1 show-grid w-50">
+            <h3 class="my-0 bg-2">Example header</h3>
+            <p class="bg-2 mb-0">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque voluptatibus neque asperiores rerum officia non illo. Incidunt sit eveniet perspiciatis
+            </p>
+        </div>
+
+        <p>Baseline grid is also responsive, so spacings between blocks too. Try to narrow window under 576px and you will see in the example above that no only size of font will become smaller, but line-height and spacings too.</p>
+
         <p>When setting baseline grid, make sure that <em>(--line-height / --grid-unit-lines)</em> is round number. Float number cause problems because of rounding. For example, by default <code>--line-height</code> is 20px (1.25rem from 16px). Then one grid unit will be <em>(20px / 2) = 10px</em>.
         </p>
 
-
         <h2>Grid units</h2>
-        <p>Grid unit is a size of step of baseline grid. <nuxt-link to="/spacing">Spacing classes</nuxt-link> use grid units to calculate their value. Value of grid unit can be get from CSS variable <code>--grid-unit</code> or function <code>gu(Number)</code> in Stylus</p>
+        <p>Grid unit is a size of step of baseline grid. <nuxt-link to="/spacing">Spacing classes</nuxt-link> by default use grid units to calculate their margins. Value of grid unit can be get from CSS variable <code>--grid-unit</code> or function <code>gu(Number)</code> in Stylus</p>
 
         <p>If you choose to use baseline grid, then use grid units in CSS rules like this:</p>
 
         <pre><code>.some-class {
-    margin-bottom: calc(--grid-unit * 8);
+    margin-bottom: calc(var(--grid-unit) * 8);
 }</code></pre>
         <p>In Stylus:</p>
         <pre><code>.some-class
