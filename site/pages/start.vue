@@ -2,7 +2,6 @@
   <main class="container">
 
     <h1>Getting Started</h1>
-
     <p>Install:</p>
 <pre>
 npm i @anovi/invisible

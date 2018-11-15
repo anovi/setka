@@ -33,6 +33,7 @@ export default {
 
 <style lang="stylus">
 @import '~~@@/lib/@anovi/invisible/index.styl'
+
 .format
     border-spacing: 0
     border-radius: 4px
@@ -42,7 +43,7 @@ export default {
         font-size: 12px
         color: #888
         font-weight: normal
-        font-family: $headerFont
+        font-family: var(--header-font)
         padding 0 6px 
         // background: rgba(#e3ccff, 0.3)
         border-right: 1px solid #E2CDFE
@@ -63,10 +64,10 @@ export default {
             background: #e3ccff
             vertical-align: bottom
             border-radius: 4px
+            display: inline-block
             &:after
                 display: inline-block
                 content: 'none'
-                font-size: 0.8em
                 padding: 0 3px
 
 .format-text

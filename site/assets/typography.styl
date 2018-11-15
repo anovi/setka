@@ -1,39 +1,36 @@
 @import '~~@@/lib/@anovi/invisible/index.styl'
-@import '~@/assets/vars.styl'
 
-// $baseline-grid = true
 $container-max-widths = {
   sm: 100%,
   md: 100%,
   lg: 100%,
   xl: 100%
 }
-
 invisible()
 
-body
-  if $baseline-grid is true
-    &:after
-      content: ''
-      display: block
-      position: absolute
-      top: 0
-      left: 0
-      right: 0
-      bottom: 0
-      z-index: 9999
-      pointer-events: none
-      background-image: linear-gradient(to bottom, #0ff 0, rgba(255,255,255,0) 1px)
-      background-repeat: repeat-y
-      background-size: 100% gu(1)
 
 :root
   --font-size: 20px
   --line-height: 24px
+  --header-font: 'Helvetica', 'Helvetica Neue', 'Arial', sans-serif
+  --mono-font: 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', monospace
+  --color-code: #5d00ff //#e83e8c
+  --color-code: #fd3700
+  --color-code-text: #333
+  --color-link: #312aff
   +media-down('sm')
     --font-size: 15px
     --line-height: 20px
     
+
+#__nuxt
+  min-height: 100vh;
+
+body
+  padding: 0;
+  margin: 0;
+  font-family: var(--header-font)
+  -webkit-font-smoothing: antialiased;
 
 // CSS
 h1 {
@@ -45,7 +42,7 @@ h1 {
 
 // Stylus
 h1,h2,h3,h4,h5,h6
-  font-family: $headerFont
+  font-family: var(--header-font)
 
 h2
   font-size: 2.1rem
@@ -83,19 +80,29 @@ pre
   display: block
   max-width: 100%
   overflow: auto
-  background: rgba(0,0,0,0.05)
+  background: rgba(0,0,0,0.03)
+  box-shadow: inset 0 0 0 1px #eeeeee
   border-radius: 4px
   padding: gu(1) gu(1) gu(1) gu(1)
+  em
+    font-style: normal
+    // font-weight: bold
+    color: var(--color-code)
+  code
+    color: var(--color-code-text)
 
 code
-  color: #e83e8c
-  font-family: $monoFont
+  color: var(--color-code)
+  font-family: var(--mono-font)
   font-size: 87.5%
-pre > code
-  color: #444
+  vertical-align: bottom
+
+a
+  color: var(--color-link)
+  text-decoration: none
 
 .subheader
-  font-family: $headerFont
+  font-family: var(--header-font)
   font-size: 1.4rem
   font-weight: 300
   line-height: gu(3)
@@ -117,7 +124,9 @@ td
   padding-top: gu(1);
   padding-bottom: gu(1);
   background-color: rgba(86,61,124,.15);
-  box-shadow: inset 0 0 0 1px rgba(86,61,124,.2);
+  background-color: rgba(170, 114, 255, 0.15)
+  box-shadow: inset 0 0 0 1px rgba(86,61,124,.2)
+  box-shadow: inset 0 0 0 1px rgba(144, 84, 234, 0.2)
   &.__narrow
     max-width: 5em
 
@@ -125,8 +134,6 @@ td
   background-color: rgba(135, 80, 218, 0.15)
 .bg-2
   background-color: rgba(255, 67, 67, 0.2)
-.bg-3
-  background-color: rgba(226, 108, 108, 0.15)
 
 
 .colored-row
@@ -134,24 +141,5 @@ td
   height: gu(12)
   background: rgba(255,0,0,0.1)
 
-.show-grid-bg
-  background-image: linear-gradient(to bottom, #0ff 0, rgba(255,255,255,0) 1px)
-  background-repeat: repeat-y
-  background-size: 100% gu(1)
 
-.show-grid
-  position: relative
-  &:after
-    content: ''
-    display: block
-    position: absolute
-    top: 0
-    left: 0
-    right: 0
-    bottom: 0
-    z-index: 9999
-    pointer-events: none
-    background-image: linear-gradient(to bottom, #0ff 0, rgba(255,255,255,0) 1px)
-    background-repeat: repeat-y
-    background-size: 100% gu(1)
 

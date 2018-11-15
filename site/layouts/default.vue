@@ -1,42 +1,47 @@
 <template>
-  <div class="layout" :class="{ 'show-grid': grid, __grid: grid}">
-      <div class="layout__sidebar">
-        <nav class="menu">
-          <div class="container">
-            <nuxt-link to="/">
-              <img class="logo" src="/logo3.svg" alt="Invisible CSS library">
-            </nuxt-link>
-            <div v-for="(item, i) in menu" :key="i">
-              <nuxt-link v-if="item.url" class="menu__item" :to="item.url">{{item.title}}</nuxt-link>
-              <div v-else class="menu__title">{{item.title}}</div>
+  <EmptyLayout>
+    <div class="layout">
+        <div class="layout__sidebar">
+          <nav class="menu">
+            <div class="container">
+              <nuxt-link to="/">
+                <img class="logo" src="/logo3.svg" alt="Invisible CSS library">
+              </nuxt-link>
+              <div v-for="(item, i) in menu" :key="i">
+                <nuxt-link v-if="item.url" class="menu__item" :to="item.url">{{item.title}}</nuxt-link>
+                <div v-else class="menu__title">{{item.title}}</div>
+              </div>
             </div>
-          </div>
-        </nav>
-      </div>
-      <div class="layout__main">
-        <nuxt />
-      </div>
-      <div class="layout__grid"><div class="layout__grid-button" :class="{ __active: grid }" v-on:click="grid = !grid" /><br><span class="layout__grid-title">Grid</span></div>
-  </div>
+          </nav>
+        </div>
+        <div class="layout__main">
+          <nuxt />
+        </div>
+    </div>
+  </EmptyLayout>
 </template>
 
 <script>
   import Vue from 'vue'
+  import EmptyLayout from '~/layouts/empty'
   import FormatTable from '~/components/format-table'
   Vue.component('format-table', FormatTable)
 
   export default {
 
+    components: {
+      EmptyLayout: EmptyLayout
+    },
+
     data() {
       return {
-        grid: false,
         wHeight: '0',
         menu: [{
           title: 'Getting started',
           url: '/start'
         }, {
           title: 'Download',
-          url: '/install'
+          url: '/download'
         }, {
           title: 'Baseline grid',
           url: '/baseline'
@@ -63,6 +68,9 @@
           title: 'Flex',
           url: '/flex'
         }, {
+          title: 'Debugging',
+          url: '/debugging'
+        }, {
           title: 'Customize'
         }, {
           title: 'CSS variables',
@@ -81,10 +89,6 @@
 
 <style lang="stylus">
 @import '~~@@/lib/@anovi/invisible/index.styl'
-@import '~@/assets/vars.styl'
-
-#__nuxt
-  min-height: 100vh;
 
 $sidebar-width = 200px
 .layout
@@ -95,18 +99,13 @@ $sidebar-width = 200px
   +media-down('sm')
     grid-template-columns: 100%;
 
-  &.__grid
-    h1, h2, h3, h4, h5, h6
-    p, ul, ol, pre
-      background-color: rgba(226, 108, 108, 0.15)
-
 .layout__sidebar
   background: #fafafa;
   border-right: 1px solid #eee;
 
 .menu
-  line-height: gu(3)
-  font-family: $headerFont
+  line-height: gu(2)
+  font-family: var(--header-font)
   +media-up('md')
     font-size: 0.8em
     position: fixed
@@ -133,53 +132,5 @@ $sidebar-width = 200px
 .layout__main
   +media-up('md')
     padding: 0 30px
-
-body
-  padding: 0;
-  margin: 0;
-  // -webkit-font-smoothing: antialiased;
-
-.layout__grid
-  position fixed
-  top: gu(1)
-  right: gu(1)
-  font-family: $headerFont
-  color: gray
-  font-size: 12px
-  line-height: gu(1)
-  text-align: center
-  z-index: 99999999999999
-.layout__grid-title
-  position: relative
-  top: 5px
-.layout__grid-button
-  width: 44px
-  height: 24px
-  border-radius: 15px
-  background: #444
-  display: inline-block
-  position: relative
-  vertical-align: bottom
-  margin-left: 2px
-  &:after
-    content: ''
-    display: block
-    width: 20px
-    height: 20px
-    border-radius: 10px
-    background: #eee
-    position: absolute
-    left: 2px
-    top: 2px
-    z-index: 1
-  &.__active
-    background: blue
-    &:after
-      left: 22px
-
-.logo
-  height: gu(5)
-  margin-top: gu(1)
-  margin-bottom: gu(2)
 
 </style>
