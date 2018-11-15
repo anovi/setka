@@ -25,7 +25,9 @@
   import Vue from 'vue'
   import EmptyLayout from '~/layouts/empty'
   import FormatTable from '~/components/format-table'
+  import Source from '~/components/source'
   Vue.component('format-table', FormatTable)
+  Vue.component('source-code', Source)
 
   export default {
 

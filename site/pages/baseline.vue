@@ -12,25 +12,25 @@
             </p>
         </div>
 
-        <p>Baseline grid is also responsive, so spacings between blocks too. Try to narrow window under 576px and you will see in the example above that no only size of font will become smaller, but line-height and spacings too.</p>
+        <p>Baseline grid is also responsive, so spacings between blocks too. Try to narrow window under 576px and you will see in the example above that not only size of font will become smaller, but <code>line-height</code> and spacings too.</p>
 
-        <p>When setting baseline grid, make sure that <em>(--line-height / --grid-unit-lines)</em> is round number. Float number cause problems because of rounding. For example, by default <code>--line-height</code> is 20px (1.25rem from 16px). Then one grid unit will be <em>(20px / 2) = 10px</em>.
+        <p>When setting baseline grid, make sure that <em>(--line-height / --grid-unit-lines)</em> is round number. Float number cause problems because of rounding. For example, by default <code>--line-height</code> variable is 20px (1.25rem from 16px). Then one grid unit will be <em>(20px / 2) = 10px</em>.
         </p>
 
         <h2>Grid units</h2>
-        <p>Grid unit is a size of step of baseline grid. <nuxt-link to="/spacing">Spacing classes</nuxt-link> by default use grid units to calculate their margins. Value of grid unit can be get from CSS variable <code>--grid-unit</code> or function <code>gu(Number)</code> in Stylus</p>
+        <p><em>Grid unit</em> is a size of step of baseline grid. <nuxt-link to="/spacing">Spacing classes</nuxt-link> by default use grid units to calculate their margins. Value of grid unit can be get from CSS variable <code>--grid-unit</code> or function <code>gu(Number)</code> in Stylus</p>
 
         <p>If you choose to use baseline grid, then use grid units in CSS rules like this:</p>
 
-        <pre><code>.some-class {
-    margin-bottom: calc(var(--grid-unit) * 8);
-}</code></pre>
-        <p>In Stylus:</p>
-        <pre><code>.some-class
-    margin-bottom: gu(8)</code></pre>
+        <source-code>
+        <code>.some-class {
+  margin-bottom: calc(var(--grid-unit) * 8);
+}</code>
+        <code slot="stylus">.some-class
+  margin-bottom: gu(8)</code>
+        </source-code>
+        
         <p>
-        <!-- --line-height: 1.25rem; -->
-        <!-- --grid-unit-lines: 2;  -->
         Formula of grid unit is:
         <code>calc(var(--line-height) / var(--grid-unit-lines))</code>
         </p>
@@ -38,18 +38,19 @@
         
 
         <h3>Examples</h3>
-        <pre><code>h1 {
+        <source-code>
+<code>h1 {
   font-size: 2.75rem;
   line-height: calc(var(--grid-unit) * 4);
   margin-top: calc(var(--grid-unit) * 4);
   margin-bottom: calc(var(--grid-unit) * 4);
-}</code></pre>
-        <pre><code>h1
+}</code>
+<code slot="stylus">h1
   font-size: 2.75rem
   line-height: gu(4)
   margin-top: gu(4)
-  margin-bottom: gu(4)</code></pre>
-
+  margin-bottom: gu(4)</code>
+        </source-code>
 
     </main>
 </template>
