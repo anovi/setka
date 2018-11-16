@@ -1,5 +1,5 @@
 <template>
-    <main class="container">
+    <main class="">
         <h1 id="content">Display property</h1>
 
         <format-table :items="display" />
@@ -40,18 +40,18 @@
 <h2 id="examples">Examples</h2>
 
 <div class="bd-example">
-<div class="d-inline example">d-inline</div>
-<div class="d-inline example">d-inline</div>
+<div class="d-inline px-01 example">d-inline</div>
+<div class="d-inline px-01 example">d-inline</div>
 </div>
-<pre><code>&lt;div class="d-inline example"&gt;d-inline&lt;/div&gt;
-&lt;div class="d-inline examples"&gt;d-inline&lt;/div&gt;</code></pre>
+<source-code :height="2"><code>&lt;div class="<em>d-inline</em> example"&gt;d-inline&lt;/div&gt;
+&lt;div class="<em>d-inline</em> examples"&gt;d-inline&lt;/div&gt;</code></source-code>
 
 <div>
-  <span class="d-block example">d-block</span>
-  <span class="d-block example">d-block</span>
+  <span class="d-block px-01 example">d-block</span>
+  <span class="d-block px-01 example">d-block</span>
 </div>
-<pre><code>&lt;span class="d-block example"&gt;d-block&lt;/span&gt;
-&lt;span class="d-block example"&gt;d-block&lt;/span&gt;</code></pre>
+<source-code :height="2"><code>&lt;span class="<em>d-block</em> example"&gt;d-block&lt;/span&gt;
+&lt;span class="<em>d-block</em> example"&gt;d-block&lt;/span&gt;</code></source-code>
 
 <h2 id="hiding-elements">Hiding elements</h2>
 
@@ -61,7 +61,7 @@
 
 <p>To show an element only on a given interval of screen sizes you can combine one <code>.d-*-none</code> class with a <code>.d-*-*</code> class, for example <code>.d-none .d-md-block .d-xl-none</code> will hide the element for all screen sizes except on medium and large devices.</p>
 
-<table>
+<table class="">
   <thead>
     <tr>
       <th>Screen Size</th>
@@ -120,12 +120,13 @@
   </tbody>
 </table>
 
-<div class="bd-example">
-<div class="d-lg-none">hide on screens wider than lg</div>
-<div class="d-none d-lg-block">hide on screens smaller than lg</div>
+<div>
+  <div class="d-lg-none px-1 example">hide on screens wider than lg</div>
+  <div class="d-none d-lg-block px-1 example bg-2">hide on screens smaller than lg</div>
 </div>
-<pre><code class="language-html" data-lang="html">&lt;div class="d-lg-none"&gt;hide on screens wider than lg&lt;/div&gt;
-&lt;div class="d-none d-lg-block"&gt;hide on screens smaller than lg&lt;/div&gt;</code></pre>
+
+<source-code :height="2"><code class="language-html" data-lang="html">&lt;div class="<em>d-lg-none</em> px-1 example"&gt;hide on screens wider than lg&lt;/div&gt;
+&lt;div class="<em>d-none d-lg-block</em> px-1 example bg-2"&gt;hide on screens smaller than lg&lt;/div&gt;</code></source-code>
 
 <!-- <h2 id="display-in-print">Display in print</h2>
 
@@ -150,9 +151,9 @@
 <div class="d-none d-print-block">Print Only (Hide on screen only)</div>
 <div class="d-none d-lg-block d-print-block">Hide up to large on screen, but always show on print</div>
 </div>
-<pre><code class="language-html" data-lang="html">&lt;div class="d-print-none"&gt;Screen Only (Hide on print only)&lt;/div&gt;
+<source-code><code class="language-html" data-lang="html">&lt;div class="d-print-none"&gt;Screen Only (Hide on print only)&lt;/div&gt;
 &lt;div class="d-none d-print-block"&gt;Print Only (Hide on screen only)&lt;/div&gt;
-&lt;div class="d-none d-lg-block d-print-block"&gt;Hide up to large on screen, but always show on print&lt;/div&gt;</code></pre> -->
+&lt;div class="d-none d-lg-block d-print-block"&gt;Hide up to large on screen, but always show on print&lt;/div&gt;</code></source-code> -->
 
 
     </main>

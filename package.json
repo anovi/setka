@@ -40,6 +40,7 @@
   },
   "homepage": "https://github.com/anovi/invisible#readme",
   "dependencies": {
-    "stylus": "0.54.5"
+    "stylus": "0.54.5",
+    "vue-clipboard2": "0.2.1"
   }
 }

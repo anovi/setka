@@ -1,5 +1,5 @@
 <template>
-    <main class="container">
+    <main class="">
         <h1 class="mb-01" id="content">Overview</h1>
         <p class="subheader mt-0">Components and options for laying out your Bootstrap project, including wrapping containers, a powerful grid system, a flexible media object, and responsive utility classes.</p>
 
@@ -15,9 +15,9 @@
             </div>
         </div>
 
-        <pre><code data-lang="html">&lt;div class="container"&gt;
+        <source-code :height="3"><code data-lang="html">&lt;div class="container"&gt;
     &lt;!-- Content here --&gt;
-&lt;/div&gt;</code></pre>
+&lt;/div&gt;</code></source-code>
 
         <p>Use <code>.container-fluid</code> for a full width container, spanning the entire width of the viewport.</p>
 
@@ -27,17 +27,55 @@
             </div>
         </div>
 
-        <pre><code data-lang="html">&lt;div class="container-fluid"&gt;
+        <source-code :height="3"><code data-lang="html">&lt;div class="container-fluid"&gt;
     ...
-&lt;/div&gt;</code></pre>
+&lt;/div&gt;</code></source-code>
 
         <h2 id="responsive-breakpoints">Responsive breakpoints</h2>
+
+
+        <table>
+            <thead>
+                <th>Breakpoint</th>
+                <th>xs</th>
+                <th>sm</th>
+                <th>md</th>
+                <th>lg</th>
+                <th>xl</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Viewport size</td>
+                    <td>all sizes</td>
+                    <td>
+                        ≥ 576px
+                    </td>
+                    <td>
+                        ≥ 768px
+                    </td>
+                    <td>
+                        ≥ 992px
+                    </td>
+                    <td>
+                        ≥ 1200px
+                    </td>
+                </tr>
+                <tr>
+                    <td>Classname</td>
+                    <td>–</td>
+                    <td><code>.*-sm-*</code></td>
+                    <td><code>.*-md-*</code></td>
+                    <td><code>.*-lg-*</code></td>
+                    <td><code>.*-xl-*</code></td>
+                </tr>
+            </tbody>
+        </table>
 
         <p>Since Bootstrap is developed to be mobile first, we use a handful of <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries">media queries</a> to create sensible breakpoints for our layouts and interfaces. These breakpoints are mostly based on minimum viewport widths and allow us to scale up elements as the viewport changes.</p>
 
         <p>Bootstrap primarily uses the following media query ranges—or breakpoints—in our source Stylus files for our layout, grid system, and components.</p>
 
-        <pre><code data-lang="scss">// Extra small devices (portrait phones, less than 576px)
+        <source-code :height="14"><code data-lang="scss">// Extra small devices (portrait phones, less than 576px)
 // No media query since this is the default in Bootstrap
 
 // Small devices (landscape phones, 576px and up)
@@ -50,11 +88,11 @@
 @media (min-width: 992px) { ... }
 
 // Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) { ... }</code></pre>
+@media (min-width: 1200px) { ... }</code></source-code>
 
         <p>Since we write our source CSS in Stylus, all our media queries are available via Stylus mixins:</p>
 
-        <pre><code data-lang="scss">+media-breakpoint-up('xs') { ... }
+        <source-code :height="10"><code data-lang="scss">+media-breakpoint-up('xs') { ... }
 +media-breakpoint-up('sm') { ... }
 +media-breakpoint-up('md') { ... }
 +media-breakpoint-up('lg') { ... }
@@ -65,11 +103,11 @@
     .some-class
         display: block
 
-</code></pre>
+</code></source-code>
 
         <p>We occasionally use media queries that go in the other direction (the given screen size <em>or smaller</em>):</p>
 
-        <pre><code data-lang="scss">// Extra small devices (portrait phones, less than 576px)
+        <source-code :height="14"><code data-lang="scss">// Extra small devices (portrait phones, less than 576px)
 @media (max-width: 575.98px) { ... }
 
 // Small devices (landscape phones, less than 768px)
@@ -82,7 +120,7 @@
 @media (max-width: 1199.98px) { ... }
 
 // Extra large devices (large desktops)
-// No media query since the extra-large breakpoint has no upper bound on its width</code></pre>
+// No media query since the extra-large breakpoint has no upper bound on its width</code></source-code>
 
         <div class="bd-callout bd-callout-info">
             <p>
@@ -92,14 +130,14 @@
 
         <p>Once again, these media queries are also available via Stylus mixins:</p>
 
-        <pre><code data-lang="scss">+media-breakpoint-down('xs') { ... }
+        <source-code :height="4"><code data-lang="scss">+media-breakpoint-down('xs') { ... }
 +media-breakpoint-down('sm') { ... }
 +media-breakpoint-down('md') { ... }
-+media-breakpoint-down('lg') { ... }</code></pre>
++media-breakpoint-down('lg') { ... }</code></source-code>
 
         <p>There are also media queries and mixins for targeting a single segment of screen sizes using the minimum and maximum breakpoint widths.</p>
 
-        <pre><code data-lang="scss">// Extra small devices (portrait phones, less than 576px)
+        <source-code :height="14"><code data-lang="scss">// Extra small devices (portrait phones, less than 576px)
 @media (max-width: 575.98px) { ... }
 
 // Small devices (landscape phones, 576px and up)
@@ -112,25 +150,25 @@
 @media (min-width: 992px) and (max-width: 1199.98px) { ... }
 
 // Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) { ... }</code></pre>
+@media (min-width: 1200px) { ... }</code></source-code>
 
         <p>These media queries are also available via Stylus mixins:</p>
 
-        <pre><code data-lang="scss">+media-breakpoint-only('xs') { ... }
+        <source-code :height="5"><code data-lang="scss">+media-breakpoint-only('xs') { ... }
 +media-breakpoint-only('sm') { ... }
 +media-breakpoint-only('md') { ... }
 +media-breakpoint-only('lg') { ... }
-+media-breakpoint-only('xl') { ... }</code></pre>
++media-breakpoint-only('xl') { ... }</code></source-code>
 
         <p>Similarly, media queries may span multiple breakpoint widths:</p>
 
-        <pre><code data-lang="scss">// Example
+        <source-code :height="3"><code data-lang="scss">// Example
 // Apply styles starting from medium devices and up to extra large devices
-@media (min-width: 768px) and (max-width: 1199.98px) { ... }</code></pre>
+@media (min-width: 768px) and (max-width: 1199.98px) { ... }</code></source-code>
 
         <p>The Stylus mixin for targeting the same screen size range would be:</p>
 
-        <pre><code data-lang="scss">+media-breakpoint-between('md', 'xl') { ... <span class="p">}</span></code></pre>
+        <source-code :height="1"><code data-lang="scss">+media-breakpoint-between('md', 'xl') { ... <span class="p">}</span></code></source-code>
 
         <!-- <h2 id="z-index">Z-index</h2>
 
@@ -140,13 +178,13 @@
 
         <p>We don’t encourage customization of these individual values; should you change one, you likely need to change them all.</p>
 
-        <pre><code data-lang="scss">$zindex-dropdown:          1000 !default;
+        <source-code><code data-lang="scss">$zindex-dropdown:          1000 !default;
         $zindex-sticky:            1020 !default;
         $zindex-fixed:             1030 !default;
         $zindex-modal-backdrop:    1040 !default;
         $zindex-modal:             1050 !default;
         $zindex-popover:           1060 !default;
-        $zindex-tooltip:           1070 !default;</code></pre>
+        $zindex-tooltip:           1070 !default;</code></source-code>
 
         <p>To handle overlapping borders within components (e.g., buttons and inputs in input groups), we use low single digit <code>z-index</code> values of <code>1</code>, <code>2</code>, and <code>3</code> for default, hover, and active states. On hover/focus/active, we bring a particular element to the forefront with a higher <code>z-index</code> value to show their border over the sibling elements.</p> -->
 

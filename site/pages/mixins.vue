@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <main class="">
         <h1>Stylus mixins</h1>
 
 
@@ -8,5 +8,5 @@
 
 
 
-    </div>
+    </main>
 </template>

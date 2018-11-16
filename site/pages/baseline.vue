@@ -1,5 +1,5 @@
 <template>
-    <main class="container">
+    <main class="">
         <h1>Baseline grid</h1>
         <p>Invisible library utilizes baseline grid for line heights, spacing and overall vertical rythm. It is optional, you can left it.</p>
 
@@ -22,7 +22,7 @@
 
         <p>If you choose to use baseline grid, then use grid units in CSS rules like this:</p>
 
-        <source-code>
+        <source-code :height="3">
         <code>.some-class {
   margin-bottom: calc(var(--grid-unit) * 8);
 }</code>
@@ -38,7 +38,7 @@
         
 
         <h3>Examples</h3>
-        <source-code>
+        <source-code :height="6">
 <code>h1 {
   font-size: 2.75rem;
   line-height: calc(var(--grid-unit) * 4);

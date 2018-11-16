@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <main class="">
         <h1>Spacing</h1>
 
         <div class="row">
@@ -37,7 +37,7 @@
         <code>4</code> - (by default) for classes that set the margin or padding to 4 line-height<br>
         <code>auto</code> - for classes that set the margin to auto
         </p>
-    </div>
+    </main>
 </template>
 
 

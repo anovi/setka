@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <main class="">
         <h1>Stylus variables</h1>
 
 <pre><code>
@@ -47,5 +47,5 @@ $show-grid = false</code></pre>
 
 
 
-    </div>
+    </main>
 </template>

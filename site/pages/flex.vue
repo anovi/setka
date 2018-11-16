@@ -1,5 +1,5 @@
 <template>
-    <main class="container">
+    <main class="">
 
         <h1>Flex</h1>
 
