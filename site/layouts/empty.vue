@@ -33,7 +33,7 @@ export default {
     max-width: 100vw
     &.__grid
         h1, h2, h3, h4, h5, h6
-        p, ul, ol, nav
+        p, ul, ol
             background-color: rgba(176, 113, 255, 0.15)
 
 // Grid thumbler

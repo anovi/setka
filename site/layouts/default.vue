@@ -1,22 +1,22 @@
 <template>
   <EmptyLayout>
-    <div class="layout">
-        <div class="layout__sidebar">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 menu-col">
           <nav class="menu">
-            <div class="container">
-              <nuxt-link to="/">
-                <img class="logo" src="/logo3.svg" alt="Invisible CSS library">
-              </nuxt-link>
-              <div v-for="(item, i) in menu" :key="i">
-                <nuxt-link v-if="item.url" class="menu__item" :to="item.url">{{item.title}}</nuxt-link>
-                <div v-else class="menu__title">{{item.title}}</div>
-              </div>
+            <nuxt-link to="/">
+              <img class="logo" src="/logo3.svg" alt="Invisible CSS library">
+            </nuxt-link>
+            <div v-for="(item, i) in menu" :key="i">
+              <nuxt-link v-if="item.url" class="menu__item" :to="item.url">{{item.title}}</nuxt-link>
+              <div v-else class="menu__title">{{item.title}}</div>
             </div>
           </nav>
         </div>
-        <div class="layout__main">
+        <div class="col-sm-9 col-md-10">
           <nuxt />
         </div>
+      </div>
     </div>
   </EmptyLayout>
 </template>
@@ -26,6 +26,9 @@
   import EmptyLayout from '~/layouts/empty'
   import FormatTable from '~/components/format-table'
   import Source from '~/components/source'
+  import VueClipboard from 'vue-clipboard2'
+
+  Vue.use(VueClipboard)
   Vue.component('format-table', FormatTable)
   Vue.component('source-code', Source)
 
@@ -93,17 +96,8 @@
 @import '~~@@/lib/@anovi/invisible/index.styl'
 
 $sidebar-width = 200px
-.layout
-  min-height: 100vh;
-  max-width: 100vw;
-  display: grid;
-  grid-template-columns: $sidebar-width minmax(100px, 100%);
-  +media-down('sm')
-    grid-template-columns: 100%;
-
-.layout__sidebar
-  background: #fafafa;
-  border-right: 1px solid #eee;
+.menu-col
+  max-width: $sidebar-width
 
 .menu
   line-height: gu(2)
@@ -113,7 +107,6 @@ $sidebar-width = 200px
     position: fixed
     top: 0
     bottom: 0
-    left: 0
     width: $sidebar-width
     overflow: auto
 
@@ -123,6 +116,7 @@ $sidebar-width = 200px
   display: block
   &.nuxt-link-exact-active
     color: black
+    color: #5d00ff
     font-weight: bold
 
 .menu__title
@@ -130,9 +124,5 @@ $sidebar-width = 200px
   font-size: 1.2em
   margin-top: gu(2)
   font-weight: 300
-
-.layout__main
-  +media-up('md')
-    padding: 0 30px
 
 </style>
