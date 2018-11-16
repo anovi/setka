@@ -93,9 +93,8 @@
 </script>
 
 <style lang="stylus">
-@import '~~@@/lib/@anovi/invisible/index.styl'
-
 $sidebar-width = 200px
+
 .menu-col
   max-width: $sidebar-width
 

@@ -36,7 +36,12 @@ module.exports = {
   transition: false,
 
   modules: [
+    '@nuxtjs/style-resources',
     '~/modules/generate-after'
-  ]
+  ],
+
+  styleResources: {
+    stylus: ['./lib/@anovi/invisible/index.styl']
+  }
 
 }

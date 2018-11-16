@@ -20,8 +20,6 @@ export default {
 
 
 <style lang="stylus">
-@import '~~@@/lib/@anovi/invisible/index.styl'
-
 .logo
     height: gu(5)
     margin-top: gu(1)
@@ -81,7 +79,5 @@ export default {
         background: var(--color-link)
         &:after
             left: 22px
-
-
 
 </style>
