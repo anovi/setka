@@ -36,12 +36,14 @@
 
         <table>
             <thead>
-                <th>Breakpoint</th>
-                <th>xs</th>
-                <th>sm</th>
-                <th>md</th>
-                <th>lg</th>
-                <th>xl</th>
+                <tr>
+                    <th>Breakpoint</th>
+                    <th>xs</th>
+                    <th>sm</th>
+                    <th>md</th>
+                    <th>lg</th>
+                    <th>xl</th>
+                </tr>
             </thead>
             <tbody>
                 <tr>
@@ -188,5 +190,5 @@
 
         <p>To handle overlapping borders within components (e.g., buttons and inputs in input groups), we use low single digit <code>z-index</code> values of <code>1</code>, <code>2</code>, and <code>3</code> for default, hover, and active states. On hover/focus/active, we bring a particular element to the forefront with a higher <code>z-index</code> value to show their border over the sibling elements.</p> -->
 
-                </main>
+    </main>
 </template>
