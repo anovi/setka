@@ -7,7 +7,7 @@
         
 
         <p>Defaults of CSS variables:</p>
-        <pre><code>:root {
+        <source-code :height="17"><code>:root {
     --font-size: 16px;         /* Size of body text */
     --line-height: 1.25rem;    /* Line height of body text */
 
@@ -23,10 +23,10 @@
     --container-md: 720px;
     --container-lg: 960px;
     --container-xl: 1140px;
-}</code></pre>
+}</code></source-code>
         
         <p>Library uses theese variables as values of css-rules and inside <code>calc()</code> function. Great thing is that you can have different values on different screen sizes:</p>
-        <pre><code>:root {
+        <source-code :height="12"><code>:root {
     --font-size: 20px;
     --line-height: 24px;
 }
@@ -37,21 +37,21 @@
         --font-size: 15px;
         --line-height: 20px;
     }
-}</code></pre>
+}</code></source-code>
 
         <p>Or the same with Stylus:</p>
-        <pre><code>:root
+        <source-code :height="6"><code>:root
     --font-size: 20px;
     --line-height: 24px;
     +media-down('sm')
         --font-size: 15px;
-        --line-height: 20px;</code></pre>
+        --line-height: 20px;</code></source-code>
 
         <h2>--grid-unit</h2>
         <p>This variable depends from other parameters: <code>--font-size</code> and <code>--line-height</code>. Use it in your calculations, for example you want to make a bottom margin equal to 8 grid units:</p>
-        <pre><code>.some-class {
+        <source-code :height="3"><code>.some-class {
     margin-bottom: calc(--grid-unit * 8);
-}</code></pre>
+}</code></source-code>
         
 
 

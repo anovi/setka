@@ -2,8 +2,7 @@
     <main class="">
         <h1>Stylus variables</h1>
 
-<pre><code>
-$grid-columns = 12
+<source-code :height="38"><code>$grid-columns = 12
 $grid-gutter-width = 30px
 $grid-breakpoints = {
     xs: 0,     // Extra small screen / phone
@@ -40,12 +39,7 @@ $spacers = {
     'auto': s('auto')
 }
 
-$show-grid = false</code></pre>
-
-
-
-
-
+$show-grid = false</code></source-code>
 
     </main>
 </template>
