@@ -7,25 +7,29 @@
         
 
         <p>Defaults of CSS variables:</p>
-        <source-code :height="17"><code>:root {
-    --font-size: 16px;         /* Size of body text */
-    --line-height: 1.25rem;    /* Line height of body text */
+        <source-code :height="20"><code>:root {
+    /* Settings of body text */
+    <em>--font-size: 16px;
+    --line-height: 20px;</em>
 
-    --grid-unit-lines: 2;      /* Amount of grid units per line of text */
-    --grid-gutter-width: 30px; /* Gutter of grid collumns */
+    /* Amount of grid steps per one line of text */
+    <em>--grid-steps: 2;</em>
 
-    --grid-unit: calc(var(--line-height) / var(--grid-unit-lines));
-    /* Grid unit size. Do not change the formula. Use it in your calculations */
-    /* 0,625rem (default) */
+    /* Grid unit size. Use it in your calculations */
+    <em>--grid-unit: calc(var(--line-height) / var(--grid-steps));</em>
     
+    /* Gutter of grid collumns */
+    <em>--grid-gutter-width: 30px;</em>
 
-    --container-sm: 540px;     /* Max width of .container on different breakpoints */
+    /* Max width of .container on different breakpoints */
+    <em>--container-sm: 540px;
     --container-md: 720px;
     --container-lg: 960px;
-    --container-xl: 1140px;
+    --container-xl: 1140px;</em>
 }</code></source-code>
         
         <p>Library uses theese variables as values of css-rules and inside <code>calc()</code> function. Great thing is that you can have different values on different screen sizes:</p>
+
         <source-code :height="12"><code>:root {
     --font-size: 20px;
     --line-height: 24px;
@@ -37,18 +41,18 @@
         --font-size: 15px;
         --line-height: 20px;
     }
-}</code></source-code>
-
-        <p>Or the same with Stylus:</p>
-        <source-code :height="6"><code>:root
+}</code>
+        <code slot="stylus">:root
     --font-size: 20px;
     --line-height: 24px;
     +media-down('sm')
         --font-size: 15px;
-        --line-height: 20px;</code></source-code>
+        --line-height: 20px;</code>
+        </source-code>
+
 
         <h2>--grid-unit</h2>
-        <p>This variable depends from other parameters: <code>--font-size</code> and <code>--line-height</code>. Use it in your calculations, for example you want to make a bottom margin equal to 8 grid units:</p>
+        <p>This variable depends from other parameters: <code>--line-height</code> and <code>--grid-steps</code>. Use it in your calculations, for example you want bottom margin is equal to 8 grid units:</p>
         <source-code :height="3"><code>.some-class {
     margin-bottom: calc(--grid-unit * 8);
 }</code></source-code>

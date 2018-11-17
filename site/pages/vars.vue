@@ -26,8 +26,6 @@ $sizes = {
     auto: auto
 }
 
-$grid-unit-lines = 2
-
 $spacers = {
     '0':    0,
     '01':   gu(1),

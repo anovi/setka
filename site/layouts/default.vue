@@ -115,7 +115,7 @@ $sidebar-width = 200px
   display: block
   &.nuxt-link-exact-active
     color: black
-    color: #5d00ff
+    color: var(--color-link)
     font-weight: bold
 
 .menu__title

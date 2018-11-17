@@ -74,9 +74,7 @@ export default {
         top: 3px
         z-index: 1
     &.__active
-        background: blue
-        background: #7313ff
-        background: var(--color-link)
+        background: #5d00ff
         &:after
             left: 22px
 
