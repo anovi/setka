@@ -37,27 +37,35 @@
     <p>That’s all you need for overall page requirements.</p>
 
     <h2>Globals</h2>
-    <p>Bootstrap employs a handful of important global styles and settings that you’ll need to be aware of when using it, all of which are almost exclusively geared towards the normalization of cross browser styles. Let’s dive in.</p>
+    <p>Invisible has a few important global styles and settings that you’ll need to be aware of when using it.</p>
     
     <h3>Responsive meta tag</h3>
     <p>Invisible is mobile first library. To ensure proper rendering and touch zooming for all devices, <strong>add the responsive viewport meta tag</strong> to your code.</p>
     <source-code :height="1"><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, shrink-to-fit=no&quot;&gt;</code></source-code>
 
-    <h3>Box-sizing</h3>
+    <h3>Box-sizing is set to border-box</h3>
     <p>To ensure <code>padding</code> does not affect the final computed width of an element, global <code>box-sizing</code> value is swiched from <code>content-box</code> to <code>border-box</code>.</p>
     <source-code :height="3"><code>* {
   box-sizing: border-box;
 }</code></source-code>
 
-    <h3>Body font-size and line-height</h3>
-    <p>Invisible set this default values for global <code>font-size</code> and <code>line-height</code></p>
-    <source-code :height="7"><code>html {
-  font-size: var(--font-size);
+    <h3>Default font-size and line-height are set</h3>
+    <p>Invisible set this default values for <code>font-size</code> and <code>line-height</code> through variables.</p>
+    <source-code :height="6"><code>html {
+  font-size: var(--font-size); /* 16px (default) */
 }
-
 body {
-  line-height: var(--line-height);
+  line-height: var(--line-height); /* 20px (default) */
 }</code></source-code>
+
+    <p>
+      <code>line-height</code> affects <nuxt-link to="/baseline">baseline</nuxt-link> grid and <nuxt-link to="/spacing">spacing utilities</nuxt-link>. You can easily change it like this:
+    </p>
+    <source-code :height="4"><code>:root {
+  --font-size: 20px;
+  --line-height: 24px;
+}</code></source-code>
+
 
   </main>
 </template>
