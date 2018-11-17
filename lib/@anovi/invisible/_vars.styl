@@ -43,9 +43,6 @@ if $sizes is not defined
 /*
 * > Typography and Vertical rythm
 */
-if $grid-unit-lines is not defined
-  $grid-unit-lines = 2
-
 gu($unit = 1)
   return s('calc(var(--grid-unit) * %s)', $unit)
 
