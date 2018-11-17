@@ -3,7 +3,6 @@
         <h1>Stylus variables</h1>
 
 <source-code :height="38"><code>$grid-columns = 12
-$grid-gutter-width = 30px
 $grid-breakpoints = {
     xs: 0,     // Extra small screen / phone
     sm: 576px, // Small screen / phone
@@ -30,16 +29,14 @@ $sizes = {
 $grid-unit-lines = 2
 
 $spacers = {
-    '0': 0,
+    '0':    0,
     '01':   gu(1),
-    '1':    gu(s('var(--grid-unit-lines) * 1')),
-    '2':    gu(s('var(--grid-unit-lines) * 2')),
-    '3':    gu(s('var(--grid-unit-lines) * 3')),
-    '4':    gu(s('var(--grid-unit-lines) * 4')),
+    '1':    calc(var(--line-height) * 1),
+    '2':    calc(var(--line-height) * 2),
+    '3':    calc(var(--line-height) * 3),
+    '4':    calc(var(--line-height) * 4)
     'auto': s('auto')
-}
-
-$show-grid = false</code></source-code>
+}</code></source-code>
 
     </main>
 </template>
