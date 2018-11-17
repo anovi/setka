@@ -48,9 +48,6 @@
           title: 'Download',
           url: '/download'
         }, {
-          title: 'Baseline grid',
-          url: '/baseline'
-        }, {
           title: 'Layout'
         }, {
           title: 'Overview',
@@ -58,6 +55,9 @@
         }, {
           title: 'Grid',
           url: '/grid'
+        }, {
+          title: 'Baseline grid',
+          url: '/baseline'
         }, {
           title: 'Utilities'
         }, {
