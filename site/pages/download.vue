@@ -4,8 +4,8 @@
         <h1 class="mb-0">Download or install</h1>
         
         <p class="subheader">
-            Download compiled CSS<br>
-            <a href="https://github.com/anovi/invisible/archive/v0.0.10.zip">Download source files</a>
+            <a :href="$store.state.data.distLink">Download compiled CSS</a><br>
+            <a :href="$store.state.data.sourceLink">Download source files</a>
         </p>
         
         <h2 class="mt-3">CDN</h2>
