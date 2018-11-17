@@ -74,7 +74,8 @@ export default {
     border-radius: 3px
     line-height: gu(2)
     font-size: 14px
-    // color: var(--color-link)
+    cursor: pointer
+    transition: all 0.1s ease
     +media-down('xs')
         display: none
     &:hover
