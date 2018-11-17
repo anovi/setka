@@ -4,9 +4,6 @@
 if $grid-columns is not defined
   $grid-columns = 12
 
-if $grid-gutter-width is not defined
-  $grid-gutter-width = 30px
-
 if $grid-breakpoints is not defined
   $grid-breakpoints = {
     // Extra small screen / phone
@@ -58,18 +55,11 @@ gu($unit = 1)
 */
 if $spacers is not defined
   $spacers = {
-    '0': 0,
+    '0':    0,
     '01':   gu(1),
-    '1':    gu(s('var(--grid-unit-lines) * 1')),
-    '2':    gu(s('var(--grid-unit-lines) * 2')),
-    '3':    gu(s('var(--grid-unit-lines) * 3')),
-    '4':    gu(s('var(--grid-unit-lines) * 4')),
+    '1':    calc(var(--line-height) * 1),
+    '2':    calc(var(--line-height) * 2),
+    '3':    calc(var(--line-height) * 3),
+    '4':    calc(var(--line-height) * 4)
     'auto': s('auto')
   }
-
-
-/*
-* > Debugging
-*/
-if $show-grid is not defined
-  $show-grid = false

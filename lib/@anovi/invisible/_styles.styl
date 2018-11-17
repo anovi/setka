@@ -8,10 +8,10 @@ make-base-styles()
 
   :root
     --font-size: 16px
-    --line-height: (20 / 16)rem
+    --line-height: 20px
     --grid-unit-lines: $grid-unit-lines
     --grid-unit: calc(var(--line-height) / var(--grid-unit-lines))
-    --grid-gutter-width: $grid-gutter-width
+    --grid-gutter-width: 30px
     // Generate container sizes variables
     for _name, _size in $container-max-widths
       {('--container-' + _name)}: _size
