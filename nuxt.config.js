@@ -7,6 +7,10 @@ module.exports = {
     dir: 'docs'
   },
 
+  router: {
+    base: process.env.NODE_ENV === 'development' ? '/' : '/invisible/'
+  },
+
   /*
   ** Headers of the page
   */
