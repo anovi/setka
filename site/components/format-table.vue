@@ -37,7 +37,7 @@ export default {
 .format
     border-spacing: 0
     border-radius: 4px
-    box-shadow: inset 0 0 0 1px #aaa
+    box-shadow: inset 0 0 0 1px #e0e0e0
     margin-top: 0
     th
         font-size: 12px
@@ -45,31 +45,31 @@ export default {
         font-weight: normal
         font-family: var(--header-font)
         padding 0 6px 
-        // background: rgba(#e3ccff, 0.3)
-        border-right: 1px solid #E2CDFE
+        border-right: 1px solid #e2e2e2
         &:last-child
             border none
     td
         vertical-align: top
         padding 0 6px gu(1) 6px
-        border-right: 1px solid #E2CDFE
+        border-right: 1px solid #e2e2e2
         &:first-child
             padding-left: 10px
         &:last-child
             border none
             padding-right: 10px
     code
-        color: #444
+        color: var(--color-text)
         &.empty
-            background: #e3ccff
+            background: rgba(0,0,0,0.08)
             vertical-align: bottom
             border-radius: 4px
+            padding: 0 0.15em
             display: inline-block
             &:after
                 display: inline-block
                 content: 'none'
                 padding: 0 3px
-                color: #674592
+                color: #444
 
 .format-text
     font-size: 0.8em
