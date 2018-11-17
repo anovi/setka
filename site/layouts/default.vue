@@ -102,12 +102,12 @@ $sidebar-width = 200px
 .menu
   line-height: gu(2)
   font-family: var(--header-font)
-  +media-up('md')
+  +media-up('sm')
     font-size: 0.8em
     position: fixed
     top: 0
     bottom: 0
-    width: $sidebar-width
+    width: ($sidebar-width - 30px)
     overflow: auto
 
 .menu__item

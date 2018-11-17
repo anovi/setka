@@ -2,23 +2,21 @@
   <main class="">
     
     <div class="row">
-      <div class="col-sm-10 offset-sm-1 mt-sm-3">
+      <div class="col-lg-10 offset-lg-1 mt-sm-3">
         <h1 class="">Invisible CSS Library</h1>
         <div class="row">
-          <div class="col-sm-7">
-            
+          <div class="col-md-10 col-lg-7">
             <p class="subheader mt-0">Mobile first CSS library with responsive grid layout, baseline grid, and useful utilities.</p>
-
           </div>
-          <div class="col-sm-5">
+          <div class="col-12 col-md-12 col-lg-4 offset-lg-1">
             <p class="subheader mt-0">
-              <nuxt-link to="/start">Read Docs</nuxt-link><br>
+              <nuxt-link class="mr-1 mr-sm-2" to="/start">Read Docs</nuxt-link><br class="d-none d-lg-inline">
               <nuxt-link to="/download">Download</nuxt-link>
             </p>
           </div>
           <div class="w-100 mt-sm-2"></div>
           <div class="col-sm-4">
-            <p class="mt-0">No widgets, no decoration, only inivisible stuff to help you laying out you content.</p>
+            <p class="mt-0">No widgets, no decoration, only inivisible stuff that helps you laying out you content.</p>
           </div>
 
           <div class="col-sm-4 mt-sm-4">

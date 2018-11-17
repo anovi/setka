@@ -2,7 +2,7 @@
     <main class="">
         <h1>Stylus variables</h1>
 
-<source-code :height="38"><code>$grid-columns = 12
+<source-code :height="34"><code>$grid-columns = 12
 $grid-breakpoints = {
     xs: 0,     // Extra small screen / phone
     sm: 576px, // Small screen / phone
@@ -29,10 +29,11 @@ $sizes = {
 $spacers = {
     '0':    0,
     '01':   gu(1),
-    '1':    calc(var(--line-height) * 1),
-    '2':    calc(var(--line-height) * 2),
-    '3':    calc(var(--line-height) * 3),
-    '4':    calc(var(--line-height) * 4)
+    '1':    var(--space-1),
+    '2':    var(--space-2),
+    '3':    var(--space-3),
+    '4':    var(--space-4),
+    '5':    var(--space-5)
     'auto': s('auto')
 }</code></source-code>
 

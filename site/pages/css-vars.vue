@@ -7,7 +7,7 @@
         
 
         <p>Defaults of CSS variables:</p>
-        <source-code :height="20"><code>:root {
+        <source-code :height="27"><code>:root {
     /* Settings of body text */
     <em>--font-size: 16px;
     --line-height: 20px;</em>
@@ -26,6 +26,13 @@
     --container-md: 720px;
     --container-lg: 960px;
     --container-xl: 1140px;</em>
+
+    /* Size of spacers. By default it uses line-height size */
+    <em>--space-1: calc(var(--line-height) * 1);
+    --space-2: calc(var(--line-height) * 2);
+    --space-3: calc(var(--line-height) * 3);
+    --space-4: calc(var(--line-height) * 4);
+    --space-5: calc(var(--line-height) * 5);</em>
 }</code></source-code>
         
         <p>Library uses theese variables as values of css-rules and inside <code>calc()</code> function. Great thing is that you can have different values on different screen sizes:</p>
