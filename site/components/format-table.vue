@@ -69,6 +69,7 @@ export default {
                 display: inline-block
                 content: 'none'
                 padding: 0 3px
+                color: #674592
 
 .format-text
     font-size: 0.8em
