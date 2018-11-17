@@ -1,8 +1,10 @@
 <template>
     <div class="layout__wrapper" :class="{ 'show-grid': grid, __grid: grid}">
-        <nuxt v-if="!$slots.default" />
-        <slot></slot>
-        <div class="layout__grid"><div class="layout__grid-button" :class="{ __active: grid }" v-on:click="$store.commit('toggleGrid')" /><br><span class="layout__grid-title">Grid</span></div>
+        <div class="container">
+            <nuxt v-if="!$slots.default" />
+            <slot></slot>
+            <div class="layout__grid"><div class="layout__grid-button" :class="{ __active: grid }" v-on:click="$store.commit('toggleGrid')" /><br><span class="layout__grid-title">Grid</span></div>
+        </div>
     </div>
 </template>
 
@@ -21,7 +23,7 @@ export default {
 
 <style lang="stylus">
 .logo
-    height: gu(5)
+    height: gu(6)
     margin-top: gu(1)
     margin-bottom: gu(2)
     display: block

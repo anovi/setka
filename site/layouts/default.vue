@@ -1,23 +1,24 @@
 <template>
   <EmptyLayout>
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-3 col-md-2 menu-col">
-          <nav class="menu">
-            <nuxt-link to="/">
-              <img class="logo" src="/logo3.svg" alt="Invisible CSS library">
-            </nuxt-link>
-            <div v-for="(item, i) in menu" :key="i">
-              <nuxt-link v-if="item.url" class="menu__item" :to="item.url">{{item.title}}</nuxt-link>
-              <div v-else class="menu__title">{{item.title}}</div>
-            </div>
-          </nav>
-        </div>
-        <div class="col-sm-9 col-md-10">
-          <nuxt />
-        </div>
+    
+    <div class="row">
+      <div class="col-sm-3 col-md-2 menu-col">
+        <nav class="menu">
+          <nuxt-link to="/">
+            <img class="logo" src="/logo.svg" alt="Invisible CSS library">
+          </nuxt-link>
+          <div v-for="(item, i) in menu" :key="i">
+            <nuxt-link v-if="item.url" class="menu__item" :to="item.url">{{item.title}}</nuxt-link>
+            <div v-else class="menu__title">{{item.title}}</div>
+          </div>
+          <div class="mt-1"><a class="color-text" :href="$store.state.data.github" target="_blank">Github page</a></div>
+        </nav>
+      </div>
+      <div class="col-sm-9 col-md-10">
+        <nuxt />
       </div>
     </div>
+  
   </EmptyLayout>
 </template>
 

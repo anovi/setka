@@ -15,11 +15,11 @@ invisible()
   --header-font: 'Helvetica', 'Helvetica Neue', 'Arial', sans-serif
   --mono-font: 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', monospace
   --color-text: #000000
+  --color-link: #5d00ff
+
   --color-code: #fd3700
-  --color-code: #5d00ff
   --color-code-text: #333
-  --color-link: #312aff
-  --color-link: #fd3700
+  
   +media-down('sm')
     --font-size: 15px
     --line-height: 18px
@@ -123,6 +123,14 @@ td
   padding: gu(1) 20px gu(1) 0
   &:last-chind
     padding-right: 0
+
+// Colors
+.color-text
+  color: var(--color-text)
+
+.color-inherit
+  color: var(--color-text)
+
 
 
 // Example
