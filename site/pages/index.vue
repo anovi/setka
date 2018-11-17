@@ -10,7 +10,7 @@
         <div class="row">
           <div class="col-sm-8">
             
-            <p class="subheader mt-0">CSS library based on Bootstrap grid and utilies. Made with Stylus preprocessor (it's optional).</p>
+            <p class="subheader mt-0">CSS library based on Invisible grid and utilies. Made with Stylus preprocessor (it's optional).</p>
             <p>It has responsive grid layout, baseline grid, utilities, and customization with CSS-variables. No widgets, no decoration, only inivisible stuff to help you layout and form you content.</p>
           </div>
           <div class="col-sm-4">

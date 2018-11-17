@@ -1,11 +1,11 @@
 <template>
     <main class="">
         <h1 class="mb-01" id="content">Overview</h1>
-        <p class="subheader mt-0">Components and options for laying out your Bootstrap project, including wrapping containers, a powerful grid system, a flexible media object, and responsive utility classes.</p>
+        <p class="subheader mt-0">Components and options for laying out your Invisible project, including wrapping containers, a powerful grid system, a flexible media object, and responsive utility classes.</p>
 
         <h2 id="containers">Containers</h2>
 
-        <p>Containers are the most basic layout element in Bootstrap and are <strong>required when using our default grid system</strong>. Choose from a responsive, fixed-width container (meaning its <code>max-width</code> changes at each breakpoint) or fluid-width (meaning it’s <code>100%</code> wide all the time).</p>
+        <p>Containers are the most basic layout element in Invisible and are <strong>required when using our default grid system</strong>. Choose from a responsive, fixed-width container (meaning its <code>max-width</code> changes at each breakpoint) or fluid-width (meaning it’s <code>100%</code> wide all the time).</p>
 
         <p>While containers <em>can</em> be nested, most layouts do not require a nested container.</p>
 
@@ -73,12 +73,12 @@
             </tbody>
         </table>
 
-        <p>Since Bootstrap is developed to be mobile first, we use a handful of <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries">media queries</a> to create sensible breakpoints for our layouts and interfaces. These breakpoints are mostly based on minimum viewport widths and allow us to scale up elements as the viewport changes.</p>
+        <p>Since Invisible is developed to be mobile first, we use a handful of <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries">media queries</a> to create sensible breakpoints for our layouts and interfaces. These breakpoints are mostly based on minimum viewport widths and allow us to scale up elements as the viewport changes.</p>
 
-        <p>Bootstrap primarily uses the following media query ranges—or breakpoints—in our source Stylus files for our layout, grid system, and components.</p>
+        <p>Invisible primarily uses the following media query ranges—or breakpoints—in our source Stylus files for our layout, grid system, and components.</p>
 
         <source-code :height="14"><code data-lang="scss">// Extra small devices (portrait phones, less than 576px)
-// No media query since this is the default in Bootstrap
+// No media query since this is the default in Invisible
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) { ... }
@@ -174,7 +174,7 @@
 
         <!-- <h2 id="z-index">Z-index</h2>
 
-        <p>Several Bootstrap components utilize <code>z-index</code>, the CSS property that helps control layout by providing a third axis to arrange content. We utilize a default z-index scale in Bootstrap that’s been designed to properly layer navigation, tooltips and popovers, modals, and more.</p>
+        <p>Several Invisible components utilize <code>z-index</code>, the CSS property that helps control layout by providing a third axis to arrange content. We utilize a default z-index scale in Invisible that’s been designed to properly layer navigation, tooltips and popovers, modals, and more.</p>
 
         <p>These higher values start at an arbitrary number, high and specific enough to ideally avoid conflicts. We need a standard set of these across our layered components—tooltips, popovers, navbars, dropdowns, modals—so we can be reasonably consistent in the behaviors. There’s no reason we couldn’t have used <code>100</code>+ or <code>500</code>+.</p>
 
