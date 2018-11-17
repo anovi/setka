@@ -12,9 +12,14 @@ make-base-styles()
     --grid-steps: 2
     --grid-unit: calc(var(--line-height) / var(--grid-steps))
     --grid-gutter-width: 30px
+
     // Generate container sizes variables
     for _name, _size in $container-max-widths
       {('--container-' + _name)}: _size
+
+    // Generate space sizes variables
+    for _space in 1 2 3 4 5
+      {('--space-' + _space)}: s('calc(var(--line-height) * %s)', _space)
   
 
 // Make base font styles for vertical rythm
