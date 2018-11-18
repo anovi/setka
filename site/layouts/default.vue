@@ -2,13 +2,13 @@
   <EmptyLayout>
     
     <div class="row">
-      <div class="col-sm-3 col-md-2 menu-col">
+      <div class="col-sm-3 col-md-2">
         <nav class="menu">
           <nuxt-link to="/">
             <img class="logo" src="logo.svg" alt="Invisible CSS library">
           </nuxt-link>
           <div class="row">
-            <div class="col-6 mb-1 col-sm-12" v-for="(item, i) in menu" :key="i">
+            <div class="col-6 mb-1 mb-sm-01 col-sm-12" v-for="(item, i) in menu" :key="i">
               <div class="menu__title" v-if="item.title">{{item.title}}</div>
               <div v-for="(item, i) in item.items" :key="i">
                 <nuxt-link v-if="item.url" class="menu__item" :to="item.url">{{item.title}}</nuxt-link>
@@ -18,7 +18,7 @@
           <div class=""><a class="color-text" :href="$store.state.data.github" target="_blank">Github page</a></div>
         </nav>
       </div>
-      <div class="col-sm-9 col-md-10">
+      <div class="col-sm-9 col-md-9">
         <nuxt />
       </div>
     </div>
