@@ -7,11 +7,15 @@
           <nuxt-link to="/">
             <img class="logo" src="logo.svg" alt="Invisible CSS library">
           </nuxt-link>
-          <div v-for="(item, i) in menu" :key="i">
-            <nuxt-link v-if="item.url" class="menu__item" :to="item.url">{{item.title}}</nuxt-link>
-            <div v-else class="menu__title">{{item.title}}</div>
+          <div class="row">
+            <div class="col-6 mb-1 col-sm-12" v-for="(item, i) in menu" :key="i">
+              <div class="menu__title" v-if="item.title">{{item.title}}</div>
+              <div v-for="(item, i) in item.items" :key="i">
+                <nuxt-link v-if="item.url" class="menu__item" :to="item.url">{{item.title}}</nuxt-link>
+              </div>
+            </div>
           </div>
-          <div class="mt-1"><a class="color-text" :href="$store.state.data.github" target="_blank">Github page</a></div>
+          <div class=""><a class="color-text" :href="$store.state.data.github" target="_blank">Github page</a></div>
         </nav>
       </div>
       <div class="col-sm-9 col-md-10">
@@ -41,52 +45,56 @@
 
     data() {
       return {
-        wHeight: '0',
         menu: [{
-          title: 'Getting started',
-          url: '/start'
+          items: [{
+            title: 'Getting started',
+            url: '/start'
+          }, {
+            title: 'Download',
+            url: '/download'
+          }]
         }, {
-          title: 'Download',
-          url: '/download'
+          title: 'Layout',
+          items: [{
+            title: 'Overview',
+            url: '/container'
+          }, {
+            title: 'Grid',
+            url: '/grid'
+          }, {
+            title: 'Baseline grid',
+            url: '/baseline'
+          }]
         }, {
-          title: 'Layout'
+          title: 'Utilities',
+          items: [{
+            title: 'Sizing',
+            url: '/sizing'
+          }, {
+            title: 'Spacing',
+            url: '/spacing'
+          }, {
+            title: 'Display',
+            url: '/display'
+          }, {
+            title: 'Flex',
+            url: '/flex'
+          }, {
+            title: 'Debugging',
+            url: '/debugging'
+          }]
         }, {
-          title: 'Overview',
-          url: '/container'
-        }, {
-          title: 'Grid',
-          url: '/grid'
-        }, {
-          title: 'Baseline grid',
-          url: '/baseline'
-        }, {
-          title: 'Utilities'
-        }, {
-          title: 'Sizing',
-          url: '/sizing'
-        }, {
-          title: 'Spacing',
-          url: '/spacing'
-        }, {
-          title: 'Display',
-          url: '/display'
-        }, {
-          title: 'Flex',
-          url: '/flex'
-        }, {
-          title: 'Debugging',
-          url: '/debugging'
-        }, {
-          title: 'Customize'
-        }, {
-          title: 'CSS variables',
-          url: '/css-vars'
-        }, {
-          title: 'Stylus variables',
-          url: '/vars'
-        }, {
-          title: 'Mixins',
-          url: '/mixins'
+          title: 'Customize',
+          items: [{
+            title: 'CSS variables',
+            url: '/css-vars'
+          }, {
+            title: 'Stylus variables',
+            url: '/vars'
+          }, {
+            title: 'Mixins',
+            url: '/mixins'
+          }]
         }]
       }
     }
@@ -97,7 +105,8 @@
 $sidebar-width = 200px
 
 .menu-col
-  max-width: $sidebar-width
+  +media-up('sm')
+    max-width: $sidebar-width
 
 .menu
   line-height: gu(2)
@@ -122,7 +131,6 @@ $sidebar-width = 200px
 .menu__title
   color: #999
   font-size: 1.2em
-  margin-top: gu(2)
   font-weight: 300
 
 </style>

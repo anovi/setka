@@ -36,7 +36,7 @@
           <div class="col-sm-4 offset-sm-2 mt-sm-2">
             <p class="mt-0 mt-sm-01">
               Baseline grid is configured with css-variables and depends from line-height.
-              <a href="#" @click="$store.commit('toggleGrid')">Show baseline grid</a>.
+              <a href="#" @click.prevent="$store.commit('toggleGrid')">Show baseline grid</a>.
             </p>
           </div>
           
