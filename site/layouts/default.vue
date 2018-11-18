@@ -123,6 +123,7 @@ $sidebar-width = 200px
   text-decoration: none
   color: #555
   display: block
+  &.nuxt-link-active
   &.nuxt-link-exact-active
     color: black
     color: var(--color-link)
