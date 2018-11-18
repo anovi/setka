@@ -18,7 +18,7 @@
           <div class=""><a class="color-text" :href="$store.state.data.github" target="_blank">Github page</a></div>
         </nav>
       </div>
-      <div class="col-sm-9 col-md-9">
+      <div class="col-sm-9 col-md-10 col-lg-9">
         <nuxt />
       </div>
     </div>
@@ -30,12 +30,14 @@
   import Vue from 'vue'
   import EmptyLayout from '~/layouts/empty'
   import FormatTable from '~/components/format-table'
+  import Header from '~/components/header'
   import Source from '~/components/source'
   import VueClipboard from 'vue-clipboard2'
 
   Vue.use(VueClipboard)
   Vue.component('format-table', FormatTable)
   Vue.component('source-code', Source)
+  Vue.component('Header', Header)
 
   export default {
 

@@ -84,6 +84,9 @@ ul ul, ol ol, ul ol, ol ul
   margin-top: 0
   margin-bottom: 0
 
+ul
+  padding-left: 0.9em
+
 pre
   display: block
   max-width: 100%
@@ -127,6 +130,37 @@ td
   padding: gu(1) 20px gu(1) 0
   &:last-chind
     padding-right: 0
+
+.table-content
+  +media-down('md')
+    display: block
+    overflow-x: auto
+
+.table-bordered
+  border-spacing: 0
+  border-radius: 4px
+  box-shadow: inset 0 0 0 1px #e0e0e0
+  th
+    padding: gu(1) 0.5em gu(1) 0.5em
+    border-right: 1px solid #e2e2e2
+    box-shadow: inset 0 -1px 0 0 #e0e0e0
+    &:last-child
+      border none
+  td
+    // vertical-align: top
+    padding: gu(1) 0.5em gu(1) 0.5em
+    border-right: 1px solid #e2e2e2
+    box-shadow: inset 0 -1px 0 0 #e0e0e0
+    &:first-child
+      padding-left: 10px
+    &:last-child
+      border none
+      padding-right: 10px
+  tbody
+    tr:last-child
+      td, th
+        box-shadow: none
+
 
 // Colors
 .color-text
