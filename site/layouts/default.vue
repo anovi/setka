@@ -5,7 +5,7 @@
       <div class="col-sm-3 col-md-2 menu-col">
         <nav class="menu">
           <nuxt-link to="/">
-            <img class="logo" src="/logo.svg" alt="Invisible CSS library">
+            <img class="logo" src="logo.svg" alt="Invisible CSS library">
           </nuxt-link>
           <div v-for="(item, i) in menu" :key="i">
             <nuxt-link v-if="item.url" class="menu__item" :to="item.url">{{item.title}}</nuxt-link>
