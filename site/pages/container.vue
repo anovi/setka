@@ -3,7 +3,8 @@
         <h1 class="mb-01" id="content">Overview</h1>
         <p class="subheader mt-0">Components and options for laying out your Invisible project, including wrapping containers, a powerful grid system, a flexible media object, and responsive utility classes.</p>
 
-        <h2 id="containers">Containers</h2>
+        <Header :level="2" name="containers">Containers</Header>
+        
 
         <p>Containers are the most basic layout element in Invisible and are <strong>required when using our default grid system</strong>. Choose from a responsive, fixed-width container (meaning its <code>max-width</code> changes at each breakpoint) or fluid-width (meaning it’s <code>100%</code> wide all the time).</p>
 
@@ -31,7 +32,9 @@
     ...
 &lt;/div&gt;</code></source-code>
 
-        <h2 id="responsive-breakpoints">Responsive breakpoints</h2>
+
+
+        <Header :level="2" name="responsive-breakpoints">Responsive breakpoints</Header>
 
 
         <table>

@@ -58,7 +58,7 @@
         </source-code>
 
 
-        <h2>--grid-unit</h2>
+        <Header :level="2" name="grid-unit">--grid-unit</Header>
         <p>This variable depends from other parameters: <code>--line-height</code> and <code>--grid-steps</code>. Use it in your calculations, for example you want bottom margin is equal to 8 grid units:</p>
         <source-code :height="3"><code>.some-class {
     margin-bottom: calc(--grid-unit * 8);

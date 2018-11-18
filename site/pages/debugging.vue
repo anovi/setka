@@ -4,7 +4,7 @@
 
         <h1>Debugging</h1>
 
-        <h2>Show columns</h2>
+        <Header :level="2" name="show-columns">Show columns</Header>
         <p>
             If you need to paint grid columns for developers needs, add <code>.show-cols</code> class to <code>.container</code> or <code>.row</code> element:
         </p>
@@ -71,7 +71,7 @@
         </div>
     
 
-        <h2>Show baseline grid</h2>
+        <Header :level="2" name="show-baseline-grid">Show baseline grid</Header>
         <p>
             If you want to check that your content follows the baseline grid, use <code>.show-grid-bg</code> or <code>.show-grid</code> classes on <code>&lt;body&gt;</code> or other container:
         </p>

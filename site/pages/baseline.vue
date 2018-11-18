@@ -25,7 +25,7 @@
         <p>When setting baseline grid, make sure that <code>(--line-height / --grid-steps)</code> is round number. Float number cause problems because of rounding. For example, by default <code>--line-height</code> variable is 20px. Then grid unit size will be <em>(20px / 2) = 10px</em>.
         </p>
 
-        <h2>Grid units</h2>
+        <Header :level="2" name="grid-units">Grid units</Header>
         <p><em>Grid unit</em> is a size of step of baseline grid. <nuxt-link to="/spacing">Spacing classes</nuxt-link> by default use grid units to calculate their margins. Value of grid unit can be get from CSS variable <code>--grid-unit</code> or function <code>gu(Number)</code> in Stylus. Formula of grid unit size is: <code>calc(var(--line-height) / var(--grid-steps))</code>.
         </p>
 

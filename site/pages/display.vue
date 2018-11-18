@@ -6,11 +6,11 @@
 
         <p class="bd-lead">Quickly and responsively toggle the display value of components and more with our display utilities. Includes support for some of the more common values, as well as some extras for controlling display when printing.</p>
     
-        <h2 id="how-it-works"><div>How it works<a class="anchorjs-link " href="#how-it-works" aria-label="Anchor" data-anchorjs-icon="#" style="padding-left: 0.375em;"></a></div></h2>
+        <Header :level="2" name="how-it-works">How it works</Header>
 
 <p>Change the value of the <code>display</code> property with our responsive display utility classes. We purposely support only a subset of all possible values for <code>display</code>. Classes can be combined for various effects as you need.</p>
 
-<h2>Notation</h2>
+<Header :level="2" name="notation">Notation</Header>
 
 <p>Display utility classes that apply to all <nuxt-link to="/container">breakpoints</nuxt-link>, from <code>xs</code> to <code>xl</code>, have no breakpoint abbreviation in them. This is because those classes are applied from <code>min-width: 0;</code> and up, and thus are not bound by a media query. The remaining breakpoints, however, do include a breakpoint abbreviation.</p>
 
@@ -37,7 +37,7 @@
 
 <p>The media queries effect screen widths with the given breakpoint <em>or larger</em>. For example, <code>.d-lg-none</code> sets <code>display: none;</code> on both <code>lg</code> and <code>xl</code> screens.</p>
 
-<h2 id="examples">Examples</h2>
+<Header :level="2" name="examples">Examples</Header>
 
 <div class="bd-example">
 <div class="d-inline px-01 example">d-inline</div>
@@ -53,7 +53,7 @@
 <source-code :height="2"><code>&lt;span class="<em>d-block</em> example"&gt;d-block&lt;/span&gt;
 &lt;span class="<em>d-block</em> example"&gt;d-block&lt;/span&gt;</code></source-code>
 
-<h2 id="hiding-elements">Hiding elements</h2>
+<Header :level="2" name="hiding-elements">Hiding elements</Header>
 
 <p>For faster mobile-friendly development, use responsive display classes for showing and hiding elements by device. Avoid creating entirely different versions of the same site, instead hide element responsively for each screen size.</p>
 
