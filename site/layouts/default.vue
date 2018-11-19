@@ -2,23 +2,28 @@
   <EmptyLayout>
     
     <div class="row">
-      <div class="col-sm-3 col-md-2">
-        <nav class="menu">
+      <div class="col-md-3 col-lg-3">
+        <nav class="menu col-md-3 col-lg-3">
           <nuxt-link to="/">
             <img class="logo" src="logo.svg" alt="Invisible CSS library">
           </nuxt-link>
           <div class="row">
-            <div class="col-6 mb-1 mb-sm-01 col-sm-12" v-for="(item, i) in menu" :key="i">
+            <div class="col-6 mb-1 mb-md-01 col-md-12" v-for="(item, i) in menu" :key="i">
               <div class="menu__title" v-if="item.title">{{item.title}}</div>
               <div v-for="(item, i) in item.items" :key="i">
                 <nuxt-link v-if="item.url" class="menu__item" :to="item.url">{{item.title}}</nuxt-link>
+                <div v-if="item.url === $router.currentRoute.path && navigationItems.length" class="d-none d-md-block my-01">
+                  <div v-for="(_item, i) in navigationItems" :key="i">
+                    <a @click.prevent="onAchorClick(_item.link)" class="menu__item __anchor __no-active" :class="{ 'ml-01': _item.level === 3, 'd-none': _item.level > 3 }" :href="'#' + _item.link">{{_item.text}}</a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
           <div class=""><a class="color-text" :href="$store.state.data.github" target="_blank">Github page</a></div>
         </nav>
       </div>
-      <div class="col-sm-9 col-md-10 col-lg-9">
+      <div class="col-md-9 col-lg-8 offset-lg-0" ref="content">
         <nuxt />
       </div>
     </div>
@@ -43,6 +48,21 @@
 
     components: {
       EmptyLayout: EmptyLayout
+    },
+
+    mounted() {
+      this.$router.beforeEach((to, from, next) => {
+        if (to.path !== from.path) {
+          this.$store.commit('buildTOC', [])
+        }
+        next()
+      })
+    },
+
+    computed: {
+      navigationItems() {
+        return this.$store.state.toc
+      }
     },
 
     data() {
@@ -99,37 +119,52 @@
           }]
         }]
       }
+    },
+
+    methods: {
+
+      onAchorClick(link) {
+        var item = document.querySelector('#' + link)
+        if (item && item.scrollIntoView) {
+          item.scrollIntoView()
+        }
+      }
+
     }
   }
 </script>
 
 <style lang="stylus">
-$sidebar-width = 200px
-
-.menu-col
-  +media-up('sm')
-    max-width: $sidebar-width
 
 .menu
   line-height: gu(2)
   font-family: var(--header-font)
-  +media-up('sm')
+  margin-left: -15px
+  +media-up('md')
     font-size: 0.8em
     position: fixed
     top: 0
     bottom: 0
-    width: ($sidebar-width - 30px)
     overflow: auto
+    max-width: 300px
 
 .menu__item
   text-decoration: none
   color: #555
   display: block
-  &.nuxt-link-active
-  &.nuxt-link-exact-active
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
+  &.nuxt-link-active:not(.__no-active)
+  &.nuxt-link-exact-active:not(.__no-active)
     color: black
     color: var(--color-link)
     font-weight: bold
+
+  &.__anchor
+    font-size: 0.9em
+    opacity: 0.8
+    padding-left: gu(1)
 
 .menu__title
   color: #999

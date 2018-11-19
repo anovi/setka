@@ -5,13 +5,13 @@
     <p class="subheader">For production use of Invisible download library's code on <nuxt-link to="/download">downloads page</nuxt-link>.</p>
 
 
-    <h2>Quick start</h2>
+    <Header :level="2" name="quick-start">Quick start</Header>
     <p>Copy-paste the stylesheet <code>&lt;link&gt;</code> into your <code>&lt;head&gt;</code> before all other stylesheets to load our CSS. </p>
 
     <source-code :height="1"><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;{{$store.state.data.cdnLink}}&quot; crossorigin=&quot;anonymous&quot;&gt;
 </code></source-code>
 
-    <h2>Starter template</h2>
+    <Header :level="2" name="starter-template">Starter template</Header>
     <p>
       Use an HTML5 doctype and including a viewport meta tag for proper responsive behaviors. Put it all together and your pages should look like this:
     </p>
@@ -36,20 +36,20 @@
 
     <p>That’s all you need for overall page requirements.</p>
 
-    <h2>Globals</h2>
+    <Header :level="2" name="globals">Globals</Header>
     <p>Invisible has a few important global styles and settings that you’ll need to be aware of when using it.</p>
     
-    <h3>Responsive meta tag</h3>
+    <Header :level="3" name="responsive-meta-tag">Responsive meta tag</Header>
     <p>Invisible is mobile first library. To ensure proper rendering and touch zooming for all devices, <strong>add the responsive viewport meta tag</strong> to your code.</p>
     <source-code :height="1"><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, shrink-to-fit=no&quot;&gt;</code></source-code>
 
-    <h3>Box-sizing is set to border-box</h3>
+    <Header :level="3" name="box-sizing">Box-sizing</Header>
     <p>To ensure <code>padding</code> does not affect the final computed width of an element, global <code>box-sizing</code> value is swiched from <code>content-box</code> to <code>border-box</code>.</p>
     <source-code :height="3"><code>* {
   box-sizing: border-box;
 }</code></source-code>
 
-    <h3>Default font-size and line-height are set</h3>
+    <Header :level="3" name="default-font-params">Default font params</Header>
     <p>Invisible set this default values for <code>font-size</code> and <code>line-height</code> through variables.</p>
     <source-code :height="6"><code>html {
   font-size: var(--font-size); /* 16px (default) */
@@ -71,5 +71,12 @@ body {
 </template>
 
 
+<script>
+export default {
+  mounted() {
+    this.buildTOC()
+  }
+}
+</script>
 
 

@@ -756,6 +756,9 @@
 
 <script>
 export default {
+    mounted() {
+        this.buildTOC()
+    },
     data() {
         return {
             container: [

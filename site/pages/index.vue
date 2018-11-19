@@ -2,7 +2,7 @@
   <main class="">
     
     <div class="row">
-      <div class="col-lg-10 offset-lg-1 mt-sm-3">
+      <div class="col-lg-10 offset-lg-0 mt-sm-3">
         <h1 class="">Invisible CSS Library</h1>
         <div class="row">
           <div class="col-md-10 col-lg-7">

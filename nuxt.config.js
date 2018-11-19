@@ -46,6 +46,10 @@ module.exports = {
 
   styleResources: {
     stylus: ['./lib/@anovi/invisible/index.styl']
-  }
+  },
+
+  plugins: [
+    { src: '~/plugins/toc', ssr: false}
+  ]
 
 }

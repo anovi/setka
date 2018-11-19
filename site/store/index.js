@@ -5,9 +5,13 @@ const createStore = () => {
   return new Vuex.Store({
     state: () => ({
       grid: false,
-      data: data
+      data: data,
+      toc: []
     }),
     mutations: {
+      buildTOC (state, items) {
+        state.toc = items
+      },
       toggleGrid (state) {
         state.grid = !state.grid
       }

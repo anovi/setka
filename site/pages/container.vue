@@ -195,3 +195,12 @@
 
     </main>
 </template>
+
+
+<script>
+export default {
+    mounted() {
+        this.buildTOC()
+    }
+}
+</script>

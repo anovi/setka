@@ -162,6 +162,11 @@
 
 <script>
 export default {
+
+  mounted() {
+    this.buildTOC()
+  },
+
   data() {
     return { display: [
       {items: ['.d-']},
@@ -169,5 +174,6 @@ export default {
       {items: ['none','inline','inline-block','block','table','table-cell','table-row','flex','inline-flex']}
     ]}
   }
+
 }
 </script>
