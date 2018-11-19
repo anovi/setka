@@ -12,7 +12,7 @@
               <div class="menu__title" v-if="item.title">{{item.title}}</div>
               <div v-for="(item, i) in item.items" :key="i">
                 <nuxt-link v-if="item.url" class="menu__item" :to="item.url">{{item.title}}</nuxt-link>
-                <div v-if="item.url === $router.currentRoute.path && navigationItems.length" class="d-none d-md-block my-01">
+                <div v-if="navigationItems.length && isCurrent(item.url)" class="d-none d-md-block mb-01">
                   <div v-for="(_item, i) in navigationItems" :key="i">
                     <a @click.prevent="onAchorClick(_item.link)" class="menu__item __anchor __no-active" :class="{ 'ml-01': _item.level === 3, 'd-none': _item.level > 3 }" :href="'#' + _item.link">{{_item.text}}</a>
                   </div>
@@ -128,6 +128,10 @@
         if (item && item.scrollIntoView) {
           item.scrollIntoView()
         }
+      },
+
+      isCurrent(path) {
+        return this.$router.currentRoute.path.match(new RegExp(path + '\/?'))
       }
 
     }
