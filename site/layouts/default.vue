@@ -103,6 +103,12 @@
             title: 'Flex',
             url: '/flex'
           }, {
+            title: 'Float',
+            url: '/float'
+          }, {
+            title: 'Visibility',
+            url: '/visibility'
+          }, {
             title: 'Debugging',
             url: '/debugging'
           }]
