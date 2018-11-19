@@ -5,13 +5,13 @@
 
     <div class="row">
         <div class="col-auto">
-            <format-table :items="container" />
+            <format-table :items="container" class="m-0" />
         </div>
         <div class="col-auto">
-            <format-table :items="row" />
+            <format-table :items="row" class="m-0" />
         </div>
         <div class="col">
-            <format-table :items="cols" />
+            <format-table :items="cols" class="m-0" />
         </div>
     </div>
 
