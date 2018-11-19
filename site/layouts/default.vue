@@ -132,9 +132,7 @@
       },
 
       isCurrent(path) {
-        let base = this.$router.options.base
-        if (base === '/') base = ''
-        return this.$router.currentRoute.path.match(new RegExp( base + path + '\/?'))
+        return this.$router.currentRoute.path.match(new RegExp(path + '\/?$'))
       }
 
     }
