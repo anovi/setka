@@ -41,6 +41,7 @@
   },
   "homepage": "https://github.com/anovi/invisible#readme",
   "dependencies": {
+    "lodash": "4.17.11",
     "stylus": "0.54.5",
     "vue-clipboard2": "0.2.1"
   }
