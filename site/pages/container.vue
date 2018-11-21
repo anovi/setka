@@ -37,7 +37,7 @@
         <Header :level="2" name="responsive-breakpoints">Responsive breakpoints</Header>
 
 
-        <table>
+        <table class="table-content">
             <thead>
                 <tr>
                     <th>Breakpoint</th>
