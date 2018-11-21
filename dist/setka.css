@@ -210,6 +210,11 @@
     display: inline-flex !important;
   }
 }
+.clearfix::after {
+  display: block;
+  content: "";
+  clear: both;
+}
 .float-none {
   float: none !important;
 }
@@ -3832,4 +3837,4 @@ body {
   }
 }
 
-/*# sourceMappingURL=invisible.css.map */
+/*# sourceMappingURL=setka.css.map */
