@@ -2,13 +2,14 @@
   <EmptyLayout>
     
     <div class="row">
-      <div class="col-md-3 col-lg-3">
+      <div class="col-md-3 col-lg-3 pb-2 pb-md-0 menu__wrapper">
         <nav class="menu col-md-3 col-lg-3">
           <nuxt-link to="/">
-            <img class="logo" src="logo.svg" alt="Invisible CSS library">
+            <svg class="logo d-none d-md-block mt-01 mb-1" xmlns="http://www.w3.org/2000/svg" width="80" height="140" viewBox="0 0 80 140"><g fill="none" fill-rule="evenodd"><g fill="#5200FF" fill-rule="nonzero" transform="translate(-120 -440)"><g transform="translate(120 440)"><g><rect width="60" height="20" x="20"/><rect width="40" height="20" x="20" y="60"/><rect width="60" height="20" y="120"/><rect width="20" height="40" y="20"/><rect width="20" height="40" x="60" y="80"/></g></g></g></g></svg>
+            <img class="logo __full d-md-none mt-01 mb-2" src="logo.svg" alt="Setka">
           </nuxt-link>
           <div class="row">
-            <div class="col-6 mb-1 mb-md-01 col-md-12" v-for="(item, i) in menu" :key="i">
+            <div class="col-6 col-sm-3 mb-1 mb-md-01 col-md-12" v-for="(item, i) in menu" :key="i">
               <div class="menu__title" v-if="item.title">{{item.title}}</div>
               <div v-for="(item, i) in item.items" :key="i">
                 <nuxt-link v-if="item.url" class="menu__item" :to="item.url">{{item.title}}</nuxt-link>
@@ -23,7 +24,7 @@
           <div class=""><a class="color-text" :href="$store.state.data.github" target="_blank">Github page</a></div>
         </nav>
       </div>
-      <div class="col-md-9 col-lg-8 offset-lg-0" ref="content">
+      <div class="col-md-9 col-lg-9 offset-lg-0" ref="content">
         <nuxt />
       </div>
     </div>
@@ -64,7 +65,6 @@
         return this.$store.state.toc
       }
     },
-    
 
     data() {
       return {
@@ -147,6 +147,24 @@
 
 <style lang="stylus">
 
+.logo
+  height: gu(7)
+  display: block
+  position relative
+  z-index 1
+  width: auto
+  &.__full
+    height: gu(7)
+    +media-up('lg')
+      height: gu(14)
+
+$menu-width = 250px
+.menu__wrapper
+  +media-down('md')
+    box-shadow: 0 1px 0 0 rgba(0,0,0,0.1)
+  +media-up('lg')
+    max-width: $menu-width
+
 .menu
   line-height: gu(2)
   font-family: var(--header-font)
@@ -157,7 +175,8 @@
     top: 0
     bottom: 0
     overflow: auto
-    max-width: 300px
+  +media-up('lg')
+    max-width: $menu-width
 
 .menu__item
   text-decoration: none

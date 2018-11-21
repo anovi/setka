@@ -22,12 +22,6 @@ export default {
 
 
 <style lang="stylus">
-.logo
-    height: gu(6)
-    margin-top: gu(1)
-    margin-bottom: gu(2)
-    display: block
-
 .layout__wrapper
     min-height: 100vh
     max-width: 100vw

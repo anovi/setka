@@ -1,10 +1,11 @@
 <template>
   <main class="">
+
     
     <div class="row">
-      <div class="col-lg-10 offset-lg-0 mt-sm-3">
-        <h1 class="">Invisible CSS Library</h1>
-        <div class="row">
+      <div class="col-lg-10 offset-lg-1">
+        <img class="logo __full my-3 d-none d-md-block" src="logo.svg" alt="Setka">
+        <div class="row mt-2 mt-md-0">
           <div class="col-md-10 col-lg-7">
             <p class="subheader mt-0">Mobile first CSS library with responsive grid layout, baseline grid, and useful utilities.</p>
           </div>

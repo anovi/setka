@@ -15,7 +15,7 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'starter',
+    title: 'Setka CSS Library',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -23,8 +23,7 @@ module.exports = {
       { property: "og:title", content: "La la la" }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: 'favicon.ico' },
-      { rel: 'stylesheet', href: "https://fonts.googleapis.com/css?family=PT+Sans:400i,700&amp;subset=cyrillic" }
+      { rel: 'icon', type: 'image/x-icon', href: 'favicon.ico' }
     ]
   },
   /*
