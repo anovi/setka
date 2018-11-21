@@ -8,7 +8,7 @@ module.exports = {
   },
 
   router: {
-    base: process.env.NODE_ENV === 'development' ? '/' : '/invisible/'
+    base: process.env.NODE_ENV === 'development' ? '/' : '/setka/'
   },
 
   /*
@@ -44,7 +44,7 @@ module.exports = {
   ],
 
   styleResources: {
-    stylus: ['./lib/@anovi/invisible/index.styl']
+    stylus: ['./lib/setka/index.styl']
   },
 
   plugins: [

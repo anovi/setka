@@ -2,7 +2,7 @@
   <main class="">
 
     <h1 class="mb-0">Getting Started</h1>
-    <p class="subheader">For production use of Invisible download library's code on <nuxt-link to="/download">downloads page</nuxt-link>.</p>
+    <p class="subheader">For production use of Setka download library's code on <nuxt-link to="/download">downloads page</nuxt-link>.</p>
 
 
     <Header :level="2" name="quick-start">Quick start</Header>
@@ -37,10 +37,10 @@
     <p>That’s all you need for overall page requirements.</p>
 
     <Header :level="2" name="globals">Globals</Header>
-    <p>Invisible has a few important global styles and settings that you’ll need to be aware of when using it.</p>
+    <p>Setka has a few important global styles and settings that you’ll need to be aware of when using it.</p>
     
     <Header :level="3" name="responsive-meta-tag">Responsive meta tag</Header>
-    <p>Invisible is mobile first library. To ensure proper rendering and touch zooming for all devices, <strong>add the responsive viewport meta tag</strong> to your code.</p>
+    <p>Setka is mobile first library. To ensure proper rendering and touch zooming for all devices, <strong>add the responsive viewport meta tag</strong> to your code.</p>
     <source-code :height="1"><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, shrink-to-fit=no&quot;&gt;</code></source-code>
 
     <Header :level="3" name="box-sizing">Box-sizing</Header>
@@ -50,7 +50,7 @@
 }</code></source-code>
 
     <Header :level="3" name="default-font-params">Default font params</Header>
-    <p>Invisible set this default values for <code>font-size</code> and <code>line-height</code> through variables.</p>
+    <p>Setka set this default values for <code>font-size</code> and <code>line-height</code> through variables.</p>
     <source-code :height="6"><code>html {
   font-size: var(--font-size); /* 16px (default) */
 }

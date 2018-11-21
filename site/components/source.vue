@@ -30,7 +30,7 @@ export default {
 </script>
 
 <style lang="stylus">
-@import '~~@@/lib/@anovi/invisible/index.styl'
+@import '~~@@/lib/setka/index.styl'
 
 .source
     margin-top: gu(2)

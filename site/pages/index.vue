@@ -20,7 +20,7 @@
           </div>
           <div class="w-100 mt-sm-2"></div>
           <div class="col-sm-4">
-            <p class="mt-0">No widgets, no decoration, only inivisible stuff that helps you laying out you content.</p>
+            <p class="mt-0">No widgets, no decoration, only tools that helps you laying out you content.</p>
           </div>
 
           <div class="col-sm-4 mt-sm-4">

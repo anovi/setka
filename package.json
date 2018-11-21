@@ -1,7 +1,7 @@
 {
-  "name": "@anovi/invisible",
+  "name": "setka",
   "version": "0.1.1",
-  "description": "Invisible CSS Library",
+  "description": "Setka CSS Library",
   "author": "Alexey Novichkov",
   "private": false,
   "main": "index.js",
@@ -27,7 +27,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/anovi/invisible.git"
+    "url": "git+https://github.com/anovi/setka.git"
   },
   "keywords": [
     "css",
@@ -37,9 +37,9 @@
   ],
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/anovi/invisible/issues"
+    "url": "https://github.com/anovi/setka/issues"
   },
-  "homepage": "https://github.com/anovi/invisible#readme",
+  "homepage": "https://github.com/anovi/setka#readme",
   "dependencies": {
     "lodash": "4.17.11",
     "stylus": "0.54.5",

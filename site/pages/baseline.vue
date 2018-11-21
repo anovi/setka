@@ -1,7 +1,7 @@
 <template>
     <main class="">
         <h1>Baseline grid</h1>
-        <p>Invisible library utilizes baseline grid for line heights, spacing and overall vertical rythm. It is optional, you can left it.</p>
+        <p>Setka library utilizes baseline grid for line heights, spacing and overall vertical rythm. It is optional, you can left it.</p>
 
         <p>Baseline grid originates from number of steps (2 by default) per one line-height of body text. It is regulated by <code>--grid-steps</code> and <code>--line-height</code> variables. I recommend use at least 2 steps or else you won't have enough options for choosing line heights.</p>
         

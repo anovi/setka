@@ -32,7 +32,7 @@ export default {
 
 
 <style lang="stylus">
-@import '~~@@/lib/@anovi/invisible/index.styl'
+@import '~~@@/lib/setka/index.styl'
 
 .format
     border-spacing: 0

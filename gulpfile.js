@@ -1,9 +1,9 @@
 const gulp = require('gulp');
-const invisible = require('./index.js');
+const setka = require('./index.js');
 const stylus = require('gulp-stylus');
 const rename = require("gulp-rename");
 const autoprefixer = require('gulp-autoprefixer');
-const src = './lib/@anovi/invisible/invisible.styl'
+const src = './lib/setka/setka.styl'
 const csso = require('gulp-csso');
 const sourcemaps = require('gulp-sourcemaps');
 
@@ -16,7 +16,7 @@ gulp.task('build', function () {
       browsers: ['last 2 versions'],
       cascade: false
     }))
-    .pipe(rename("invisible.css"))
+    .pipe(rename("setka.css"))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('./dist'));
 });
@@ -34,7 +34,7 @@ gulp.task('build-mini', function () {
       sourceMap: true,
       debug: true
     }))
-    .pipe(rename("invisible.min.css"))
+    .pipe(rename("setka.min.css"))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('./dist'));
 });
@@ -42,9 +42,9 @@ gulp.task('build-mini', function () {
 gulp.task('test', function () {
   return gulp.src('./test/test-import.styl')
     .pipe(stylus({
-      use: invisible()
+      use: setka()
     }))
-    .pipe(rename("test-invisible.css"))
+    .pipe(rename("test-setka.css"))
     .pipe(gulp.dest('./dist'));
 });
 

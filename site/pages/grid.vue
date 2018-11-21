@@ -261,7 +261,7 @@
 
     <Header :level="2" name="responsive-classes">Responsive classes</Header>
 
-    <p>Invisible’s grid includes five tiers of predefined classes for building complex responsive layouts. Customize the size of your columns on extra small, small, medium, large, or extra large devices however you see fit.</p>
+    <p>Setka’s grid includes five tiers of predefined classes for building complex responsive layouts. Customize the size of your columns on extra small, small, medium, large, or extra large devices however you see fit.</p>
 
     <Header :level="3" name="all-breakpoints">All breakpoints</Header>
 

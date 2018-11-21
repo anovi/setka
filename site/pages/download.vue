@@ -9,12 +9,12 @@
         </p>
         
         <h2 class="mt-3">CDN</h2>
-        <p>Add this to you <code>&lt;head&gt;</code> section to deliver cached version of Invisible's compiled CSS to your project.</p>
+        <p>Add this to you <code>&lt;head&gt;</code> section to deliver cached version of Setka's compiled CSS to your project.</p>
         <source-code :height="1"><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;{{$store.state.data.cdnLink}}&quot; crossorigin=&quot;anonymous&quot;&gt;
 </code></source-code>
 
         <h2 class="mt-3">Install with NPM</h2>
-<source-code :height="1"><code>npm install @anovi/invisible</code></source-code>
+<source-code :height="1"><code>npm install setka</code></source-code>
 
 
 
