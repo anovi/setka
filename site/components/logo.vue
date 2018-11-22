@@ -99,7 +99,8 @@ export default {
                                 row[i] = color === 1 ? 0 : 1
                                 setTimeout(() => {
                                     row[i] = initialColor
-                                }, (1000 / fps))
+                                    this.setka = [].concat(this.setka)
+                                }, 200)
                             }
                         });
                     });
@@ -110,7 +111,6 @@ export default {
                 if (this.timer) {
                     clearInterval(this.timer)
                 }
-                this.setka = initial
             }, 2000)
         }
     }
