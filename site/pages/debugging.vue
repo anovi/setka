@@ -81,7 +81,7 @@
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque voluptatibus neque asperiores rerum officia non illo. Incidunt sit eveniet perspiciatis
             </p>
         </div>
-        <source-code :height="3"><code>&lt;div class=&quot;p-1 w-50 <em>show-grid</em>&quot;&gt;
+        <source-code :height="3"><code class="html">&lt;div class=&quot;p-1 w-50 <em>show-grid</em>&quot;&gt;
     ...
 &lt;/div&gt;</code></source-code>
 

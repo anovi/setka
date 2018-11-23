@@ -30,7 +30,8 @@ module.exports = {
   ** Global CSS
   */
   css: [
-    { src: '~/assets/typography.styl', lang: 'stylus' }
+    { src: '~/assets/typography.styl', lang: 'stylus' },
+    { src: 'highlight.js/styles/github.css' }
   ],
   /*
   ** Customize the progress-bar color

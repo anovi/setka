@@ -16,7 +16,7 @@
             </div>
         </div>
 
-        <source-code :height="3"><code data-lang="html">&lt;div class="container"&gt;
+        <source-code :height="3"><code class="html">&lt;div class="container"&gt;
     &lt;!-- Content here --&gt;
 &lt;/div&gt;</code></source-code>
 
@@ -28,7 +28,7 @@
             </div>
         </div>
 
-        <source-code :height="3"><code data-lang="html">&lt;div class="container-fluid"&gt;
+        <source-code :height="3"><code class="html">&lt;div class="container-fluid"&gt;
     ...
 &lt;/div&gt;</code></source-code>
 
@@ -37,7 +37,7 @@
         <Header :level="2" name="responsive-breakpoints">Responsive breakpoints</Header>
 
 
-        <table class="table-content">
+        <table class="table-bordered table-content">
             <thead>
                 <tr>
                     <th>Breakpoint</th>
@@ -80,24 +80,21 @@
 
         <p>Setka primarily uses the following media query ranges—or breakpoints—in our source Stylus files for our layout, grid system, and components.</p>
 
-        <source-code :height="14"><code data-lang="scss">// Extra small devices (portrait phones, less than 576px)
-// No media query since this is the default in Setka
+        <source-code :height="14"><code class="css">/* Extra small devices (portrait phones, less than 576px) */
+/* No media query since this is the default in Setka */
 
-// Small devices (landscape phones, 576px and up)
+/* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) { ... }
 
-// Medium devices (tablets, 768px and up)
+/* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) { ... }
 
-// Large devices (desktops, 992px and up)
+/* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) { ... }
 
-// Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) { ... }</code></source-code>
-
-        <p>Since we write our source CSS in Stylus, all our media queries are available via Stylus mixins:</p>
-
-        <source-code :height="10"><code data-lang="scss">+media-breakpoint-up('xs') { ... }
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { ... }</code>
+        <code class="stylus" slot="stylus">+media-breakpoint-up('xs') { ... }
 +media-breakpoint-up('sm') { ... }
 +media-breakpoint-up('md') { ... }
 +media-breakpoint-up('lg') { ... }
@@ -110,22 +107,28 @@
 
 </code></source-code>
 
+        
+
         <p>We occasionally use media queries that go in the other direction (the given screen size <em>or smaller</em>):</p>
 
-        <source-code :height="14"><code data-lang="scss">// Extra small devices (portrait phones, less than 576px)
+        <source-code :height="14"><code class="css">/* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) { ... }
 
-// Small devices (landscape phones, less than 768px)
+/* Small devices (landscape phones, less than 768px) */
 @media (max-width: 767.98px) { ... }
 
-// Medium devices (tablets, less than 992px)
+/* Medium devices (tablets, less than 992px) */
 @media (max-width: 991.98px) { ... }
 
-// Large devices (desktops, less than 1200px)
+/* Large devices (desktops, less than 1200px) */
 @media (max-width: 1199.98px) { ... }
 
-// Extra large devices (large desktops)
-// No media query since the extra-large breakpoint has no upper bound on its width</code></source-code>
+/* Extra large devices (large desktops) */
+/* No media query since the extra-large breakpoint has no upper bound on its width */</code>
+        <code class="stylus" slot="stylus">+media-breakpoint-down('xs') { ... }
++media-breakpoint-down('sm') { ... }
++media-breakpoint-down('md') { ... }
++media-breakpoint-down('lg') { ... }</code></source-code>
 
         <div class="bd-callout bd-callout-info">
             <p>
@@ -133,47 +136,36 @@
             </p>
         </div>
 
-        <p>Once again, these media queries are also available via Stylus mixins:</p>
-
-        <source-code :height="4"><code data-lang="scss">+media-breakpoint-down('xs') { ... }
-+media-breakpoint-down('sm') { ... }
-+media-breakpoint-down('md') { ... }
-+media-breakpoint-down('lg') { ... }</code></source-code>
-
         <p>There are also media queries and mixins for targeting a single segment of screen sizes using the minimum and maximum breakpoint widths.</p>
 
-        <source-code :height="14"><code data-lang="scss">// Extra small devices (portrait phones, less than 576px)
+        <source-code :height="14"><code class="css">/* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) { ... }
 
-// Small devices (landscape phones, 576px and up)
+/* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) and (max-width: 767.98px) { ... }
 
-// Medium devices (tablets, 768px and up)
+/* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px) { ... }
 
-// Large devices (desktops, 992px and up)
+/* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) and (max-width: 1199.98px) { ... }
 
-// Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) { ... }</code></source-code>
-
-        <p>These media queries are also available via Stylus mixins:</p>
-
-        <source-code :height="5"><code data-lang="scss">+media-breakpoint-only('xs') { ... }
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { ... }</code>
+        <code class="stylus" slot="stylus">+media-breakpoint-only('xs') { ... }
 +media-breakpoint-only('sm') { ... }
 +media-breakpoint-only('md') { ... }
 +media-breakpoint-only('lg') { ... }
 +media-breakpoint-only('xl') { ... }</code></source-code>
 
+
         <p>Similarly, media queries may span multiple breakpoint widths:</p>
 
-        <source-code :height="3"><code data-lang="scss">// Example
-// Apply styles starting from medium devices and up to extra large devices
-@media (min-width: 768px) and (max-width: 1199.98px) { ... }</code></source-code>
+        <source-code :height="3"><code class="css">/* Example */
+/* Apply styles starting from medium devices and up to extra large devices */
+@media (min-width: 768px) and (max-width: 1199.98px) { ... }</code>
+        <code class="stylus" slot="stylus">+media-breakpoint-between('md', 'xl') { ... }</code></source-code>
 
-        <p>The Stylus mixin for targeting the same screen size range would be:</p>
-
-        <source-code :height="1"><code data-lang="scss">+media-breakpoint-between('md', 'xl') { ... <span class="p">}</span></code></source-code>
 
         <!-- <h2 id="z-index">Z-index</h2>
 
@@ -183,7 +175,7 @@
 
         <p>We don’t encourage customization of these individual values; should you change one, you likely need to change them all.</p>
 
-        <source-code><code data-lang="scss">$zindex-dropdown:          1000 !default;
+        <source-code><code class="scss">$zindex-dropdown:          1000 !default;
         $zindex-sticky:            1020 !default;
         $zindex-fixed:             1030 !default;
         $zindex-modal-backdrop:    1040 !default;

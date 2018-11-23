@@ -23,7 +23,7 @@
             <div class="float-none">Don't float on all viewport sizes</div>
         </div>
 
-        <source-code :height="3"><code class="language-html" data-lang="html">&lt;div class="<em>float-left</em>"&gt;Float left on all viewport sizes&lt;/div&gt;&lt;br&gt;
+        <source-code :height="3"><code class="html" data-lang="html">&lt;div class="<em>float-left</em>"&gt;Float left on all viewport sizes&lt;/div&gt;&lt;br&gt;
 &lt;div class="<em>float-right</em>"&gt;Float right on all viewport sizes&lt;/div&gt;&lt;br&gt;
 &lt;div class="<em>float-none</em>"&gt;Don't float on all viewport sizes&lt;/div&gt;</code></source-code>
 
@@ -36,7 +36,7 @@
             <div class="float-xl-left">Float left on viewports sized XL (extra-large) or wider</div><br>
         </div>
 
-        <source-code :height="4"><code class="language-html" data-lang="html">&lt;div class="<em>float-sm-right</em>"&gt;Float right on viewports sized SM (small) or wider&lt;/div&gt;&lt;br&gt;
+        <source-code :height="4"><code class="html" data-lang="html">&lt;div class="<em>float-sm-right</em>"&gt;Float right on viewports sized SM (small) or wider&lt;/div&gt;&lt;br&gt;
 &lt;div class="<em>float-md-left</em>"&gt;Float left on viewports sized MD (medium) or wider&lt;/div&gt;&lt;br&gt;
 &lt;div class="<em>float-lg-right</em>"&gt;Float right on viewports sized LG (large) or wider&lt;/div&gt;&lt;br&gt;
 &lt;div class="<em>float-xl-left</em>"&gt;Float left on viewports sized XL (extra-large) or wider&lt;/div&gt;&lt;br&gt;</code></source-code>
@@ -45,8 +45,8 @@
         <p>Easily clear <code class="">float</code>s by adding <code class="">.clearfix</code> <strong>to the parent element</strong>. Can also be used as a Stylus mixin.</p>
 
         <source-code :height="2">
-            <code class="language-html" data-lang="html">&lt;div class="clearfix"&gt;...&lt;/div&gt;</code>
-            <code slot="stylus">.some-element
+            <code class="html">&lt;div class="clearfix"&gt;...&lt;/div&gt;</code>
+            <code slot="stylus" class="stylus">.some-element
     clearfix()
             </code>
         </source-code>
@@ -58,7 +58,7 @@
             <div class="bg-2 float-right">Example Button floated right</div>
         </div>
 
-        <source-code :height="4"><code class="language-html" data-lang="html">&lt;div class="example <em>clearfix</em>"&gt;
+        <source-code :height="4"><code class="html" data-lang="html">&lt;div class="example <em>clearfix</em>"&gt;
   &lt;div class="bg-2 float-left"&gt;Example Button floated left&lt;/div&gt;
   &lt;div class="bg-2 float-right"&gt;Example Button floated right&lt;/div&gt;
 &lt;/div&gt;</code></source-code>

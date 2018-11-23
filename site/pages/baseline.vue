@@ -32,23 +32,23 @@
         <p>If you choose to use baseline grid, then use grid units in CSS rules like this:</p>
 
         <source-code :height="3">
-        <code>.some-class {
+        <code class="css">.some-class {
   margin-bottom: calc(var(--grid-unit) * 8);
 }</code>
-        <code slot="stylus">.some-class
+        <code slot="stylus" class="stylus">.some-class
   margin-bottom: gu(8)</code>
         </source-code>
         
 
         <p>Example of using grid units:</p>
         <source-code :height="6">
-<code>h1 {
+<code class="css">h1 {
   font-size: 2.75rem;
   line-height: calc(var(--grid-unit) * 4);
   margin-top: calc(var(--grid-unit) * 4);
   margin-bottom: calc(var(--grid-unit) * 4);
 }</code>
-<code slot="stylus">h1
+<code slot="stylus" class="stylus">h1
   font-size: 2.75rem
   line-height: gu(4)
   margin-top: gu(4)

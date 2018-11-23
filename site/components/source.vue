@@ -5,12 +5,61 @@
         <a class="source__tab" :class="{ __active: tab === 1 }" v-on:click="tab = 1">Stylus</a>
     </div>
     <button class="source__copy" type="button" @click="doCopy">Copy</button>
-<pre :style="{ height: `calc(var(--grid-unit) * ${height} * var(--grid-steps))` }"><div :class="{'deactive-code':tab === 1}"><slot></slot></div><div :class="{'deactive-code':tab === 0}"><slot name="stylus"></slot></div></pre>
+<pre v-highlightjs :style="{ height: `calc(var(--grid-unit) * ${height} * var(--grid-steps))` }"><div :class="{'deactive-code':tab === 1}"><slot></slot></div><div :class="{'deactive-code':tab === 0}"><slot name="stylus"></slot></div></pre>
 </div>
 </template>
 
 
 <script>
+'use strict';
+import Vue from 'vue'
+var hljs = require('highlight.js/lib/highlight.js');
+hljs.registerLanguage('stylus', require('highlight.js/lib/languages/stylus'));
+hljs.registerLanguage('css', require('highlight.js/lib/languages/css'));
+hljs.registerLanguage('xml', require('highlight.js/lib/languages/xml'));
+
+// vue-highlightjs
+var vueHighlightJS = {};
+vueHighlightJS.install = function install(Vue) {
+    Vue.directive('highlightjs', {
+        deep: true,
+        bind: function bind(el, binding) {
+            // on first bind, highlight all targets
+            var targets = el.querySelectorAll('code');
+            var target;
+            var i;
+
+            for (i = 0; i < targets.length; i += 1) {
+                target = targets[i];
+
+                if (typeof binding.value === 'string') {
+                    // if a value is directly assigned to the directive, use this
+                    // instead of the element content.
+                    target.textContent = binding.value;
+                }
+
+                hljs.highlightBlock(target);
+            }
+        },
+        componentUpdated: function componentUpdated(el, binding) {
+            // after an update, re-fill the content and then highlight
+            var targets = el.querySelectorAll('code');
+            var target;
+            var i;
+
+            for (i = 0; i < targets.length; i += 1) {
+                target = targets[i];
+                if (typeof binding.value === 'string') {
+                    target.textContent = binding.value;
+                    hljs.highlightBlock(target);
+                }
+            }
+        },
+    });
+};
+
+Vue.use(vueHighlightJS);
+
 export default {
     data() {
         return {
@@ -29,13 +78,14 @@ export default {
 }
 </script>
 
+
 <style lang="stylus">
 @import '~~@@/lib/setka/index.styl'
 
 .source
     margin-top: gu(2)
-    background: rgba(0,0,0,0.03)
-    box-shadow: inset 0 0 0 1px #eeeeee
+    background: rgba(0,0,0,0.02)
+    box-shadow: 0 0 0 1px #ededed
     border-radius: 4px
     position: relative
     pre

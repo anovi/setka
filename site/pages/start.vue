@@ -51,11 +51,17 @@
 
     <Header :level="3" name="default-font-params">Default font params</Header>
     <p>Setka set this default values for <code>font-size</code> and <code>line-height</code> through variables.</p>
-    <source-code :height="6"><code>html {
-  font-size: var(--font-size); /* 16px (default) */
+    <source-code :height="12"><code>:root {
+  --font-size: 16px;
+  --line-height: 20px;
 }
+
+html {
+  font-size: var(--font-size);
+}
+
 body {
-  line-height: var(--line-height); /* 20px (default) */
+  line-height: var(--line-height);
 }</code></source-code>
 
     <p>

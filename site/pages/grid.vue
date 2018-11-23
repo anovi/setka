@@ -33,7 +33,7 @@
         </div>
     </div>
 
-    <source-code><code>&lt;div class=&quot;<em>container</em>&quot;&gt;
+    <source-code :height="13"><code class="html">&lt;div class=&quot;<em>container</em>&quot;&gt;
   &lt;div class=&quot;<em>row</em>&quot;&gt;
     &lt;div class=&quot;<em>col-sm</em>&quot;&gt;
       One of three columns
@@ -210,7 +210,7 @@
 
     
     <Header :level="3" name="variable-width-content">Variable width content</Header>
-    <p>Use col-{breakpoint}-auto classes to size columns based on the natural width of their content.</p>
+    <p>Use <code>col-{breakpoint}-auto</code> classes to size columns based on the natural width of their content.</p>
     <div class="container">
         <div class="row justify-content-md-center">
             <div class="col col-lg-2 example">
@@ -250,7 +250,7 @@
         </div>
     </div>
 
-    <source-code :height="7"><code>&lt;div class=&quot;row&quot;&gt;
+    <source-code :height="7"><code class="html">&lt;div class=&quot;row&quot;&gt;
   &lt;div class=&quot;col&quot;&gt;col&lt;/div&gt;
   &lt;div class=&quot;col&quot;&gt;col&lt;/div&gt;
   &lt;div class=&quot;w-100&quot;&gt;&lt;/div&gt;
@@ -280,7 +280,7 @@
         </div>
     </div>
     
-    <source-code :height="7"><code>&lt;div class=&quot;row&quot;&gt;
+    <source-code :height="9"><code class="html">&lt;div class=&quot;row&quot;&gt;
   &lt;div class=&quot;col-sm-8&quot;&gt;col-sm-8&lt;/div&gt;
   &lt;div class=&quot;col-sm-4&quot;&gt;col-sm-4&lt;/div&gt;
 &lt;/div&gt;
@@ -315,7 +315,7 @@
         </div>
     </div>
 
-    <source-code :height="18"><code class="language-html" data-lang="html">&lt;!-- Stack the columns on mobile by making one full-width and the other half-width --&gt;
+    <source-code :height="18"><code class="html" data-lang="html">&lt;!-- Stack the columns on mobile by making one full-width and the other half-width --&gt;
 &lt;div class="row"&gt;
   &lt;div class="col-12 col-md-8"&gt;.col-12 .col-md-8&lt;/div&gt;
   &lt;div class="col-6 col-md-4"&gt;.col-6 .col-md-4&lt;/div&gt;
@@ -378,7 +378,7 @@
         </div>
     </div>
 
-    <source-code :height="35"><code>&lt;div class=&quot;container&quot;&gt;
+    <source-code :height="35"><code class="html">&lt;div class=&quot;container&quot;&gt;
   &lt;div class=&quot;row align-items-start&quot;&gt;
     &lt;div class=&quot;col&quot;&gt;
       One of three columns
@@ -428,7 +428,7 @@
         </div>
     </div>
 
-    <source-code :height="13"><code>&lt;div class=&quot;container&quot;&gt;
+    <source-code :height="13"><code class="html">&lt;div class=&quot;container&quot;&gt;
   &lt;div class=&quot;row&quot;&gt;
     &lt;div class=&quot;col align-self-start&quot;&gt;
       One of three columns
@@ -488,7 +488,7 @@
         </div>
     </div>
 
-    <source-code :height="42"><code class="language-html" data-lang="html">&lt;div class="container"&gt;
+    <source-code :height="42"><code class="html" data-lang="html">&lt;div class="container"&gt;
   &lt;div class="row justify-content-start"&gt;
     &lt;div class="col-4"&gt;
       One of two columns
@@ -545,7 +545,7 @@
         </div>
     </div>
 
-    <source-code :height="4"><code>&lt;div class=&quot;row no-gutters&quot;&gt;
+    <source-code :height="4"><code class="html">&lt;div class=&quot;row no-gutters&quot;&gt;
   &lt;div class=&quot;col-12 col-sm-6 col-md-8&quot;&gt;.col-12 .col-sm-6 .col-md-8&lt;/div&gt;
   &lt;div class=&quot;col-6 col-md-4&quot;&gt;.col-6 .col-md-4&lt;/div&gt;
 &lt;/div&gt;</code></source-code>
@@ -562,7 +562,7 @@
             <div class="col-6 example">.col-6<br>Subsequent columns continue along the new line.</div>
         </div>
     </div>
-    <source-code :height="5"><code class="language-html" data-lang="html">&lt;div class="row"&gt;
+    <source-code :height="5"><code class="html" data-lang="html">&lt;div class="row"&gt;
   &lt;div class="col-9"&gt;.col-9&lt;/div&gt;
   &lt;div class="col-4"&gt;.col-4&lt;br&gt;Since 9 + 4 = 13 &amp;gt; 12, this 4-column-wide div gets wrapped onto a new line as one contiguous unit.&lt;/div&gt;
   &lt;div class="col-6"&gt;.col-6&lt;br&gt;Subsequent columns continue along the new line.&lt;/div&gt;
@@ -586,7 +586,7 @@
             <div class="col-6 col-sm-3 example">.col-6 .col-sm-3</div>
         </div>
     </div>
-    <source-code :height="10"><code class="language-html" data-lang="html">&lt;div class="row"&gt;
+    <source-code :height="10"><code class="html" data-lang="html">&lt;div class="row"&gt;
   &lt;div class="col-6 col-sm-3"&gt;.col-6 .col-sm-3&lt;/div&gt;
   &lt;div class="col-6 col-sm-3"&gt;.col-6 .col-sm-3&lt;/div&gt;
 
@@ -617,7 +617,7 @@
             </div>
         </div>
     </div>
-    <source-code :height="13"><code class="language-html" data-lang="html">&lt;div class="container"&gt;
+    <source-code :height="13"><code class="html" data-lang="html">&lt;div class="container"&gt;
   &lt;div class="row"&gt;
     &lt;div class="col"&gt;
       First, but unordered
@@ -655,7 +655,7 @@
         </div>
     </div>
 
-    <source-code :height="11"><code class="language-html" data-lang="html">&lt;div class="row"&gt;
+    <source-code :height="11"><code class="html" data-lang="html">&lt;div class="row"&gt;
   &lt;div class="col-md-4"&gt;.col-md-4&lt;/div&gt;
   &lt;div class="col-md-4 offset-md-4"&gt;.col-md-4 .offset-md-4&lt;/div&gt;
 &lt;/div&gt;
@@ -683,7 +683,7 @@
         </div>
     </div>
 
-    <source-code :height="9"><code class="language-html" data-lang="html">&lt;div class="row"&gt;
+    <source-code :height="9"><code class="html" data-lang="html">&lt;div class="row"&gt;
   &lt;div class="col-sm-5 col-md-6"&gt;.col-sm-5 .col-md-6&lt;/div&gt;
   &lt;div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0"&gt;.col-sm-5 .offset-sm-2 .col-md-6 .offset-md-0&lt;/div&gt;
 &lt;/div&gt;
@@ -712,7 +712,7 @@
         </div>
     </div>
 
-    <source-code :height="12"><code class="language-html" data-lang="html">&lt;div class="row"&gt;
+    <source-code :height="12"><code class="html" data-lang="html">&lt;div class="row"&gt;
   &lt;div class="col-md-4"&gt;.col-md-4&lt;/div&gt;
   &lt;div class="col-md-4 ml-auto"&gt;.col-md-4 .ml-auto&lt;/div&gt;
 &lt;/div&gt;

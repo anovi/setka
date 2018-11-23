@@ -43,14 +43,14 @@
 <div class="d-inline px-01 example">d-inline</div>
 <div class="d-inline px-01 example">d-inline</div>
 </div>
-<source-code :height="2"><code>&lt;div class="<em>d-inline</em> example"&gt;d-inline&lt;/div&gt;
+<source-code :height="2"><code class="html">&lt;div class="<em>d-inline</em> example"&gt;d-inline&lt;/div&gt;
 &lt;div class="<em>d-inline</em> examples"&gt;d-inline&lt;/div&gt;</code></source-code>
 
 <div>
   <span class="d-block px-01 example">d-block</span>
   <span class="d-block px-01 example">d-block</span>
 </div>
-<source-code :height="2"><code>&lt;span class="<em>d-block</em> example"&gt;d-block&lt;/span&gt;
+<source-code :height="2"><code class="html">&lt;span class="<em>d-block</em> example"&gt;d-block&lt;/span&gt;
 &lt;span class="<em>d-block</em> example"&gt;d-block&lt;/span&gt;</code></source-code>
 
 <Header :level="2" name="hiding-elements">Hiding elements</Header>
@@ -125,7 +125,7 @@
   <div class="d-none d-lg-block px-1 example bg-2">hide on screens smaller than lg</div>
 </div>
 
-<source-code :height="2"><code class="language-html" data-lang="html">&lt;div class="<em>d-lg-none</em> px-1 example"&gt;hide on screens wider than lg&lt;/div&gt;
+<source-code :height="2"><code class="html" data-lang="html">&lt;div class="<em>d-lg-none</em> px-1 example"&gt;hide on screens wider than lg&lt;/div&gt;
 &lt;div class="<em>d-none d-lg-block</em> px-1 example bg-2"&gt;hide on screens smaller than lg&lt;/div&gt;</code></source-code>
 
 <!-- <h2 id="display-in-print">Display in print</h2>
@@ -151,7 +151,7 @@
 <div class="d-none d-print-block">Print Only (Hide on screen only)</div>
 <div class="d-none d-lg-block d-print-block">Hide up to large on screen, but always show on print</div>
 </div>
-<source-code><code class="language-html" data-lang="html">&lt;div class="d-print-none"&gt;Screen Only (Hide on print only)&lt;/div&gt;
+<source-code><code class="html" data-lang="html">&lt;div class="d-print-none"&gt;Screen Only (Hide on print only)&lt;/div&gt;
 &lt;div class="d-none d-print-block"&gt;Print Only (Hide on screen only)&lt;/div&gt;
 &lt;div class="d-none d-lg-block d-print-block"&gt;Hide up to large on screen, but always show on print&lt;/div&gt;</code></source-code> -->
 
