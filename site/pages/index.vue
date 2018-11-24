@@ -2,13 +2,13 @@
   <main class="">
 
     
-    <div class="row">
+    <div class="row" >
       <div class="col-lg-10 offset-lg-1">
 
         <!-- <img class="logo __full my-3 d-none d-md-block" src="logo.svg" alt="Setka"> -->
         <Logo class="my-3 d-none d-md-block" />
 
-        <div class="row mt-2 mt-md-0">
+        <div class="row mt-2 mt-md-0" :class="{'show-cols': $store.state.grid}">
           <div class="col-md-10 col-lg-7">
             <p class="subheader mt-0">Mobile first CSS library with responsive grid layout, baseline grid, and useful utilities.</p>
           </div>

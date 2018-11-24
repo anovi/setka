@@ -30,40 +30,51 @@ make-base-font()
   body
     line-height: var(--line-height)
 
+show-cols()
+  background-image: linear-gradient(to right,
+    rgba(255,0,0,0) 0,
+    rgba(255,0,0,0) var(--grid-gutter-width),
+    rgba(255,0,0,0.1) var(--grid-gutter-width)
+  )
+  background-repeat: repeat-x
+  background-size: (100% / $grid-columns) 100%
+  background-position: calc(var(--grid-gutter-width) / 2 * -1)
+
+show-grid-bg()
+  background-image: linear-gradient(to bottom, #0ff 0, rgba(255,255,255,0) 1px)
+  background-repeat: repeat-y
+  background-size: 100% gu(1)
+
+show-grid()
+  position: relative
+  &:after
+    content: ''
+    display: block
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    z-index: 9999
+    pointer-events: none
+    background-image: linear-gradient(to bottom, #0ff 0, rgba(255,255,255,0) 1px)
+    background-repeat: repeat-y
+    background-size: 100% gu(1)
+
+
 
 // Make styles for grids painting
 make-debug-styles()
 
   // Show grid columns
   .show-cols
-    background-image: linear-gradient(to right,
-      rgba(255,0,0,0) 0,
-      rgba(255,0,0,0) var(--grid-gutter-width),
-      rgba(255,0,0,0.15) var(--grid-gutter-width)
-    )
-    background-repeat: repeat-x
-    background-size: (100% / $grid-columns) 100%
-    background-position: calc(var(--grid-gutter-width) / 2 * -1)
+    show-cols()
+    
 
   // Show baseline grid in background
   .show-grid-bg
-    background-image: linear-gradient(to bottom, #0ff 0, rgba(255,255,255,0) 1px)
-    background-repeat: repeat-y
-    background-size: 100% gu(1)
+    show-grid-bg()
 
   // Show baseline grid as overlay
   .show-grid
-    position: relative
-    &:after
-      content: ''
-      display: block
-      position: absolute
-      top: 0
-      left: 0
-      right: 0
-      bottom: 0
-      z-index: 9999
-      pointer-events: none
-      background-image: linear-gradient(to bottom, #0ff 0, rgba(255,255,255,0) 1px)
-      background-repeat: repeat-y
-      background-size: 100% gu(1)
+    show-grid()

@@ -2,7 +2,12 @@
     <main class="">
         <h1 id="content">Display property</h1>
 
-        <format-table :items="display" />
+        <format-table :items="display" :initial="[0,0,1]" :example="displayExample" @value="(val) => displayValue = val">
+          <h3 class="my-01"><code>{{`.${displayValue}`}}</code></h3>
+          <div class="d-inline-block example p-01">Item</div>
+          <div class="example p-01" :class="displayValue">{{`.${displayValue}`}}</div>
+          <div class="d-inline-block example p-01">Item</div>
+        </format-table>
 
         <p class="bd-lead">Quickly and responsively toggle the display value of components and more with our display utilities. Includes support for some of the more common values, as well as some extras for controlling display when printing.</p>
     
@@ -168,11 +173,18 @@ export default {
   },
 
   data() {
-    return { display: [
-      {items: ['.d-']},
-      {items: [null, 'sm-','md-','lg-','xl-']},
-      {items: ['none','inline','inline-block','block','table','table-cell','table-row','flex','inline-flex']}
-    ]}
+    return { 
+      display: [
+        {items: ['.d-'], align: 'right'},
+        {items: [null, 'sm-','md-','lg-','xl-']},
+        {items: ['none','inline','inline-block','block','table','table-cell','table-row','flex','inline-flex']}
+      ],
+      displayValue: 'd-inline-block',
+      displayExample: [
+        {class: 'd-inline-block example p-01', text: 'Item'},
+        {class: 'example p-01', value: true},
+        {class: 'd-inline-block example p-01', text: 'Item'}
+      ]}
   }
 
 }
