@@ -13,10 +13,11 @@
               <div class="menu__title" v-if="item.title">{{item.title}}</div>
               <div v-for="(item, i) in item.items" :key="i">
                 <nuxt-link v-if="item.url" class="menu__item" :to="item.url">{{item.title}}</nuxt-link>
-                <div v-if="navigationItems.length && isCurrent(item.url)" class="d-none d-md-block mb-01">
+                <div v-if="navigationItems.length && isCurrent(item.url)" class="menu__toc d-none d-md-block mb-01">
                   <div v-for="(_item, i) in navigationItems" :key="i">
-                    <nuxt-link class="menu__item __anchor __no-active" :class="{ 'ml-01': _item.level === 3, 'd-none': _item.level > 3, '__scroll-active': tocViewed == i }" :to="'#' + _item.link">{{_item.text}}</nuxt-link>
+                    <nuxt-link class="menu__item __anchor __no-active" :class="{ 'ml-01': _item.level === 3, 'd-none': _item.level > 3 }" :to="'#' + _item.link">{{_item.text}}</nuxt-link>
                   </div>
+                  <div v-if="tocCursor" :style="{top: tocCursor.top, height: tocCursor.height}" class="menu__toc-cursor"></div>
                 </div>
               </div>
             </div>
@@ -85,6 +86,14 @@
       },
       tocViewed() {
         return this.$store.state.tocViewed
+      },
+      tocCursor() {
+        var coord = this.$store.state.tocViewed
+        if (!coord || this.$store.state.toc.length === 0) return null
+        return {
+          top: `calc(var(--line-height) * ${coord[0]})`,
+          height: `calc(var(--line-height) * ${coord[1] - coord[0] + 1})`
+        }
       }
     },
 
@@ -160,31 +169,29 @@
 
       onHeaderScroll() {
         if (!this.headers) return
-        var res = null
-        let prev, rect, element
-        let amount = this.headers.length
-        let i = 0
-        let detectZone = 0.4
-        do {
+        var res = [null, null]
+        let inView = []
+        let above, rect
+        let detectZone = 0.9
+
+        this.headers.forEach((element, i) => {
           element = this.headers[i]
           rect = element.getBoundingClientRect()
-          if (rect.top <= 0){
-            // before viewport
-            prev = i
-            if (i => amount - 1) res = i
+          if (rect.top <= 0 - 100){
+            above = i
           } 
-          if (rect.top > 0 && rect.top <= window.innerHeight * detectZone) {
-            // in viewport
-            if (i => amount - 1) res = i
-            prev = i
+          if (rect.top > 0 - 100 && rect.top <= window.innerHeight - 200) {
+            inView.push(i)
           }
-          if (rect.top > 0 && rect.top > window.innerHeight * detectZone) {
-            // below viewport
-            if (prev) res = prev
-          }
-          i++
-        } while (i < amount)
-        if (res !== null) this.$store.commit('markTOC', res)
+        })
+        if (inView.length === 0 && above !== null) {
+          res = [above, above]
+        } else if (inView.length >= 0) {
+          res = [inView[0], inView.pop()]
+        } else {
+          res = null
+        }
+        if (res != null) this.$store.commit('markTOC', res)
       },
 
       findHeaderElements() {
@@ -275,4 +282,13 @@ $menu-width = 250px
   font-size: 1.2em
   font-weight: 300
 
+.menu__toc
+  position relative
+
+.menu__toc-cursor
+  position: absolute
+  width: 1px
+  background-color: var(--color-link)
+  left: 5px
+  transition: top 0.3s ease, height 0.3s ease
 </style>
