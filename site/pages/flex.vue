@@ -15,31 +15,31 @@
         <Header :level=3 name="direction" class="">
             Direction
         </Header>
-        <format-table :items="flexOrder" :wrapper="{class: 'd-flex', value: true}" :example="flexOrderExample" selectable />
+        <format-table :items="flexOrder" :wrapper="{class: 'd-flex', value: true}" :example="flexOrderExample" interactive />
     
 
         <Header :level=3 name="wrap" class="">
             Wrap
         </Header>
-        <format-table :items="flexWrap" :example="flexWrapExample" :wrapper="{class: 'd-flex', value: true}" selectable />
+        <format-table :items="flexWrap" :example="flexWrapExample" :wrapper="{class: 'd-flex', value: true}" interactive />
 
 
         <Header :level=3 name="justify-content" class="">
             Justify content
         </Header>
-        <format-table :items="flexJustify" :example="flexJustifyExample" :wrapper="{class: 'd-flex', value: true}" selectable />
+        <format-table :items="flexJustify" :example="flexJustifyExample" :wrapper="{class: 'd-flex', value: true}" interactive />
 
 
         <Header :level=3 name="align-items" class="">
             Align items
         </Header>
-        <format-table :items="flexAlign" :example="flexAlignExample" :wrapper="{class: 'd-flex hi-row', value: true}" selectable />
+        <format-table :items="flexAlign" :example="flexAlignExample" :wrapper="{class: 'd-flex hi-row', value: true}" interactive />
     
         
         <Header :level=3 name="align-content" class="">
             Align content
         </Header>
-        <format-table :items="flexAlignContent" :example="flexAlignContentExample" :wrapper="{class: 'd-flex hi-row flex-wrap', value: true}" selectable />
+        <format-table :items="flexAlignContent" :example="flexAlignContentExample" :wrapper="{class: 'd-flex hi-row flex-wrap', value: true}" interactive />
     
 
         <Header :level=2 name="flex-items">Children's classes</Header>
@@ -71,21 +71,21 @@
         <Header :level=3 name="grow-and-shrink" class="">
             Grow and shrink
         </Header>
-        <format-table :items="flexGrow" :example="flexGrowExample" :wrapper="{class: 'd-flex'}" selectable/>
+        <format-table :items="flexGrow" :example="flexGrowExample" :wrapper="{class: 'd-flex'}" interactive/>
 
-        <format-table class="mt-1" :items="flexShrink" :example="flexShrinkExample" :wrapper="{class: 'd-flex'}" selectable/>
+        <format-table class="mt-1" :items="flexShrink" :example="flexShrinkExample" :wrapper="{class: 'd-flex'}" interactive/>
     
 
         <Header :level=3 name="align-self" class="">
             Align self
         </Header>
-        <format-table :items="flexAlignSelf" :example="flexAlignSelfExample" :wrapper="{class: 'd-flex hi-row'}" selectable/>
+        <format-table :items="flexAlignSelf" :example="flexAlignSelfExample" :wrapper="{class: 'd-flex hi-row'}" interactive/>
     
 
         <Header :level=3 name="order" class="">
             Order
         </Header>
-        <format-table :items="order" :example="orderExample" :wrapper="{class: 'd-flex flex-wrap'}" selectable/>
+        <format-table :items="order" :example="orderExample" :wrapper="{class: 'd-flex flex-wrap'}" interactive/>
     
 
     </main>

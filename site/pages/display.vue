@@ -3,7 +3,7 @@
         <h1 class="mb-01">Display property</h1>
         <p class="subheader mt-0">Quickly and responsively toggle the display value of elements. Includes support for some of the more common values.</p>
 
-        <format-table :items="display" :initial="[0,0,1]" :example="displayExample" selectable />
+        <format-table :items="display" :initial="[0,0,1]" :example="displayExample" interactive />
     
         <Header :level="2" name="how-it-works">How it works</Header>
 

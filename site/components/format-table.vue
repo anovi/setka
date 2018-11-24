@@ -1,7 +1,7 @@
 <template>
 <div>
     <div class="row">
-        <div class="col-12 col-lg-6 col-xl-5">
+        <div :class="{'col-12 col-lg-6 col-xl-5': interactive, col: !interactive }">
             <table class="format">
                 <thead>
                     <tr>
@@ -20,7 +20,7 @@
                                 :key="y"
                                 @click="setValue(x, y)"
                                 class="format__item"
-                                :class="{__selected: resValue && resValue[x] === y, __selectable: item.items.length > 1 }"
+                                :class="{__selected: resValue && resValue[x] === y, __selectable: interactive && item.items.length > 1 }"
                             >
                                 <code :class="{empty: rule === null, __selected: resValue && item.items.length > 1 && resValue[x] === y }">{{rule}}</code>
                             </div>
@@ -29,7 +29,7 @@
                 </tbody>
             </table>
         </div>
-        <div class="col-12 col-lg-6 col-xl-7 mt-01 mt-lg-0" v-if="selectable">
+        <div class="col-12 col-lg-6 col-xl-7 mt-01 mt-lg-0" v-if="interactive">
             <div class="format__example">
                 <div class="mt-0 mb-01"><code>{{getValue('.')}}</code></div>
                 <div :class="wrapper.class + (wrapper.value ? getValue(' ') : '')" >
@@ -51,7 +51,7 @@
 export default {
     props: {
         items: Array,
-        selectable: Boolean,
+        interactive: Boolean,
         wrapper: {
             type: Object,
             default: () => {
@@ -73,7 +73,7 @@ export default {
     },
     computed: {
         resValue() {
-            if (!this.selectable) return null
+            if (!this.interactive) return null
             return (this.value == null) ? new Array(this.items.length).fill(0) : this.value
         },
         source() {
@@ -151,9 +151,13 @@ export default {
 .format__item
     &.__selectable
         cursor: pointer
+        &:hover
+            code
+                color: var(--color-link)
     &.__selected
-        background rgba(#fd3700, 0.1)
-        box-shadow: 0 0 0 1px rgba(#fd3700, 0.52)
+        box-shadow: 0 0 0 1px var(--color-link)
+        code
+            color: var(--color-link)
 
 .format__example
     background: rgba(0,0,0,0.02)
