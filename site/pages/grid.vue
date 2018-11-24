@@ -136,7 +136,7 @@
 
     <div class="row">
         <div class="col">
-        <p class="mt-0">For example, here are two grid layouts that apply to every device and viewport, from xs to xl. Add any number of unit-less classes for each breakpoint you need and every column will be the same width.</p>
+        <p class="mt-0">For example, here are two grid layouts that apply to every device and viewport, from <code>xs</code> to <code>xl</code>. Add any number of unit-less classes for each breakpoint you need and every column will be the same width.</p>
         </div>
     </div>
   
@@ -163,6 +163,28 @@
         </div>
     </div>
 
+    <source-code><code class="html">&lt;div class="container"&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="col"&gt;
+      1 of 2
+    &lt;/div&gt;
+    &lt;div class="col"&gt;
+      2 of 2
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="col"&gt;
+      1 of 3
+    &lt;/div&gt;
+    &lt;div class="col"&gt;
+      2 of 3
+    &lt;/div&gt;
+    &lt;div class="col"&gt;
+      3 of 3
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></source-code>
+
 
     
     <p>Equal-width columns can be broken into multiple lines, but there was a Safari flexbox bug that prevented this from working without an explicit flex-basis or border. There are workarounds for older browser versions, but they shouldn’t be necessary if you’re up-to-date.</p>
@@ -175,6 +197,15 @@
             <div class="col example">Column</div>
         </div>
     </div>
+    <source-code><code class="html">&lt;div class="container"&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="col"&gt;Column&lt;/div&gt;
+    &lt;div class="col"&gt;Column&lt;/div&gt;
+    &lt;div class="w-100"&gt;&lt;/div&gt;
+    &lt;div class="col"&gt;Column&lt;/div&gt;
+    &lt;div class="col"&gt;Column&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></source-code>
 
 
     
@@ -204,6 +235,30 @@
             </div>
         </div>
     </div>
+    <source-code><code class="html">&lt;div class="container"&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="col"&gt;
+      1 of 3
+    &lt;/div&gt;
+    &lt;div class="col-6"&gt;
+      2 of 3 (wider)
+    &lt;/div&gt;
+    &lt;div class="col"&gt;
+      3 of 3
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="col"&gt;
+      1 of 3
+    &lt;/div&gt;
+    &lt;div class="col-5"&gt;
+      2 of 3 (wider)
+    &lt;/div&gt;
+    &lt;div class="col"&gt;
+      3 of 3
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></source-code>
 
 
     
@@ -235,6 +290,30 @@
             </div>
         </div>
     </div>
+    <source-code><code class="html">&lt;div class="container"&gt;
+  &lt;div class="row justify-content-md-center"&gt;
+    &lt;div class="col col-lg-2"&gt;
+      1 of 3
+    &lt;/div&gt;
+    &lt;div class="col-md-auto"&gt;
+      Variable width content
+    &lt;/div&gt;
+    &lt;div class="col col-lg-2"&gt;
+      3 of 3
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="col"&gt;
+      1 of 3
+    &lt;/div&gt;
+    &lt;div class="col-md-auto"&gt;
+      Variable width content
+    &lt;/div&gt;
+    &lt;div class="col col-lg-2"&gt;
+      3 of 3
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></source-code>
 
 
     <Header :level="3" name="equal-width-multi-row">Equal-width multi-row</Header>
