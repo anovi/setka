@@ -15,7 +15,7 @@
                 <nuxt-link v-if="item.url" class="menu__item" :to="item.url">{{item.title}}</nuxt-link>
                 <div v-if="navigationItems.length && isCurrent(item.url)" class="d-none d-md-block mb-01">
                   <div v-for="(_item, i) in navigationItems" :key="i">
-                    <nuxt-link class="menu__item __anchor __no-active" :class="{ 'ml-01': _item.level === 3, 'd-none': _item.level > 3 }" :to="'#' + _item.link">{{_item.text}}</nuxt-link>
+                    <nuxt-link class="menu__item __anchor __no-active" :class="{ 'ml-01': _item.level === 3, 'd-none': _item.level > 3, '__scroll-active': tocViewed == i }" :to="'#' + _item.link">{{_item.text}}</nuxt-link>
                   </div>
                 </div>
               </div>
@@ -51,6 +51,14 @@
       EmptyLayout: EmptyLayout
     },
 
+    watch: {
+      navigationItems() {
+        this.$nextTick(() => {
+          this.findHeaderElements()
+        })
+      }
+    },
+
     mounted() {
       this.$router.beforeEach((to, from, next) => {
         if (to.path !== from.path) {
@@ -58,14 +66,25 @@
         }
         next()
       })
+
       if (this.$router.currentRoute.hash) {
         this.onAchorClick(this.$router.currentRoute.hash.slice(1))
       }
+
+      this.headers = this.findHeaderElements()
+      window.addEventListener('scroll', this.onHeaderScroll)
+    },
+
+    beforeDestroy() {
+      window.removeEventListener('scroll', this.onHeaderScroll)
     },
 
     computed: {
       navigationItems() {
         return this.$store.state.toc
+      },
+      tocViewed() {
+        return this.$store.state.tocViewed
       }
     },
 
@@ -139,6 +158,44 @@
 
     methods: {
 
+      onHeaderScroll() {
+        if (!this.headers) return
+        var res = null
+        let prev, rect, element
+        let amount = this.headers.length
+        let i = 0
+        let detectZone = 0.4
+        do {
+          element = this.headers[i]
+          rect = element.getBoundingClientRect()
+          if (rect.top <= 0){
+            // before viewport
+            prev = i
+            if (i => amount - 1) res = i
+          } 
+          if (rect.top > 0 && rect.top <= window.innerHeight * detectZone) {
+            // in viewport
+            if (i => amount - 1) res = i
+            prev = i
+          }
+          if (rect.top > 0 && rect.top > window.innerHeight * detectZone) {
+            // below viewport
+            if (prev) res = prev
+          }
+          i++
+        } while (i < amount)
+        if (res !== null) this.$store.commit('markTOC', res)
+      },
+
+      findHeaderElements() {
+        if (this.navigationItems.length == 0) {
+          this.headers = null
+          return;
+        }
+        var selector = this.navigationItems.map((item) => '#' + item.link).join(', ')
+        this.headers = this.$el.querySelectorAll(selector)
+      },
+
       onAchorClick(link) {
         var item = document.querySelector('#' + link)
         if (item && item.scrollIntoView) {
@@ -205,6 +262,8 @@ $menu-width = 250px
     color: black
     color: var(--color-link)
     font-weight: bold
+  &.__scroll-active
+    color: var(--color-link)
 
   &.__anchor
     font-size: 0.9em

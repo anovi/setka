@@ -6,11 +6,15 @@ const createStore = () => {
     state: () => ({
       grid: false,
       data: data,
-      toc: []
+      toc: [],
+      tocViewed: null
     }),
     mutations: {
       buildTOC (state, items) {
         state.toc = items
+      },
+      markTOC (state, items) {
+        state.tocViewed = items
       },
       toggleGrid (state) {
         state.grid = !state.grid
