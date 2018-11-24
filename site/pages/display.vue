@@ -146,7 +146,6 @@ export default {
         {items: [null, 'sm-','md-','lg-','xl-']},
         {items: ['none','inline','inline-block','block','table','table-cell','table-row','flex','inline-flex']}
       ],
-      displayValue: 'd-inline-block',
       displayExample: [
         {class: 'd-inline-block example p-01', text: 'Item'},
         {class: 'example p-01', value: true},
