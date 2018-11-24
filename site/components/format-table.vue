@@ -89,8 +89,8 @@ export default {
                     text += item.text
                 }
                 let className = item.class + (item.value ? this.getValue(' ') : '')
-                return `${tab}<div class="${className}">${text}</div>\n`
-            }).join('') + close
+                return `${tab}<div class="${className}">${text}</div>`
+            }).join('\n') + close
         },
         stringValue() {
             return this.value.map((val, i) => this.items[i].items[val]).join('').slice(1)
