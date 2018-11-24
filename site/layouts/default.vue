@@ -5,7 +5,7 @@
       <div class="col-md-3 col-lg-3 pb-2 pb-md-0 menu__wrapper">
         <nav class="menu col-md-3 col-lg-3">
           <nuxt-link to="/">
-            <svg class="logo d-none d-md-block mt-01 mb-1" xmlns="http://www.w3.org/2000/svg" width="80" height="140" viewBox="0 0 80 140"><g fill="none" fill-rule="evenodd"><g fill="#5200FF" fill-rule="nonzero" transform="translate(-120 -440)"><g transform="translate(120 440)"><g><rect width="60" height="20" x="20"/><rect width="40" height="20" x="20" y="60"/><rect width="60" height="20" y="120"/><rect width="20" height="40" y="20"/><rect width="20" height="40" x="60" y="80"/></g></g></g></g></svg>
+            <svg preserveAspectRatio="none" class="logo d-none d-md-block mt-01 mb-1" xmlns="http://www.w3.org/2000/svg" width="80" height="140" viewBox="0 0 80 140"><g fill="none" fill-rule="evenodd"><g fill="#5200FF" fill-rule="nonzero" transform="translate(-120 -440)"><g transform="translate(120 440)"><g><rect width="60" height="20" x="20"/><rect width="40" height="20" x="20" y="60"/><rect width="60" height="20" y="120"/><rect width="20" height="40" y="20"/><rect width="20" height="40" x="60" y="80"/></g></g></g></g></svg>
             <img class="logo __full d-md-none mt-01 mb-2" src="logo.svg" alt="Setka">
           </nuxt-link>
           <div class="row flex-column flex-md-row menu__row">
@@ -158,8 +158,9 @@
   display: block
   position relative
   z-index 1
-  width: auto
+  width: 50%
   &.__full
+    width: auto
     height: gu(7)
     +media-up('lg')
       height: gu(14)
