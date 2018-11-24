@@ -15,7 +15,7 @@
                 <nuxt-link v-if="item.url" class="menu__item" :to="item.url">{{item.title}}</nuxt-link>
                 <div v-if="navigationItems.length && isCurrent(item.url)" class="d-none d-md-block mb-01">
                   <div v-for="(_item, i) in navigationItems" :key="i">
-                    <a @click.prevent="onAchorClick(_item.link)" class="menu__item __anchor __no-active" :class="{ 'ml-01': _item.level === 3, 'd-none': _item.level > 3 }" :href="'#' + _item.link">{{_item.text}}</a>
+                    <nuxt-link class="menu__item __anchor __no-active" :class="{ 'ml-01': _item.level === 3, 'd-none': _item.level > 3 }" :to="'#' + _item.link">{{_item.text}}</nuxt-link>
                   </div>
                 </div>
               </div>
@@ -58,6 +58,9 @@
         }
         next()
       })
+      if (this.$router.currentRoute.hash) {
+        this.onAchorClick(this.$router.currentRoute.hash.slice(1))
+      }
     },
 
     computed: {
