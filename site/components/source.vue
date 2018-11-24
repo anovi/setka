@@ -5,7 +5,7 @@
         <a class="source__tab" :class="{ __active: tab === 1 }" v-on:click="tab = 1">Stylus</a>
     </div>
     <button class="source__copy" type="button" @click="doCopy">Copy</button>
-<pre v-highlightjs :style="{ height: `calc(var(--grid-unit) * ${height} * var(--grid-steps))` }"><div :class="{'deactive-code':tab === 1}"><slot></slot></div><div :class="{'deactive-code':tab === 0}"><slot name="stylus"></slot></div></pre>
+<pre v-highlightjs="source" :style="{ height: `calc(var(--grid-unit) * ${height} * var(--grid-steps))` }"><div :class="{'deactive-code':tab === 1}"><slot></slot></div><div :class="{'deactive-code':tab === 0}"><slot name="stylus"></slot></div></pre>
 </div>
 </template>
 
@@ -67,7 +67,8 @@ export default {
         }
     },
     props: {
-        height: Number
+        height: Number,
+        source: String
     },
     methods: {
         doCopy() {
@@ -94,6 +95,7 @@ export default {
         background: none
         box-shadow: none
         margin-top: 0
+        margin-bottom: 0
         display: flex
         overflow-x: auto
         overflow-y: hidden

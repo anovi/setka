@@ -20,7 +20,7 @@
                                 :key="y"
                                 @click="setValue(x, y)"
                                 class="format__item"
-                                :class="{__selected: resValue && item.items.length > 1 && resValue[x] === y, __selectable: item.items.length > 1 }"
+                                :class="{__selected: resValue && resValue[x] === y, __selectable: item.items.length > 1 }"
                             >
                                 <code :class="{empty: rule === null, __selected: resValue && item.items.length > 1 && resValue[x] === y }">{{rule}}</code>
                             </div>
@@ -29,15 +29,20 @@
                 </tbody>
             </table>
         </div>
-        <div class="col-12 col-lg-6 col-xl-7" v-if="$slots.default && selectable">
-            <!-- <h3 class="my-01"><code>{{getValue('.')}}</code></h3> -->
-            <!-- <div v-for="(item, i) in example" :key="i" :class="item.class + (item.value ? getValue(' ') : '')" >{{ item.value ? getValue('.') : item.text }}</div> -->
+        <div class="col-12 col-lg-6 col-xl-7 mt-01 mt-lg-0" v-if="selectable">
             <div class="format__example">
-                <slot></slot>
+                <h4 class="mt-0 mb-01"><code>{{getValue('.')}}</code></h4>
+                <div :class="wrapper.class + (wrapper.value ? getValue(' ') : '')" >
+                    <div v-for="(item, i) in example" :key="i" :class="item.class + (item.value ? getValue(' ') : '')" >
+                        {{ item.value ? getValue('.') : null }}
+                        <br v-if="item.value && item.text" />
+                        {{item.text}}
+                    </div>
+                </div>
+                <source-code v-if="example" class="m-0 mt-01" :height="source.split('\n').length" :source="source"><code class="html"></code></source-code>
             </div>
         </div>
     </div>
-    <!-- <pre v-if="this.example"><code>{{source}}</code></pre> -->
 </div>
 </template>
 
@@ -47,7 +52,14 @@ export default {
     props: {
         items: Array,
         selectable: Boolean,
+        wrapper: {
+            type: Object,
+            default: () => {
+                return {class: ''}
+            }
+        },
         initial: Array,
+        example: Array
     },
     data(vm) {
         return {
@@ -65,11 +77,20 @@ export default {
             return (this.value == null) ? new Array(this.items.length).fill(0) : this.value
         },
         source() {
-            return this.example.map((item, i) => {
-                var text = item.value ? this.getValue('.') : item.text
-                var className = item.class + (item.value ? this.getValue(' ') : '')
-                return `<div class="${className}">${text}</div>\n`
-            }).join('')
+            var wrapperClass = this.wrapper.class + (this.wrapper.value ? this.getValue(' ') : '')
+            var open = wrapperClass ? `<div class="${wrapperClass}">\n` : ''
+            var close = wrapperClass ? `</div>` : ''
+            var tab = wrapperClass ? '    ' : ''
+            
+            return open + this.example.map((item, i) => {
+                let text = item.value ? this.getValue('.') : ''
+                if (item.text) {
+                    if (item.value) text += '<br>'
+                    text += item.text
+                }
+                let className = item.class + (item.value ? this.getValue(' ') : '')
+                return `${tab}<div class="${className}">${text}</div>\n`
+            }).join('') + close
         },
         stringValue() {
             return this.value.map((val, i) => this.items[i].items[val]).join('').slice(1)
@@ -111,36 +132,21 @@ export default {
         vertical-align: top
         padding 0 0 gu(1) 0
         border-right: 1px solid #e2e2e2
-        // &:first-child
-            // padding-left: 10px
         &:last-child
             border none
-            // padding-right: 10px
     code
         color: var(--color-text)
         display: inline-block
         padding 0 6px 0 6px
         &.empty
-            // background: rgba(0,0,0,0.08)
             vertical-align: baseline
             border-radius: 4px
-            // padding: 0 0.15em
             display: inline-block
             line-height: 1.2em
             &:after
                 display: inline-block
-                content: 'none'
-                color: white
-                padding: 0 0.35em
+                content: '[all]'
                 margin-left: -0.1em
-                // color: rgba(0,0,0,0.6)
-                background: rgba(0,0,0,0.6)
-                border-radius: 40px
-                -webkit-font-smoothing: antialiased
-        // &.__selected
-        //     color: black
-        //     &:after
-        //         color: black
 
 .format__item
     &.__selectable
@@ -148,14 +154,12 @@ export default {
     &.__selected
         background rgba(#fd3700, 0.1)
         box-shadow: 0 0 0 1px rgba(#fd3700, 0.52)
-        // var(--color-code)
 
 .format__example
     border-radius: 4px
     box-shadow: 0 0 0 1px #e0e0e0
     overflow auto
     padding: gu(1)
-    // margin-right: calc(var(--grid-gutter-width) / 2)
 
 .format__text
     font-size: 0.8em
