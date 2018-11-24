@@ -1,46 +1,13 @@
 <template>
     <main class="">
-        <h1 id="content">Display property</h1>
+        <h1 class="mb-01">Display property</h1>
+        <p class="subheader mt-0">Quickly and responsively toggle the display value of elements. Includes support for some of the more common values.</p>
 
-        <format-table :items="display" :initial="[0,0,1]" :example="displayExample" @value="(val) => displayValue = val">
-          <h3 class="my-01"><code>{{`.${displayValue}`}}</code></h3>
-          <div class="d-inline-block example p-01">Item</div>
-          <div class="example p-01" :class="displayValue">{{`.${displayValue}`}}</div>
-          <div class="d-inline-block example p-01">Item</div>
-        </format-table>
-
-        <p class="bd-lead">Quickly and responsively toggle the display value of components and more with our display utilities. Includes support for some of the more common values, as well as some extras for controlling display when printing.</p>
+        <format-table :items="display" :initial="[0,0,1]" :example="displayExample" selectable />
     
         <Header :level="2" name="how-it-works">How it works</Header>
 
 <p>Change the value of the <code>display</code> property with our responsive display utility classes. We purposely support only a subset of all possible values for <code>display</code>. Classes can be combined for various effects as you need.</p>
-
-<Header :level="2" name="notation">Notation</Header>
-
-<p>Display utility classes that apply to all <nuxt-link to="/container">breakpoints</nuxt-link>, from <code>xs</code> to <code>xl</code>, have no breakpoint abbreviation in them. This is because those classes are applied from <code>min-width: 0;</code> and up, and thus are not bound by a media query. The remaining breakpoints, however, do include a breakpoint abbreviation.</p>
-
-<p>As such, the classes are named using the format:</p>
-
-<ul>
-  <li><code>.d-{value}</code> for <code>xs</code></li>
-  <li><code>.d-{breakpoint}-{value}</code> for <code>sm</code>, <code>md</code>, <code>lg</code>, and <code>xl</code>.</li>
-</ul>
-
-<p>Where <em>value</em> is one of:</p>
-
-<ul>
-  <li><code>none</code></li>
-  <li><code>inline</code></li>
-  <li><code>inline-block</code></li>
-  <li><code>block</code></li>
-  <li><code>table</code></li>
-  <li><code>table-cell</code></li>
-  <li><code>table-row</code></li>
-  <li><code>flex</code></li>
-  <li><code>inline-flex</code></li>
-</ul>
-
-<p>The media queries effect screen widths with the given breakpoint <em>or larger</em>. For example, <code>.d-lg-none</code> sets <code>display: none;</code> on both <code>lg</code> and <code>xl</code> screens.</p>
 
 <Header :level="2" name="examples">Examples</Header>
 

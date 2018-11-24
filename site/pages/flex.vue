@@ -1,93 +1,92 @@
 <template>
     <main class="">
 
-        <h1>Flex</h1>
+        <h1 class="mb-01">Flex</h1>
+        <p class="subheader mt-0">Quickly manage the layout, alignment, and sizing of grid columns and other elements. For more complex implementations, custom CSS may be necessary. To learn flexbox read a <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/#flexbox-background" target="_blank">flexbox guide</a>.</p>
+        <p>To enable flexbox layout use <nuxt-link to="/display">display utilities</nuxt-link> like <code>.d-flex</code>, <code>.d-inline-flex</code> and their responsive variations.</p>
 
-        <Header :level=2 name="flex-container" class="mt-0">Flex container's classes</Header>
+        <source-code><code class="html">&lt;div class="d-flex"&gt;
+    I'm a flexbox container!
+    All children inside me will behave in according to flexbox.
+&lt;/div&gt;</code></source-code>
+
+        <Header :level=2 name="flex-container" class="">Flex container's classes</Header>
         
+        <Header :level=3 name="direction" class="">
+            Direction
+        </Header>
+        <format-table :items="flexOrder" :wrapper="{class: 'd-flex', value: true}" :example="flexOrderExample" selectable />
+    
+
+        <Header :level=3 name="wrap" class="">
+            Wrap
+        </Header>
+        <format-table :items="flexWrap" :example="flexWrapExample" :wrapper="{class: 'd-flex', value: true}" selectable />
+
+
+        <Header :level=3 name="justify-content" class="">
+            Justify content
+        </Header>
+        <format-table :items="flexJustify" :example="flexJustifyExample" :wrapper="{class: 'd-flex', value: true}" selectable />
+
+
+        <Header :level=3 name="align-items" class="">
+            Align items
+        </Header>
+        <format-table :items="flexAlign" :example="flexAlignExample" :wrapper="{class: 'd-flex hi-row', value: true}" selectable />
+    
+        
+        <Header :level=3 name="align-content" class="">
+            Align content
+        </Header>
+        <format-table :items="flexAlignContent" :example="flexAlignContentExample" :wrapper="{class: 'd-flex hi-row flex-wrap', value: true}" selectable />
+    
+
+        <Header :level=2 name="flex-items">Children's classes</Header>
+    
+
+        <Header :level=3 name="fill" class="">
+            Fill
+        </Header>
         <div class="row">
-            <div class="col-12 mt-3">
-                <Header :level=3 name="direction" class="mt-0">
-                    Direction
-                </Header>
-                <format-table :items="flexOrder" :wrapper="{class: 'd-flex', value: true}" :example="flexOrderExample" selectable />
+            <div class="col-12 col-lg-6 col-xl-5">
+                <format-table :items="flexFill" />
             </div>
-
-            <div class="col-12 mt-3">
-                <Header :level=3 name="wrap" class="mt-0">
-                    Wrap
-                </Header>
-                <format-table :items="flexWrap" :example="flexWrapExample" :wrapper="{class: 'd-flex', value: true}" selectable />
-            </div>
-
-            <div class="col-12 mt-3">
-                <Header :level=3 name="justify-content" class="mt-0">
-                    Justify content
-                </Header>
-                <format-table :items="flexJustify" :example="flexJustifyExample" :wrapper="{class: 'd-flex', value: true}" selectable />
-            </div>
-
-            <div class="col-12 mt-3">
-                <Header :level=3 name="align-items" class="mt-0">
-                    Align items
-                </Header>
-                <format-table :items="flexAlign" :example="flexAlignExample" :wrapper="{class: 'd-flex colored-row', value: true}" selectable />
-            </div>
-
-            <div class="col-12 mt-3">
-                <Header :level=3 name="align-content" class="mt-0">
-                    Align content
-                </Header>
-                <format-table :items="flexAlignContent" :example="flexAlignContentExample" :wrapper="{class: 'd-flex colored-row flex-wrap', value: true}" selectable />
-            </div>
-
-            <div class="col-12">
-                <Header :level=2 name="flex-items">Children's classes</Header>
-            </div>
-
-            <div class="col-12 mt-3">
-                <Header :level=3 name="fill" class="mt-0">
-                    Fill
-                </Header>
-                <div class="row">
-                    <div class="col-12 col-lg-6 col-xl-5">
-                        <format-table :items="flexFill" />
-                    </div>
-                    <div class="col-12 col-lg-6 col-xl-7 mt-01 mt-lg-0">
-                        <p class="mt-0">Use the <code>.flex-fill</code> class on a series of sibling elements to force them into equal widths while taking up all available horizontal space.</p>
-                        <div class="d-flex">
-                            <div class="p-01 example">No fill</div>
-                            <div class="p-01 flex-fill example">Equal</div>
-                            <div class="p-01 flex-fill example">Equal</div>
-                        </div>
-                        <source-code><code class="html">&lt;div class="d-flex"&gt;
+            <div class="col-12 col-lg-6 col-xl-7 mt-01 mt-lg-0">
+                <p class="mt-0">Use the <code>.flex-fill</code> class on a series of sibling elements to force them into equal widths while taking up all available horizontal space.</p>
+                <div class="d-flex">
+                    <div class="p-01 example">No fill</div>
+                    <div class="p-01 flex-fill example">Equal</div>
+                    <div class="p-01 flex-fill example">Equal</div>
+                </div>
+                <source-code><code class="html">&lt;div class="d-flex"&gt;
   &lt;div class="p-2 example"&gt;No fill&lt;/div&gt;
   &lt;div class="p-2 flex-fill example"&gt;Equal&lt;/div&gt;
   &lt;div class="p-2 flex-fill example"&gt;Equal&lt;/div&gt;
 &lt;/div&gt;</code></source-code>
-                    </div>
-                </div>
             </div>
-
-            <div class="col-12 mt-3">
-                <Header :level=3 name="grow-and-shrink" class="mt-0">
-                    Grow and shrink
-                </Header>
-                <format-table :items="flexGrow" :example="flexGrowExample" :wrapper="{class: 'd-flex'}" selectable/>
-
-                <format-table class="mt-1" :items="flexShrink" :example="flexShrinkExample" :wrapper="{class: 'd-flex'}" selectable/>
-            </div>
-
-            <div class="col-12 mt-3">
-                <Header :level=3 name="align-self" class="mt-0">
-                    Align self
-                </Header>
-                <format-table :items="flexAlignSelf" :example="flexAlignSelfExample" :wrapper="{class: 'd-flex colored-row'}" selectable/>
-            </div>
-
-            
         </div>
+    
 
+        <Header :level=3 name="grow-and-shrink" class="">
+            Grow and shrink
+        </Header>
+        <format-table :items="flexGrow" :example="flexGrowExample" :wrapper="{class: 'd-flex'}" selectable/>
+
+        <format-table class="mt-1" :items="flexShrink" :example="flexShrinkExample" :wrapper="{class: 'd-flex'}" selectable/>
+    
+
+        <Header :level=3 name="align-self" class="">
+            Align self
+        </Header>
+        <format-table :items="flexAlignSelf" :example="flexAlignSelfExample" :wrapper="{class: 'd-flex hi-row'}" selectable/>
+    
+
+        <Header :level=3 name="order" class="">
+            Order
+        </Header>
+        <format-table :items="order" :example="orderExample" :wrapper="{class: 'd-flex flex-wrap'}" selectable/>
+    
 
     </main>
 </template>
@@ -204,6 +203,26 @@ export default {
                 { class: "example p-01", text: '1' },
                 { class: "example p-01", value: true },
                 { class: "example p-01", text: '3' },
+            ],
+
+            order: [
+                { items: ['.order-'], align: 'right' },
+                { items: [ null, 'sm-', 'md-', 'lg-', 'xl-'] },
+                { items: ['0','1','2','3','4','5','6','7','8','9','10','11','12'] }
+            ],
+            orderExample: [
+                { class: "example p-01 order-1", text: '1' },
+                { class: "example p-01", value: true },
+                { class: "example p-01 order-2", text: '2' },
+                { class: "example p-01 order-3", text: '3' },
+                { class: "example p-01 order-4", text: '4' },
+                { class: "example p-01 order-5", text: '5' },
+                { class: "example p-01 order-6", text: '6' },
+                { class: "example p-01 order-7", text: '7' },
+                { class: "example p-01 order-8", text: '8' },
+                { class: "example p-01 order-9", text: '9' },
+                { class: "example p-01 order-10", text: '10' },
+                { class: "example p-01 order-11", text: '11' },
             ],
         }
     },

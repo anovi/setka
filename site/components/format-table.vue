@@ -31,7 +31,7 @@
         </div>
         <div class="col-12 col-lg-6 col-xl-7 mt-01 mt-lg-0" v-if="selectable">
             <div class="format__example">
-                <h4 class="mt-0 mb-01"><code>{{getValue('.')}}</code></h4>
+                <div class="mt-0 mb-01"><code>{{getValue('.')}}</code></div>
                 <div :class="wrapper.class + (wrapper.value ? getValue(' ') : '')" >
                     <div v-for="(item, i) in example" :key="i" :class="item.class + (item.value ? getValue(' ') : '')" >
                         {{ item.value ? getValue('.') : null }}
@@ -39,8 +39,8 @@
                         {{item.text}}
                     </div>
                 </div>
-                <source-code v-if="example" class="m-0 mt-01" :height="source.split('\n').length" :source="source"><code class="html"></code></source-code>
             </div>
+            <source-code v-if="example" class="m-0 mt-01" :height="source.split('\n').length" :source="source"><code class="html"></code></source-code>
         </div>
     </div>
 </div>
@@ -156,9 +156,9 @@ export default {
         box-shadow: 0 0 0 1px rgba(#fd3700, 0.52)
 
 .format__example
+    background: rgba(0,0,0,0.02)
+    box-shadow: 0 0 0 1px #ededed
     border-radius: 4px
-    box-shadow: 0 0 0 1px #e0e0e0
-    overflow auto
     padding: gu(1)
 
 .format__text
