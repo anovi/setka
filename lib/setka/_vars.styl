@@ -46,6 +46,9 @@ if $sizes is not defined
 gu($unit = 1)
   return s('calc(var(--grid-unit) * %s)', $unit)
 
+line($unit = 1)
+  return s('calc(var(--line-height) * %s)', $unit)
+
 
 /*
 * > Spacers
