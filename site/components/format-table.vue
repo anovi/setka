@@ -78,7 +78,7 @@ export default {
             if (!this.interactive) return null;
             var wrapperClass = this.wrapper.class + (this.wrapper.value ? this.getValue(' ') : '')
             var open = wrapperClass ? `<div class="${wrapperClass}">\n` : ''
-            var close = wrapperClass ? `</div>` : ''
+            var close = wrapperClass ? `\n</div>` : ''
             var tab = wrapperClass ? '    ' : ''
             
             return open + this.example.map((item, i) => {
