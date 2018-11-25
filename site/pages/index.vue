@@ -59,6 +59,10 @@
 <script>
 import Logo from '~/components/logo.vue'
 export default {
+  head: {
+    title: 'Setka CSS Library',
+    titleTemplate: null,
+  },
   components: {
     Logo
   }

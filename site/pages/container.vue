@@ -191,6 +191,9 @@
 
 <script>
 export default {
+    head: {
+        title: 'Overview'
+    },
     mounted() {
         this.buildTOC()
     }

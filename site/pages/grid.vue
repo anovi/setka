@@ -835,6 +835,9 @@
 
 <script>
 export default {
+    head: {
+      title: 'Grid'
+    },
     mounted() {
         this.buildTOC()
     },

@@ -46,6 +46,9 @@
 
 <script>
 export default {
+    head: {
+        title: 'Sizing'
+    },
     data() {
         return {
             widths: [

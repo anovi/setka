@@ -16,9 +16,14 @@
         <h2 class="mt-3">Install with NPM</h2>
 <source-code :height="1"><code>npm install setka</code></source-code>
 
-
-
-
-
     </main>
 </template>
+
+
+<script>
+export default {
+    head: {
+        title: 'Download'
+    },
+}
+</script>

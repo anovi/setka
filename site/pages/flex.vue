@@ -95,6 +95,11 @@
 
 <script>
 export default {
+
+    head: {
+        title: 'Flex'
+    },
+    
     data() {
         return {
             flexOrder: [

@@ -63,10 +63,15 @@
         <source-code :height="3"><code class="css">.some-class {
     margin-bottom: calc(--grid-unit * 8);
 }</code></source-code>
-        
-
-
-
-
+    
     </main>
 </template>
+
+
+<script>
+export default {
+    head: {
+        title: 'CSS variables'
+    },
+}
+</script>

@@ -76,6 +76,9 @@
 
 <script>
 export default {
+    head: {
+        title: 'Float'
+    },
     data() {
         return {
             float: [

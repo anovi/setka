@@ -79,6 +79,9 @@ body {
 
 <script>
 export default {
+  head: {
+    title: 'Getting started'
+  },
   mounted() {
     this.buildTOC()
   }

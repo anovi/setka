@@ -66,3 +66,12 @@ $spacers = {
 
     </main>
 </template>
+
+
+<script>
+export default {
+    head: {
+        title: 'Stylus variables'
+    },
+}
+</script>

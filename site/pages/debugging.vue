@@ -87,10 +87,14 @@
 
         <p>Be aware that <code>.show-grid</code> uses <code>:after</code> psewdo element.</p>
         
-
-
-
-
-
     </main>
 </template>
+
+
+<script>
+export default {
+    head: {
+        title: 'Debugging'
+    },
+}
+</script>

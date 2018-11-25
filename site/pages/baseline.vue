@@ -57,3 +57,12 @@
 
     </main>
 </template>
+
+
+<script>
+export default {
+    head: {
+        title: 'Baseline grid'
+    }
+}
+</script>

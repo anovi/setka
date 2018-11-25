@@ -39,6 +39,9 @@
 
 <script>
 export default {
+    head: {
+        title: 'Spacing'
+    },
     data() {
         return {
             margins: [

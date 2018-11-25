@@ -1,3 +1,5 @@
+import meta from './site/assets/meta'
+
 module.exports = {
 
   srcDir: './site',
@@ -57,11 +59,14 @@ module.exports = {
   */
   head: {
     title: 'Setka CSS Library',
+    titleTemplate: '%s · Setka',
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', content: "Nuxt.js project" },
-      { property: "og:title", content: "La la la" }
+      { name: 'viewport', content: 'width=device-width, initial-scale=1, shrink-to-fit=no' },
+      ...meta({
+        'description': 'Setka CSS project'
+        // 'og:title': 'La la la'
+      })
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: 'favicon.ico' }

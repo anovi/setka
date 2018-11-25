@@ -135,6 +135,10 @@
 <script>
 export default {
 
+  head: {
+    title: 'Display'
+  },
+
   mounted() {
     this.buildTOC()
   },
