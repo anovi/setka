@@ -15,7 +15,7 @@
         <Header :level=3 name="direction" class="">
             Direction
         </Header>
-        <format-table :items="flexOrder" :wrapper="{class: 'd-flex', value: true}" :example="flexOrderExample" interactive />
+        <format-table :items="flexOrder" interactive />
     
 
         <Header :level=3 name="wrap" class="">
@@ -45,27 +45,27 @@
         <Header :level=2 name="flex-items">Children's classes</Header>
     
 
-        <Header :level=3 name="fill" class="">
-            Fill
-        </Header>
+        <Header :level=3 name="fill" class="">Fill</Header>
+
         <div class="row">
-            <div class="col-12 col-lg-6 col-xl-5">
+            <div class="col-auto">
                 <format-table :items="flexFill" />
             </div>
-            <div class="col-12 col-lg-6 col-xl-7 mt-01 mt-lg-0">
-                <p class="mt-0">Use the <code>.flex-fill</code> class on a series of sibling elements to force them into equal widths while taking up all available horizontal space.</p>
-                <div class="d-flex">
-                    <div class="p-01 example">No fill</div>
-                    <div class="p-01 flex-fill example">Equal</div>
-                    <div class="p-01 flex-fill example">Equal</div>
-                </div>
-                <source-code><code class="html">&lt;div class="d-flex"&gt;
+        </div>
+        
+        <p class="mt-0">Use the <code>.flex-fill</code> class on a series of sibling elements to force them into equal widths while taking up all available horizontal space.</p>
+        <div class="d-flex">
+            <div class="p-01 example">No fill</div>
+            <div class="p-01 flex-fill example">Equal</div>
+            <div class="p-01 flex-fill example">Equal</div>
+        </div>
+        <source-code><code class="html">&lt;div class="d-flex"&gt;
   &lt;div class="p-2 example"&gt;No fill&lt;/div&gt;
   &lt;div class="p-2 flex-fill example"&gt;Equal&lt;/div&gt;
   &lt;div class="p-2 flex-fill example"&gt;Equal&lt;/div&gt;
 &lt;/div&gt;</code></source-code>
-            </div>
-        </div>
+    
+    
     
 
         <Header :level=3 name="grow-and-shrink" class="">

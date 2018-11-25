@@ -10,7 +10,7 @@
         <div class="col-auto">
             <format-table :items="row" class="m-0" />
         </div>
-        <div class="col">
+        <div class="col-auto">
             <format-table :items="cols" class="m-0" />
         </div>
     </div>
