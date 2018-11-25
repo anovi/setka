@@ -1,48 +1,46 @@
 <template>
-<div>
-    <div class="row">
-        <div :class="{'col-12 col-lg-6 col-xl-5': interactive, col: !interactive }">
-            <table class="format">
-                <thead>
-                    <tr>
-                        <th>property</th>
-                        <th v-if="items.length > 1">breakpoint</th>
-                        <th v-if="items.length > 2">value</th>
-                        <th v-if="items.length > 3">additional</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td v-for="(item, x) in items" :key="x" :class="{'text-right': item.align === 'right'}">
-                            <div v-if="item.text" class="format__text">{{item.text}}</div>
-                            <div
-                                v-for="(rule, y) in item.items"
-                                :key="y"
-                                @click="setValue(x, y)"
-                                class="format__item"
-                                :class="{__selected: resValue && resValue[x] === y, __selectable: interactive && item.items.length > 1 }"
-                            >
-                                <code :class="{empty: rule === null, __selected: resValue && item.items.length > 1 && resValue[x] === y }">{{rule}}</code>
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="col-12 col-lg-6 col-xl-7 mt-01 mt-lg-0" v-if="interactive">
-            <div class="format__example">
-                <div class="mt-0 mb-01"><code>{{getValue('.')}}</code></div>
-                <div :class="wrapper.class + (wrapper.value ? getValue(' ') : '')" >
-                    <div v-for="(item, i) in example" :key="i" :class="item.class + (item.value ? getValue(' ') : '')" >
-                        {{ item.value ? getValue('.') : null }}
-                        <br v-if="item.value && item.text" />
-                        {{item.text}}
+<div class="row">
+
+    <div class="col-12">
+        <div class="format d-flex flex-wrap flex-lg-nowrap">
+            <div class="d-flex format__rules">
+                <div v-for="(item, x) in items" :key="x" :class="{'text-right': item.align === 'right', '__final': x === items.length-1}" class="format__cell text-nowrap flex-shrink-0">
+                    <div class="format__header" v-if="x === 0">prop</div>
+                    <div class="format__header" v-if="x === 1">breakpoint</div>
+                    <div class="format__header" v-if="x === 2">value</div>
+                    <div class="format__header" v-if="x === 3">additional</div>
+                    <div v-if="item.text" class="format__text">{{item.text}}</div>
+                    <div
+                        v-for="(rule, y) in item.items"
+                        :key="y"
+                        @click="setValue(x, y)"
+                        class="format__item"
+                        :class="{__selected: resValue && resValue[x] === y, __selectable: interactive && item.items.length > 1 }"
+                    >
+                        <code :class="{empty: rule === null, __selected: resValue && item.items.length > 1 && resValue[x] === y }">{{rule}}</code>
                     </div>
                 </div>
             </div>
-            <source-code v-if="example" class="m-0 mt-01" :height="source.split('\n').length" :source="source"><code class="html"></code></source-code>
+            <div v-if="interactive" class="format__cell __result flex-grow-1">
+                <div class="format__header __result">result</div>
+                <div class="format__example">
+                    <div class="mt-0 mb-01"><strong><code class="p-0">{{getValue('.')}}</code></strong></div>
+                    <div :class="wrapper.class + (wrapper.value ? getValue(' ') : '')" >
+                        <div v-for="(item, i) in example" :key="i" :class="item.class + (item.value ? getValue(' ') : '')" >
+                            {{ item.value ? getValue('.') : null }}
+                            <br v-if="item.value && item.text" />
+                            {{item.text}}
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+
+    <div class="col-12 mt-01" v-if="interactive">
+        <source-code v-if="example" class="m-0" :height="source.split('\n').length" :source="source"><code class="html"></code></source-code>
+    </div>
+
 </div>
 </template>
 
@@ -119,21 +117,33 @@ export default {
     box-shadow: 0 0 0 1px #e0e0e0
     margin-top: 0
     margin-bottom: 0
-    th
+
+    .format__header
         font-size: 12px
         color: #888
         font-weight: normal
         font-family: var(--header-font)
         padding 0 6px 
-        border-right: 1px solid #e2e2e2
         &:last-child
             border none
-    td
+        &.__result
+            padding-left: gu(1)
+
+    .format__cell
         vertical-align: top
         padding 0 0 gu(1) 0
         border-right: 1px solid #e2e2e2
         &:last-child
             border none
+        &.__final
+            border-right: none
+            flex-grow: 1
+        &.__result
+            background: rgba(0,0,0,0.02)
+            box-shadow: inset 1px 0 0 0 #e2e2e2
+            +media-down('md')
+                width: 100%
+                box-shadow: inset 0 1px 0 0 #e2e2e2
     code
         color: var(--color-text)
         display: inline-block
@@ -148,22 +158,31 @@ export default {
                 content: '[all]'
                 margin-left: -0.1em
 
+.format__rules
+    flex-grow: 1
+    +media-up('lg')
+        flex-grow: 0
+        flex-basis: 350px
+
 .format__item
+    position relative
     &.__selectable
         cursor: pointer
         &:hover
             code
                 color: var(--color-link)
     &.__selected
-        box-shadow: 0 0 0 1px var(--color-link)
+        box-shadow: 0 1px 0 0 var(--color-link), 0 -1px 0 0 var(--color-link)
         code
             color: var(--color-link)
+        .format__cell:first-child > &
+            box-shadow: 0 1px 0 0 var(--color-link), 0 -1px 0 0 var(--color-link), -1px 0 0 0 var(--color-link)
+        .format__cell:last-child > &
+            box-shadow: 0 1px 0 0 var(--color-link), 0 -1px 0 0 var(--color-link), 1px 0 0 0 var(--color-link)
 
 .format__example
-    background: rgba(0,0,0,0.02)
-    box-shadow: 0 0 0 1px #ededed
-    border-radius: 4px
-    padding: gu(1)
+    padding: 0 gu(1) 0 gu(1)
+    // min-width: 400px
 
 .format__text
     font-size: 0.8em
