@@ -52,14 +52,6 @@
       EmptyLayout: EmptyLayout
     },
 
-    watch: {
-      navigationItems() {
-        this.$nextTick(() => {
-          this.findHeaderElements()
-        })
-      }
-    },
-
     mounted() {
       this.$router.beforeEach((to, from, next) => {
         if (to.path !== from.path) {
@@ -72,7 +64,6 @@
         this.onAchorClick(this.$router.currentRoute.hash.slice(1))
       }
 
-      this.headers = this.findHeaderElements()
       window.addEventListener('scroll', this.onHeaderScroll)
     },
 
@@ -168,14 +159,16 @@
     methods: {
 
       onHeaderScroll() {
-        if (!this.headers) return
+        if (this.navigationItems.length == 0) return
+        let headers = this.findHeaderElements()
+        if (!headers || headers.length === 0) return
         var res = [null, null]
         let inView = []
         let above, rect
         let detectZone = 0.9
 
-        this.headers.forEach((element, i) => {
-          element = this.headers[i]
+        headers.forEach((element, i) => {
+          element = headers[i]
           rect = element.getBoundingClientRect()
           if (rect.top <= 0 - 100){
             above = i
@@ -196,11 +189,10 @@
 
       findHeaderElements() {
         if (this.navigationItems.length == 0) {
-          this.headers = null
           return;
         }
         var selector = this.navigationItems.map((item) => '#' + item.link).join(', ')
-        this.headers = this.$el.querySelectorAll(selector)
+        return this.$el.querySelectorAll(selector)
       },
 
       onAchorClick(link) {
