@@ -44,7 +44,7 @@ export default {
             margins: [
                 {items: ['.m-', '.mt-','.mb-','.ml-','.mr-','.mx-','.my-']},
                 {items: [null,'sm-','md-','lg-','xl-']},
-                {items: ['0','01','1','2','3','4','auto']}
+                {items: ['0','01','1','2','3','4','5','auto']}
             ],
             marginsExample: [
                 {class: 'example p-01', text: 'Item'},
@@ -55,7 +55,7 @@ export default {
             paddings: [
                 {items: ['.p-', '.pt-','.pb-','.pl-','.pr-','.px-','.py-']},
                 {items: [null,'sm-','md-','lg-','xl-']},
-                {items: ['0','01','1','2','3','4']}
+                {items: ['0','01','1','2','3','4','5']}
             ],
             paddingsExample: [
                 {class: 'example d-inline-block p-01', text: 'Item'},

@@ -5,9 +5,9 @@
 
         <format-table :items="display" :initial="[0,0,1]" :example="displayExample" interactive />
     
-        <Header :level="2" name="how-it-works">How it works</Header>
+        <!-- <Header :level="2" name="how-it-works">How it works</Header> -->
 
-<p>Change the value of the <code>display</code> property with our responsive display utility classes. We purposely support only a subset of all possible values for <code>display</code>. Classes can be combined for various effects as you need.</p>
+<!-- <p>Change the value of the <code>display</code> property with our responsive display utility classes. We purposely support only a subset of all possible values for <code>display</code>. Classes can be combined for various effects as you need.</p> -->
 
 <Header :level="2" name="examples">Examples</Header>
 
