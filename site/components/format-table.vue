@@ -1,5 +1,5 @@
 <template>
-<div class="my-1">
+<div class="format__wrapper">
 
     <div class="format d-flex flex-wrap flex-lg-nowrap">
         <div class="d-flex format__rules flex-grow-1" :class="{ 'flex-lg-grow-0': example }">
@@ -107,6 +107,9 @@ export default {
 
 <style lang="stylus">
 @import '~~@@/lib/setka/index.styl'
+
+.format__wrapper
+    margin: gu(2) 0
 
 .format
     border-spacing: 0

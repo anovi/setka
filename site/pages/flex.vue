@@ -12,10 +12,9 @@
 
         <Header :level=2 name="flex-container" class="">Flex container's classes</Header>
         
-        <Header :level=3 name="direction" class="">
-            Direction
-        </Header>
-        <format-table :items="flexOrder" interactive />
+        <Header :level=3 name="direction" class="">Direction</Header>
+        <p>Set the direction of flex items in a flex container. In most cases you can omit the horizontal class here as the browser default is <code>row</code>. However, you may encounter situations where you needed to explicitly set this value (like responsive layouts).</p>
+        <format-table :items="flexOrder" :example="flexOrderExample" :wrapper="{class: 'd-flex', value: true}" interactive />
     
 
         <Header :level=3 name="wrap" class="">
@@ -49,7 +48,7 @@
 
         <div class="row">
             <div class="col-auto">
-                <format-table :items="flexFill" />
+                <format-table :items="flexFill" class="mt-0" />
             </div>
         </div>
         
@@ -71,7 +70,10 @@
         <Header :level=3 name="grow-and-shrink" class="">
             Grow and shrink
         </Header>
+        <p>Use <code>.flex-grow-*</code> utilities to toggle a flex item’s ability to grow to fill available space.</p>
         <format-table :items="flexGrow" :example="flexGrowExample" :wrapper="{class: 'd-flex'}" interactive/>
+
+        <p>Use <code>.flex-shrink-*</code> utilities to toggle a flex item’s ability to shrink if necessary.</p>
 
         <format-table class="mt-1" :items="flexShrink" :example="flexShrinkExample" :wrapper="{class: 'd-flex'}" interactive/>
     
@@ -82,9 +84,8 @@
         <format-table :items="flexAlignSelf" :example="flexAlignSelfExample" :wrapper="{class: 'd-flex hi-row'}" interactive/>
     
 
-        <Header :level=3 name="order" class="">
-            Order
-        </Header>
+        <Header :level=3 name="order" class="">Order</Header>
+        <p>Change the visual order of specific flex items with order utilities. With this classes you can also <nuxt-link to="/grid#order-classes">change order of grid columns</nuxt-link> since Setka's grid build with flexbox layout.</p>
         <format-table :items="order" :example="orderExample" :wrapper="{class: 'd-flex flex-wrap'}" interactive/>
     
 
@@ -102,10 +103,10 @@ export default {
                 { items: ['row','column','row-reverse','column-reverse'] }
             ],
             flexOrderExample: [
-                {class: 'd-inline-block example p-01', text: 'Item 1'},
-                {class: 'd-inline-block example p-01', text: 'Item 2'},
-                {class: 'd-inline-block example p-01', text: 'Item 3'},
-                {class: 'd-inline-block example p-01', text: 'Item 4'}
+                {class: 'example p-01', text: 'Item 1'},
+                {class: 'example p-01', text: 'Item 2'},
+                {class: 'example p-01', text: 'Item 3'},
+                {class: 'example p-01', text: 'Item 4'}
             ],
 
             flexWrap: [
