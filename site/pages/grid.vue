@@ -168,7 +168,7 @@
         </div>
     </div>
 
-    <source-code><code class="html">&lt;div class="container"&gt;
+    <source-code :height="21"><code class="html">&lt;div class="container"&gt;
   &lt;div class="row"&gt;
     &lt;div class="col"&gt;
       1 of 2
@@ -202,7 +202,7 @@
             <div class="col example">Column</div>
         </div>
     </div>
-    <source-code><code class="html">&lt;div class="container"&gt;
+    <source-code :height="9"><code class="html">&lt;div class="container"&gt;
   &lt;div class="row"&gt;
     &lt;div class="col"&gt;Column&lt;/div&gt;
     &lt;div class="col"&gt;Column&lt;/div&gt;
@@ -240,7 +240,7 @@
             </div>
         </div>
     </div>
-    <source-code><code class="html">&lt;div class="container"&gt;
+    <source-code :height="24"><code class="html">&lt;div class="container"&gt;
   &lt;div class="row"&gt;
     &lt;div class="col"&gt;
       1 of 3
@@ -295,7 +295,7 @@
             </div>
         </div>
     </div>
-    <source-code><code class="html">&lt;div class="container"&gt;
+    <source-code :height="24"><code class="html">&lt;div class="container"&gt;
   &lt;div class="row justify-content-md-center"&gt;
     &lt;div class="col col-lg-2"&gt;
       1 of 3

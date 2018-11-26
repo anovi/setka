@@ -5,7 +5,7 @@
         <p class="subheader mt-0">Quickly manage the layout, alignment, and sizing of grid columns and other elements. For more complex implementations, custom CSS may be necessary. To learn flexbox read a <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/#flexbox-background" target="_blank">flexbox guide</a>.</p>
         <p>To enable flexbox layout use <nuxt-link to="/display">display utilities</nuxt-link> like <code>.d-flex</code>, <code>.d-inline-flex</code> and their responsive variations.</p>
 
-        <source-code><code class="html">&lt;div class="d-flex"&gt;
+        <source-code :height="4"><code class="html">&lt;div class="d-flex"&gt;
     I'm a flexbox container!
     All children inside me will behave in according to flexbox.
 &lt;/div&gt;</code></source-code>
@@ -57,7 +57,7 @@
             <div class="p-01 flex-fill example">Equal</div>
             <div class="p-01 flex-fill example">Equal</div>
         </div>
-        <source-code><code class="html">&lt;div class="d-flex"&gt;
+        <source-code :height="5"><code class="html">&lt;div class="d-flex"&gt;
   &lt;div class="p-2 example"&gt;No fill&lt;/div&gt;
   &lt;div class="p-2 flex-fill example"&gt;Equal&lt;/div&gt;
   &lt;div class="p-2 flex-fill example"&gt;Equal&lt;/div&gt;

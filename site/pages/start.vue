@@ -23,12 +23,13 @@
     <em>&lt;meta charset=&quot;utf-8&quot;&gt;</em>
     <em>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, shrink-to-fit=no&quot;&gt;</em>
 
-    &lt;!-- Invisbile CSS --&gt;
+    &lt;!-- Setka's CSS --&gt;
     <em>&lt;link rel=&quot;stylesheet&quot; href=&quot;{{$store.state.data.cdnLink}}&quot; integrity=&quot;sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO&quot; crossorigin=&quot;anonymous&quot;&gt;</em>
 
     &lt;title&gt;Hello, world!&lt;/title&gt;
   &lt;/head&gt;
   &lt;body&gt;
+
     &lt;!-- Content --&gt;
 
   &lt;/body&gt;
