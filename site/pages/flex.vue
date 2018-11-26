@@ -14,7 +14,7 @@
         
         <Header :level=3 name="direction" class="">Direction</Header>
         <p>Set the direction of flex items in a flex container. In most cases you can omit the horizontal class here as the browser default is <code>row</code>. However, you may encounter situations where you needed to explicitly set this value (like responsive layouts).</p>
-        <format-table :items="$store.state.classes.flex.flexOrder" :example="flexOrderExample" :wrapper="{class: 'd-flex', value: true}" interactive />
+        <format-table :items="$store.state.classes.flex.flexOrder" :initial="[0,0,2]" :example="flexOrderExample" :wrapper="{class: 'd-flex', value: true}" interactive />
     
 
         <Header :level=3 name="wrap" class="">Wrap</Header>
@@ -22,11 +22,11 @@
 
 
         <Header :level=3 name="justify-content" class="">Justify content</Header>
-        <format-table :items="$store.state.classes.flex.flexJustify" :example="flexJustifyExample" :wrapper="{class: 'd-flex', value: true}" interactive />
+        <format-table :items="$store.state.classes.flex.flexJustify" :initial="[0,0,3]" :example="flexJustifyExample" :wrapper="{class: 'd-flex', value: true}" interactive />
 
 
         <Header :level=3 name="align-items" class="">Align items</Header>
-        <format-table :items="$store.state.classes.flex.flexAlign" :example="flexAlignExample" :wrapper="{class: 'd-flex hi-row', value: true}" interactive />
+        <format-table :items="$store.state.classes.flex.flexAlign" :initial="[0,0,2]" :example="flexAlignExample" :wrapper="{class: 'd-flex hi-row', value: true}" interactive />
     
         
         <Header :level=3 name="align-content" class="">Align content</Header>
@@ -38,7 +38,7 @@
         </p>
 
 
-        <format-table :items="$store.state.classes.flex.flexAlignContent" :example="flexAlignContentExample" :wrapper="{class: 'd-flex hi-row flex-wrap', value: true}" interactive />
+        <format-table :items="$store.state.classes.flex.flexAlignContent" :initial="[0,0,1]":example="flexAlignContentExample" :wrapper="{class: 'd-flex hi-row flex-wrap', value: true}" interactive />
     
 
         <Header :level=2 name="flex-items">Children's classes</Header>
@@ -75,10 +75,8 @@
         <format-table class="mt-1" :items="$store.state.classes.flex.flexShrink" :example="flexShrinkExample" :wrapper="{class: 'd-flex'}" interactive/>
     
 
-        <Header :level=3 name="align-self" class="">
-            Align self
-        </Header>
-        <format-table :items="$store.state.classes.flex.flexAlignSelf" :example="flexAlignSelfExample" :wrapper="{class: 'd-flex hi-row'}" interactive/>
+        <Header :level=3 name="align-self" class="">Align self</Header>
+        <format-table :items="$store.state.classes.flex.flexAlignSelf" :initial="[0,0,2]":example="flexAlignSelfExample" :wrapper="{class: 'd-flex hi-row'}" interactive/>
     
 
         <Header :level=3 name="order" class="">Order</Header>
