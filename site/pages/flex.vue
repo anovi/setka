@@ -38,7 +38,7 @@
         </p>
 
 
-        <format-table :items="$store.state.classes.flex.flexAlignContent" :initial="[0,0,1]":example="flexAlignContentExample" :wrapper="{class: 'd-flex hi-row flex-wrap', value: true}" interactive />
+        <format-table :items="$store.state.classes.flex.flexAlignContent" :initial="[0,0,1]" :example="flexAlignContentExample" :wrapper="{class: 'd-flex hi-row flex-wrap', value: true}" interactive />
     
 
         <Header :level=2 name="flex-items">Children's classes</Header>
@@ -76,7 +76,7 @@
     
 
         <Header :level=3 name="align-self" class="">Align self</Header>
-        <format-table :items="$store.state.classes.flex.flexAlignSelf" :initial="[0,0,2]":example="flexAlignSelfExample" :wrapper="{class: 'd-flex hi-row'}" interactive/>
+        <format-table :items="$store.state.classes.flex.flexAlignSelf" :initial="[0,0,2]" :example="flexAlignSelfExample" :wrapper="{class: 'd-flex hi-row'}" interactive/>
     
 
         <Header :level=3 name="order" class="">Order</Header>
