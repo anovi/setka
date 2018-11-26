@@ -131,6 +131,7 @@ export default {
                 display: inline-block
                 content: '[all]'
                 margin-left: -0.1em
+                color: #888
 
 .format__cell
     vertical-align: top

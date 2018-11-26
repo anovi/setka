@@ -47,10 +47,10 @@ $spacers = {
 
         <p>To generate styles with you settings:</p>
         <source-code :height="15"><code class="stylus">// Import library
-<em>@import 'setka'</em>
+@import 'setka'
 
 // Set variables
-<em>$grid-breakpoints</em> = {
+$grid-breakpoints = {
     xs: 0, 
     sm: 400px, 
     md: 600px,
@@ -60,7 +60,7 @@ $spacers = {
 }
 
 // Then generate Setka's styles
-<em>setka()</em>
+setka()
 </code></source-code>
 
 

@@ -17,27 +17,27 @@
         <format-table :items="flexOrder" :example="flexOrderExample" :wrapper="{class: 'd-flex', value: true}" interactive />
     
 
-        <Header :level=3 name="wrap" class="">
-            Wrap
-        </Header>
+        <Header :level=3 name="wrap" class="">Wrap</Header>
         <format-table :items="flexWrap" :example="flexWrapExample" :wrapper="{class: 'd-flex', value: true}" interactive />
 
 
-        <Header :level=3 name="justify-content" class="">
-            Justify content
-        </Header>
+        <Header :level=3 name="justify-content" class="">Justify content</Header>
         <format-table :items="flexJustify" :example="flexJustifyExample" :wrapper="{class: 'd-flex', value: true}" interactive />
 
 
-        <Header :level=3 name="align-items" class="">
-            Align items
-        </Header>
+        <Header :level=3 name="align-items" class="">Align items</Header>
         <format-table :items="flexAlign" :example="flexAlignExample" :wrapper="{class: 'd-flex hi-row', value: true}" interactive />
     
         
-        <Header :level=3 name="align-content" class="">
-            Align content
-        </Header>
+        <Header :level=3 name="align-content" class="">Align content</Header>
+        <!-- <p>
+            Use align-content utilities on flexbox containers to align flex items together on the cross axis. Choose from start (browser default), end, center, between, around, or stretch. 
+        </p> -->
+        <p>
+            This property has <strong>no effect on single rows</strong> of flex items. To demonstrate these utilities, we’ve enforced <code>flex-wrap: wrap</code> and increased the number of flex items.
+        </p>
+
+
         <format-table :items="flexAlignContent" :example="flexAlignContentExample" :wrapper="{class: 'd-flex hi-row flex-wrap', value: true}" interactive />
     
 
@@ -45,7 +45,6 @@
     
 
         <Header :level=3 name="fill" class="">Fill</Header>
-
         <div class="row">
             <div class="col-auto">
                 <format-table :items="flexFill" class="mt-0" />
