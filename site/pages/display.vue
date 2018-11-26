@@ -3,7 +3,7 @@
         <h1 class="mb-01">Display property</h1>
         <p class="subheader mt-0">Quickly and responsively toggle the display value of elements. Includes support for some of the more common values.</p>
 
-        <format-table :items="display" :initial="[0,0,1]" :example="displayExample" interactive />
+        <format-table :items="$store.state.classes.display.classes" :initial="[0,0,1]" :example="displayExample" interactive />
     
         <!-- <Header :level="2" name="how-it-works">How it works</Header> -->
 
@@ -145,11 +145,6 @@ export default {
 
   data() {
     return { 
-      display: [
-        {items: ['.d-'], align: 'right'},
-        {items: [null, 'sm-','md-','lg-','xl-']},
-        {items: ['none','inline','inline-block','block','table','table-cell','table-row','flex','inline-flex']}
-      ],
       displayExample: [
         {class: 'd-inline-block example p-01', text: 'Item'},
         {class: 'example p-01', value: true},

@@ -5,18 +5,18 @@
 
     <div class="row">
         <div class="col-auto">
-            <format-table :items="container" class="mb-0" />
+            <format-table :items="$store.state.classes.grid.container" class="mb-0" />
         </div>
         <div class="col-auto">
-            <format-table :items="row" class="mb-0" />
+            <format-table :items="$store.state.classes.grid.row" class="mb-0" />
         </div>
     </div>
     <div class="row">
         <div class="col-auto">
-            <format-table :items="cols" class="mb-0" />
+            <format-table :items="$store.state.classes.grid.cols" class="mb-0" />
         </div>
         <div class="col-auto">
-            <format-table :items="offset" class="mb-0" />
+            <format-table :items="$store.state.classes.grid.offset" class="mb-0" />
         </div>
     </div>
 
@@ -845,27 +845,6 @@ export default {
     },
     mounted() {
         this.buildTOC()
-    },
-    data() {
-        return {
-            container: [
-                {items: ['.container','.container-fluid']}
-            ],
-            row: [
-                {items: ['.row']}
-            ],
-            cols: [
-                {items: ['.col-']},
-                {items: [null,'sm-','md-','lg-','xl-']},
-                {items: ['1','2','3','4','5','6','7','8','9','10','11','12']},
-                {items: ['.no-gutters']}
-            ],
-            offset: [
-                {items: ['.offset-']},
-                {items: [null,'sm-','md-','lg-','xl-']},
-                {items: ['0', '1','2','3','4','5','6','7','8','9','10','11']},
-            ]
-        }
     }
 }
 </script>

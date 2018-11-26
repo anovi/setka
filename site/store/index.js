@@ -1,11 +1,13 @@
 import Vuex from 'vuex'
 import data from '~/assets/data'
+import { classes } from '~/assets/data'
 
 const createStore = () => {
   return new Vuex.Store({
     state: () => ({
       grid: false,
       data: data,
+      classes: classes,
       toc: [],
       tocViewed: null
     }),

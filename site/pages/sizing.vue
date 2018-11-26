@@ -7,13 +7,13 @@
                 <p class="mt-0">
                     width and height
                 </p>
-                <format-table :items="widths" />
+                <format-table :items="$store.state.classes.sizing.widths" />
             </div>
             <div class="col-auto">
                 <p class="mt-0">
                     max-width and max-height
                 </p>
-                <format-table :items="maxWidths" />
+                <format-table :items="$store.state.classes.sizing.maxWidths" />
             </div>
         </div>
 
@@ -48,17 +48,6 @@
 export default {
     head: {
         title: 'Sizing'
-    },
-    data() {
-        return {
-            widths: [
-                {items: ['.w-','.h-']},
-                {items: ['25','50','75','100','auto']}
-            ],
-            maxWidths: [
-                {items: ['.mw-100','.mh-100']}
-            ]
-        }
     }
 }
 </script>

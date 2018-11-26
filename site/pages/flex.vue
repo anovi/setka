@@ -14,19 +14,19 @@
         
         <Header :level=3 name="direction" class="">Direction</Header>
         <p>Set the direction of flex items in a flex container. In most cases you can omit the horizontal class here as the browser default is <code>row</code>. However, you may encounter situations where you needed to explicitly set this value (like responsive layouts).</p>
-        <format-table :items="flexOrder" :example="flexOrderExample" :wrapper="{class: 'd-flex', value: true}" interactive />
+        <format-table :items="$store.state.classes.flex.flexOrder" :example="flexOrderExample" :wrapper="{class: 'd-flex', value: true}" interactive />
     
 
         <Header :level=3 name="wrap" class="">Wrap</Header>
-        <format-table :items="flexWrap" :example="flexWrapExample" :wrapper="{class: 'd-flex', value: true}" interactive />
+        <format-table :items="$store.state.classes.flex.flexWrap" :example="flexWrapExample" :wrapper="{class: 'd-flex', value: true}" interactive />
 
 
         <Header :level=3 name="justify-content" class="">Justify content</Header>
-        <format-table :items="flexJustify" :example="flexJustifyExample" :wrapper="{class: 'd-flex', value: true}" interactive />
+        <format-table :items="$store.state.classes.flex.flexJustify" :example="flexJustifyExample" :wrapper="{class: 'd-flex', value: true}" interactive />
 
 
         <Header :level=3 name="align-items" class="">Align items</Header>
-        <format-table :items="flexAlign" :example="flexAlignExample" :wrapper="{class: 'd-flex hi-row', value: true}" interactive />
+        <format-table :items="$store.state.classes.flex.flexAlign" :example="flexAlignExample" :wrapper="{class: 'd-flex hi-row', value: true}" interactive />
     
         
         <Header :level=3 name="align-content" class="">Align content</Header>
@@ -38,7 +38,7 @@
         </p>
 
 
-        <format-table :items="flexAlignContent" :example="flexAlignContentExample" :wrapper="{class: 'd-flex hi-row flex-wrap', value: true}" interactive />
+        <format-table :items="$store.state.classes.flex.flexAlignContent" :example="flexAlignContentExample" :wrapper="{class: 'd-flex hi-row flex-wrap', value: true}" interactive />
     
 
         <Header :level=2 name="flex-items">Children's classes</Header>
@@ -47,7 +47,7 @@
         <Header :level=3 name="fill" class="">Fill</Header>
         <div class="row">
             <div class="col-auto">
-                <format-table :items="flexFill" class="mt-0" />
+                <format-table :items="$store.state.classes.flex.flexFill" class="mt-0" />
             </div>
         </div>
         
@@ -62,30 +62,28 @@
   &lt;div class="p-2 flex-fill example"&gt;Equal&lt;/div&gt;
   &lt;div class="p-2 flex-fill example"&gt;Equal&lt;/div&gt;
 &lt;/div&gt;</code></source-code>
-    
-    
-    
+
 
         <Header :level=3 name="grow-and-shrink" class="">
             Grow and shrink
         </Header>
         <p>Use <code>.flex-grow-*</code> utilities to toggle a flex item’s ability to grow to fill available space.</p>
-        <format-table :items="flexGrow" :example="flexGrowExample" :wrapper="{class: 'd-flex'}" interactive/>
+        <format-table :items="$store.state.classes.flex.flexGrow" :example="flexGrowExample" :wrapper="{class: 'd-flex'}" interactive/>
 
         <p>Use <code>.flex-shrink-*</code> utilities to toggle a flex item’s ability to shrink if necessary.</p>
 
-        <format-table class="mt-1" :items="flexShrink" :example="flexShrinkExample" :wrapper="{class: 'd-flex'}" interactive/>
+        <format-table class="mt-1" :items="$store.state.classes.flex.flexShrink" :example="flexShrinkExample" :wrapper="{class: 'd-flex'}" interactive/>
     
 
         <Header :level=3 name="align-self" class="">
             Align self
         </Header>
-        <format-table :items="flexAlignSelf" :example="flexAlignSelfExample" :wrapper="{class: 'd-flex hi-row'}" interactive/>
+        <format-table :items="$store.state.classes.flex.flexAlignSelf" :example="flexAlignSelfExample" :wrapper="{class: 'd-flex hi-row'}" interactive/>
     
 
         <Header :level=3 name="order" class="">Order</Header>
         <p>Change the visual order of specific flex items with order utilities. With this classes you can also <nuxt-link to="/grid#order-classes">change order of grid columns</nuxt-link> since Setka's grid build with flexbox layout.</p>
-        <format-table :items="order" :example="orderExample" :wrapper="{class: 'd-flex flex-wrap'}" interactive/>
+        <format-table :items="$store.state.classes.flex.order" :example="orderExample" :wrapper="{class: 'd-flex flex-wrap'}" interactive/>
     
 
     </main>
@@ -101,22 +99,11 @@ export default {
     
     data() {
         return {
-            flexOrder: [
-                { items: ['.flex-'], align: 'right' },
-                { items: [ null, 'sm-', 'md-', 'lg-', 'xl-'] },
-                { items: ['row','column','row-reverse','column-reverse'] }
-            ],
             flexOrderExample: [
                 {class: 'example p-01', text: 'Item 1'},
                 {class: 'example p-01', text: 'Item 2'},
                 {class: 'example p-01', text: 'Item 3'},
                 {class: 'example p-01', text: 'Item 4'}
-            ],
-
-            flexWrap: [
-                { items: ['.flex-'], align: 'right' },
-                { items: [ null, 'sm-', 'md-', 'lg-', 'xl-'] },
-                { items: ['wrap','nowrap','wrap-reverse'] }
             ],
             flexWrapExample: [
                 { class: "example w-25 p-01", text: 'Item 1' },
@@ -127,67 +114,30 @@ export default {
                 { class: "example w-25 p-01", text: 'Item 6' },
                 { class: "example w-25 p-01", text: 'Item 7' },
             ],
-
-            flexFill: [
-                { items: ['.flex-'], align: 'right' },
-                { items: [ null, 'sm-', 'md-', 'lg-', 'xl-'] },
-                { items: ['fill'] }
-            ],
             flexFillExample: [
                 { class: "example p-01", text: '1', value: true },
                 { class: "example p-01", text: '2', value: true },
                 { class: "example p-01", text: '3', value: true },
-            ],
-
-            flexGrow: [
-                { items: ['.flex-'], align: 'right' },
-                { items: [ null, 'sm-', 'md-', 'lg-', 'xl-'] },
-                { items: ['grow-0', 'grow-1'] }
             ],
             flexGrowExample: [
                 { class: "example p-01", text: '1' },
                 { class: "example p-01", value: true },
                 { class: "example p-01", text: 'Lorem' },
             ],
-
-            flexShrink: [
-                { items: ['.flex-'], align: 'right' },
-                { items: [ null, 'sm-', 'md-', 'lg-', 'xl-'] },
-                { items: ['shrink-0', 'shrink-1'] }
-            ],
             flexShrinkExample: [
                 { class: "example p-01", text: '1' },
                 { class: "example p-01", text: 'Lorem ipsum, dolor sit amet', value: true },
                 { class: "example p-01", text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae ab ipsam sapiente ut, voluptas possimus perferendis ea nesciunt rerum quasi.' },
-            ],
-
-            flexJustify: [
-                { items: ['.justify-content-'], align: 'right' },
-                { items: [ null, 'sm-', 'md-', 'lg-', 'xl-'] },
-                { items: [ 'start','end','center','between','around'] }
             ],
             flexJustifyExample: [
                 { class: "example p-01", text: '1' },
                 { class: "example p-01", text: '2' },
                 { class: "example p-01", text: '3' },
             ],
-
-            flexAlign: [
-                { items: ['.align-items-'], align: 'right' },
-                { items: [ null, 'sm-', 'md-', 'lg-', 'xl-'] },
-                { items: ['start','end','center','baseline','stretch'] }
-            ],
             flexAlignExample: [
                 { class: "example p-01", text: '1' },
                 { class: "example p-01", text: '2' },
                 { class: "example p-01", text: '3' },
-            ],
-
-            
-            flexAlignContent: [
-                { items: ['.align-content-'], align: 'right' },
-                { items: [ null, 'sm-', 'md-', 'lg-', 'xl-'] },
-                { items: ['start','end','center','between','around','stretch'] }
             ],
             flexAlignContentExample: [
                 { class: "example w-25 p-01", text: 'Item 1' },
@@ -198,22 +148,10 @@ export default {
                 { class: "example w-25 p-01", text: 'Item 6' },
                 { class: "example w-25 p-01", text: 'Item 7' },
             ],
-
-            flexAlignSelf: [
-                { items: ['.align-self-'], align: 'right' },
-                { items: [ null, 'sm-', 'md-', 'lg-', 'xl-'] },
-                { items: ['auto','start','end','center','baseline','stretch'] }
-            ],
             flexAlignSelfExample: [
                 { class: "example p-01", text: '1' },
                 { class: "example p-01", value: true },
                 { class: "example p-01", text: '3' },
-            ],
-
-            order: [
-                { items: ['.order-'], align: 'right' },
-                { items: [ null, 'sm-', 'md-', 'lg-', 'xl-'] },
-                { items: ['0','1','2','3','4','5','6','7','8','9','10','11','12'] }
             ],
             orderExample: [
                 { class: "example p-01 order-1", text: '1' },

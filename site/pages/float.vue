@@ -5,10 +5,10 @@
 
         <div class="row">
             <div class="col-auto">
-                <format-table :items="float" />
+                <format-table :items="$store.state.classes.float.classes" />
             </div>
             <div class="col-auto">
-                <format-table :items="[{items: ['.clearfix']}]" />
+                <format-table :items="$store.state.classes.float.clearfix" />
             </div>
         </div>
         
@@ -78,15 +78,6 @@
 export default {
     head: {
         title: 'Float'
-    },
-    data() {
-        return {
-            float: [
-                { items: ['.float-'], align: 'right' },
-                { items: [ null, 'sm-', 'md-', 'lg-', 'xl-'] },
-                { items: ['left','right','none'] }
-            ],
-        }
     },
     mounted() {
         this.buildTOC()

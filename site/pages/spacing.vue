@@ -5,13 +5,13 @@
         <h2 class="mt-0">
             Margins
         </h2>
-        <format-table :items="margins" :example="marginsExample" :initial="[0,0,1]" interactive />
+        <format-table :items="$store.state.classes.spacing.margins" :example="marginsExample" :initial="[0,0,1]" interactive />
     
         
         <h2 class="">
             Paddings
         </h2>
-        <format-table :items="paddings" :example="paddingsExample" :initial="[0,0,2]" interactive />
+        <format-table :items="$store.state.classes.spacing.paddings" :example="paddingsExample" :initial="[0,0,2]" interactive />
     
 
         <p>The classes are named using the format <code>{property}{sides}-{size}</code> for <code>xs</code> and <code>{property}{sides}-{breakpoint}-{size}</code> for <code>sm</code>, <code>md</code>, <code>lg</code>, and <code>xl</code>.</p>
@@ -44,21 +44,10 @@ export default {
     },
     data() {
         return {
-            margins: [
-                {items: ['.m-', '.mt-','.mb-','.ml-','.mr-','.mx-','.my-']},
-                {items: [null,'sm-','md-','lg-','xl-']},
-                {items: ['0','01','1','2','3','4','5','auto']}
-            ],
             marginsExample: [
                 {class: 'example p-01', text: 'Item'},
                 {class: 'example p-01', value: true},
                 {class: 'example p-01', text: 'Item'}
-            ],
-
-            paddings: [
-                {items: ['.p-', '.pt-','.pb-','.pl-','.pr-','.px-','.py-']},
-                {items: [null,'sm-','md-','lg-','xl-']},
-                {items: ['0','01','1','2','3','4','5']}
             ],
             paddingsExample: [
                 {class: 'example d-inline-block p-01', text: 'Item'},
