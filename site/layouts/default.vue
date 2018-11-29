@@ -98,6 +98,9 @@
           }, {
             title: 'Download',
             url: '/download'
+          }, {
+            title: 'Integrate code',
+            url: '/integrate'
           }]
         }, {
           title: 'Layout',
