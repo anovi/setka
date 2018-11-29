@@ -1,0 +1,20 @@
+{
+  "name": "setka-webpack-stylus-example",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "autoprefixer": "9.3.1",
+    "css-loader": "1.0.1",
+    "postcss-loader": "3.0.0",
+    "setka": "0.1.2",
+    "style-loader": "0.23.1",
+    "stylus-loader": "3.0.2"
+  }
+}

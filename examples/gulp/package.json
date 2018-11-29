@@ -1,0 +1,17 @@
+{
+  "name": "setka-gulp-example",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "gulp": "3.9.1",
+    "gulp-stylus": "2.7.0",
+    "setka": "0.1.2"
+  }
+}
