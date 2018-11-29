@@ -1,33 +1,45 @@
 <template>
-    <div class="setka" :class="{__double: double}">
-        <div class="row no-gutters">
-            <div v-for="(letter, i) in setka" class="col setka-letter mr-01" :key="i">
-                <div v-for="(row, i) in letter" :class="{outline}" class="row no-gutters setka-letter-row" :key="i">
-                    <div v-for="(color, i) in row" class="col setka-letter-pixel" :class="{__color: color, __double: double}" :key="i"></div>
+    <div class="setka" :class="{__double: double, __letter: letter}">
+        <div class="row setka__letters no-gutters">
+            <div v-for="(letter, l) in setka" class="col setka__letter" :key="l">
+                <div v-for="(row, r) in letter" :class="{outline}" class="row no-gutters setka__letter-row" :key="r">
+                    <div v-for="(color, i) in row" class="col setka__letter-pixel" :class="{__color: color}" :key="i"></div>
+                    <div v-if="l !== setka.length - 1" class="col setka__letter-pixel" />
                 </div>
             </div>
         </div>
     </div>    
 </template>
 
+
 <style lang="stylus">
 .setka
     width: gu(26)
     height: gu(7)
-    +media-up('lg')
-      height: gu(14)
-      width: gu(52)
-.setka-letter-pixel
-    height: gu(1)
-    +media-up('lg')
-        height: gu(2)
+    &.__letter
+        width: gu(4.3)
+    &.__double
+        +media-up('lg')
+            height: gu(14)
+            width: gu(52)
+            &.__letter
+                width: gu(8.32)
+.setka__letters
+    height: 100%
+
+.setka__letter-row
+    height: (100 / 7)%
+
+.setka__letter-pixel
+    height: 100%
     &.__color
         background-color: var(--color-logo)
 
-.outline .setka-letter-pixel
+.outline .setka__letter-pixel
     outline: 2px solid var(--color-code)
     outline-offset: -1px
 </style>
+
 
 <script>
 import cloneDeep from 'lodash/cloneDeep'
@@ -117,12 +129,15 @@ const FULL = [[
 export default {
     props: {
         double: Boolean,
+        letter: Boolean,
         animation: Number
     },
     data(vm) {
+        let content = vm.animation === 2 ? EMPTY : FULL
+        if (vm.letter) content = [content[0]]
         return {
             outline: vm.animation === 2,
-            setka: vm.animation === 2 ? cloneDeep(EMPTY) : FULL
+            setka: cloneDeep(content)
         }
     },
     mounted() {
@@ -173,7 +188,7 @@ export default {
                             setTimeout(() => {
                                 row[i] = initialColor
                                 this.setka = [].concat(this.setka)
-                            }, (r * (time/7)) + (l * (time/7/5)) + (i * 20))
+                            }, (r * (time/7)) + (l * (time/7/5)) + (i * (time/7/5/5)))
                         }
                     });
 
