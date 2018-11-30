@@ -11,7 +11,7 @@
 
         <p>Import Setka, override <nuxt-link to="/vars">built-in variables</nuxt-link>, then generate Setka's styles:</p>
 
-        <source-code><code class="stylus">@import "~setka/index"
+        <source-code :height="6"><code class="stylus">@import "~setka/index"
 
 // Set variables            
 
@@ -20,7 +20,7 @@ setka()</code></source-code>
 
     <p>For compiling styles, install and use the required loaders: <a href="https://github.com/shama/stylus-loader" target="_blank">stylus-loader</a>, <a href="https://github.com/postcss/postcss-loader" target="_blank">postcss-loader</a> with <a href="https://github.com/postcss/autoprefixer#webpack" tabindex="_blank">Autoprefixer</a>. Minimal setup, your webpack config should include this rule or similar in <code>module: { rules: [...] }</code>:</p>
 
-    <source-code><code class="javascript">...
+    <source-code :height="23"><code class="javascript">...
 module: {
     rules: [{
         test: /\.(styl)$/,
@@ -51,11 +51,11 @@ module: {
 
         <p>Alternatively, you may use Bootstrap’s ready-to-use CSS by simply adding this line to your project’s entry point:</p>
 
-        <source-code><code class="javascript">import 'setka/dist/setka.min.css';</code></source-code>
+        <source-code :height="1"><code class="javascript">import 'setka/dist/setka.min.css';</code></source-code>
 
         <p>In this case you may use your existing rule for <code class="">css</code> without any special modifications to webpack config, and you only need <a href="https://github.com/webpack-contrib/style-loader">style-loader</a> and <a href="https://github.com/webpack-contrib/css-loader">css-loader</a>.</p>
 
-        <source-code><code class="javascript">...
+        <source-code :height="9"><code class="javascript">...
 module: {
     rules: [
         {
@@ -71,7 +71,7 @@ module: {
 
         <p>For building CSS from source code with <a href="https://gulpjs.com/" target="_blank">Gulp</a>, minimal <code>gulpfile.js</code> configuration should be:</p>
 
-        <source-code><code class="javscript">const gulp = require('gulp');
+        <source-code :height="13"><code class="javscript">const gulp = require('gulp');
 const setka = require('setka');
 const stylus = require('gulp-stylus');
 
@@ -86,7 +86,7 @@ gulp.task('build', function () {
 gulp.task('default', [ 'build' ]);</code></source-code>
 
         <p>And in <code>styles.styl</code> import Setka and build CSS:</p>
-        <source-code><code class="stylus">@import 'setka'
+        <source-code :height="6"><code class="stylus">@import 'setka'
 
 // Set variables
 
