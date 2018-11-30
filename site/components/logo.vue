@@ -14,16 +14,16 @@
 
 <style lang="stylus">
 .setka
-    width: gu(26)
+    max-width: gu(26)
     height: gu(7)
     &.__letter
-        width: gu(4.3)
+        max-width: gu(4.3)
     &.__double
         +media-up('lg')
             height: gu(14)
-            width: gu(52)
+            max-width: gu(52)
             &.__letter
-                width: gu(8.32)
+                max-width: gu(8.32)
 .setka__letters
     height: 100%
 

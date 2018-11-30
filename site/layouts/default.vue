@@ -5,8 +5,8 @@
       <div class="col-md-3 col-lg-3 pb-2 pb-md-0 menu__wrapper">
         <nav class="menu col-md-3 col-lg-3">
           <nuxt-link to="/">
-            <svg preserveAspectRatio="none" class="logo d-none d-md-block mt-01 mb-1" xmlns="http://www.w3.org/2000/svg" width="80" height="140" viewBox="0 0 80 140"><g fill="none" fill-rule="evenodd"><g fill="#5200FF" fill-rule="nonzero" transform="translate(-120 -440)"><g transform="translate(120 440)"><g><rect width="60" height="20" x="20"/><rect width="40" height="20" x="20" y="60"/><rect width="60" height="20" y="120"/><rect width="20" height="40" y="20"/><rect width="20" height="40" x="60" y="80"/></g></g></g></g></svg>
-            <img class="logo __full d-md-none mt-01 mb-2" src="logo.svg" alt="Setka">
+            <Logo class="logo d-none d-md-block mt-01 mb-1" letter />
+            <Logo class="logo d-md-none mt-01 mb-1" />
           </nuxt-link>
           <div class="row flex-column flex-md-row menu__row">
             <div v-for="(item, i) in menu" :key="i" :class="item.class">
@@ -40,6 +40,7 @@
   import Header from '~/components/header'
   import Source from '~/components/source'
   import VueClipboard from 'vue-clipboard2'
+  import Logo from '~/components/logo.vue'
 
   Vue.use(VueClipboard)
   Vue.component('format-table', FormatTable)
@@ -49,7 +50,8 @@
   export default {
 
     components: {
-      EmptyLayout: EmptyLayout
+      EmptyLayout: EmptyLayout,
+      Logo
     },
 
     mounted() {
@@ -217,10 +219,9 @@
 
 .logo
   height: gu(7)
-  display: block
   position relative
   z-index 1
-  width: 50%
+  // width: 50%
   &.__full
     width: auto
     height: gu(7)
@@ -248,7 +249,7 @@ $menu-width = 250px
     max-width: $menu-width
 
 .menu__row
-  height: gu(26)
+  height: gu(28)
   +media-up('md')
     height: auto
 
