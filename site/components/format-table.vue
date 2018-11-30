@@ -43,7 +43,7 @@
         </div>
     </div>
 
-    <div class="mt-01" v-if="interactive && example">
+    <div class="format__source" v-if="interactive && example">
         <source-code v-if="example" class="m-0" :height="source.split('\n').length" :source="source"><code class="html"></code></source-code>
     </div>
 
@@ -108,13 +108,14 @@ export default {
 <style lang="stylus">
 @import '~~@@/lib/setka/index.styl'
 
+
+// var(--header-color, blue);
 .format__wrapper
     margin: gu(2) 0
 
 .format
     border-spacing: 0
-    border-radius: 4px
-    box-shadow: 0 0 0 1px #e0e0e0
+    box-shadow: 0 0 0 1px var(--color-border)
     margin-top: 0
     margin-bottom: 0
 
@@ -124,7 +125,6 @@ export default {
         padding 0 6px 0 6px
         &.empty
             vertical-align: baseline
-            border-radius: 4px
             display: inline-block
             line-height: 1.2em
             &:after
@@ -136,17 +136,17 @@ export default {
 .format__cell
     vertical-align: top
     padding 0 0 gu(1) 0
-    border-right: 1px solid #e2e2e2
+    border-right: 1px solid var(--color-border)
     &:last-child
         border none
     &.__final
         flex-grow: 1
     &.__result
-        background: rgba(0,0,0,0.02)
-        box-shadow: inset 1px 0 0 0 #e2e2e2
+        // background: rgba(0,0,0,0.02)
+        box-shadow: inset 1px 0 0 0 var(--color-border)
         +media-down('md')
             width: 100%
-            box-shadow: inset 0 1px 0 0 #e2e2e2
+            box-shadow: inset 0 1px 0 0 var(--color-border)
 
 .format__rules
     +media-up('lg')
@@ -163,6 +163,15 @@ export default {
     &.__result
         padding-left: gu(1)
 
+$psw
+    display block
+    content ''
+    position absolute
+    z-index 1
+    top: 0
+    bottom: 0
+    width: 1px
+    background white
 .format__item
     position relative
     &.__selectable
@@ -171,13 +180,24 @@ export default {
             code
                 color: var(--color-link)
         &.__selected
-            box-shadow: 0 1px 0 0 var(--color-link), 0 -1px 0 0 var(--color-link)
+            // box-shadow: 0 1px 0 0 var(--color-link), 0 -1px 0 0 var(--color-link)
+            outline: 1px solid var(--color-link)
+            position relative
+            
+            &:after
+                @extend $psw
+                right: -1px
+            &:before
+                @extend $psw
+                left: -1px
             code
                 color: var(--color-link)
             .format__cell:first-child > &
-                box-shadow: 0 1px 0 0 var(--color-link), 0 -1px 0 0 var(--color-link), -1px 0 0 0 var(--color-link)
+                &:before
+                    display none
             .format__cell:last-child > &
-                box-shadow: 0 1px 0 0 var(--color-link), 0 -1px 0 0 var(--color-link), 1px 0 0 0 var(--color-link)
+                &:after
+                    display none
 
 .format__example
     padding: 0 gu(1) 0 gu(1)
@@ -186,4 +206,6 @@ export default {
     font-size: 0.8em
     color: #888
 
+.format__source
+    margin-top: 1px
 </style>

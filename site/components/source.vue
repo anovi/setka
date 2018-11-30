@@ -88,8 +88,7 @@ export default {
     margin-top: gu(2)
     margin-bottom: gu(2)
     background: rgba(0,0,0,0.02)
-    box-shadow: 0 0 0 1px #ededed
-    border-radius: 4px
+    box-shadow: 0 0 0 1px var(--color-border)
     position: relative
     pre
         // clearfix()

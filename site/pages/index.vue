@@ -24,29 +24,28 @@
           </div>
 
           <div class="col-sm-4 mt-sm-4">
-            <p class="mt-0">Based on <a href="https://getbootstrap.com/docs/4.1/layout/overview/" target="_blank">Bootstrap</a> grid. Grid is customizable with Stylus variables.</p>
+            <p class="mt-0">Baseline grid is configureable and depends from line-height. <a href="#" @click.prevent="$store.commit('toggleGrid')">Show baseline grid</a>.</p>
           </div>
 
           <div class="col-sm-4">
-            <p class="mt-0">Made with <a href="http://stylus-lang.com/" target="_blank">Stylus</a> preprocessor. It's optional, if you need an advanced control.</p>
+            <p class="mt-0">Made with <a href="http://stylus-lang.com/" target="_blank">Stylus</a> preprocessor, but it's optional! Use it if you need an advanced control, otherwise pure CSS would be perfect!</p>
           </div>
 
           <div class="col-sm-4">
-            <p class="mt-0">Customizable with CSS-variables. Almost every values can be changed: size of grid gutter and spacers, width of container.</p>
+            <p class="mt-0">Customize with <nuxt-link to="/css-vars">CSS-variables</nuxt-link>. Almost every values can be changed: size of grid gutter and spacers, width of container, baseline grid.</p>
           </div>
 
           <div class="w-100"></div>
 
           <div class="col-sm-4 offset-sm-2 mt-sm-2">
             <p class="mt-0 mt-sm-01">
-              Baseline grid is configured with css-variables and depends from line-height.
-              <a href="#" @click.prevent="$store.commit('toggleGrid')">Show baseline grid</a>.
+              Based on <a href="https://getbootstrap.com/docs/4.1/layout/overview/" target="_blank">Bootstrap</a> grid. Grid is customizable with variables.
             </p>
           </div>
           
           <div class="col-sm-5 offset-sm-1">
-            <h3 class="mt-0">Why</h3>
-            <p>If you like to use Bootstrap grid and css-utilities, but you don't need widgets and javascript and decoration styles from it. If you prefer Stylus over Saas. If you don't want to mess with preprocessors at all, but still want some customization.</p>
+            <!-- <h3 class="mt-0">Why</h3> -->
+            <p><strong>Why to use?</strong> If you like Bootstrap's grid and CSS-utilities, but you don't need it's widgets, javascript and decoration styles. If you prefer Stylus over Saas. Or if you don't want to mess with preprocessors at all, but still need a customization.</p>
           </div>
         </div>
       </div>
