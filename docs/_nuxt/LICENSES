@@ -29,14 +29,14 @@ object-assign
 */
 
 /*!
+ * vue-no-ssr v1.0.0
+ * (c) 2018-present egoist <0x142857@gmail.com>
+ * Released under the MIT License.
+ */
+
+/*!
  * clipboard.js v2.0.4
  * https://zenorocha.github.io/clipboard.js
  * 
  * Licensed MIT © Zeno Rocha
- */
-
-/*!
- * vue-no-ssr v1.0.0
- * (c) 2018-present egoist <0x142857@gmail.com>
- * Released under the MIT License.
  */
