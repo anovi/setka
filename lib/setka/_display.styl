@@ -1,7 +1,7 @@
 
 make-display()
   for $breakpoint in keys($grid-breakpoints)
-    +media-breakpoint-up($breakpoint)
+    +media-up($breakpoint)
       $infix = breakpoint-infix($breakpoint, $grid-breakpoints)
 
       .d{$infix}-none           { display: none !important; }

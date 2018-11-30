@@ -94,14 +94,14 @@
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) { ... }</code>
-        <code class="stylus" slot="stylus">+media-breakpoint-up('xs') { ... }
-+media-breakpoint-up('sm') { ... }
-+media-breakpoint-up('md') { ... }
-+media-breakpoint-up('lg') { ... }
-+media-breakpoint-up('xl') { ... }
+        <code class="stylus" slot="stylus">+media-up('xs') { ... }
++media-up('sm') { ... }
++media-up('md') { ... }
++media-up('lg') { ... }
++media-up('xl') { ... }
 
 // Example usage:
-+media-breakpoint-up('sm')
++media-up('sm')
     .some-class
         display: block
 
@@ -125,10 +125,10 @@
 
 /* Extra large devices (large desktops) */
 /* No media query since the extra-large breakpoint has no upper bound on its width */</code>
-        <code class="stylus" slot="stylus">+media-breakpoint-down('xs') { ... }
-+media-breakpoint-down('sm') { ... }
-+media-breakpoint-down('md') { ... }
-+media-breakpoint-down('lg') { ... }</code></source-code>
+        <code class="stylus" slot="stylus">+media-down('xs') { ... }
++media-down('sm') { ... }
++media-down('md') { ... }
++media-down('lg') { ... }</code></source-code>
 
         <div class="bd-callout bd-callout-info">
             <p>
@@ -152,11 +152,11 @@
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) { ... }</code>
-        <code class="stylus" slot="stylus">+media-breakpoint-only('xs') { ... }
-+media-breakpoint-only('sm') { ... }
-+media-breakpoint-only('md') { ... }
-+media-breakpoint-only('lg') { ... }
-+media-breakpoint-only('xl') { ... }</code></source-code>
+        <code class="stylus" slot="stylus">+media-only('xs') { ... }
++media-only('sm') { ... }
++media-only('md') { ... }
++media-only('lg') { ... }
++media-only('xl') { ... }</code></source-code>
 
 
         <p>Similarly, media queries may span multiple breakpoint widths:</p>
@@ -164,7 +164,7 @@
         <source-code :height="3"><code class="css">/* Example */
 /* Apply styles starting from medium devices and up to extra large devices */
 @media (min-width: 768px) and (max-width: 1199.98px) { ... }</code>
-        <code class="stylus" slot="stylus">+media-breakpoint-between('md', 'xl') { ... }</code></source-code>
+        <code class="stylus" slot="stylus">+media-between('md', 'xl') { ... }</code></source-code>
 
 
         <!-- <h2 id="z-index">Z-index</h2>

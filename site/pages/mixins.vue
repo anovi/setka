@@ -61,9 +61,9 @@ breakpoint-infix('sm', (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px))
 
         <Header :level="2" name="custom-utilities">Build custom utilities</Header>
         
-        <p>With <code>+media-breakpoint-up()</code> and <code>breakpoint-infix()</code> you can create you own responsive utilities. This example shows how standard <nuxt-link to="/flex">flex utilities</nuxt-link> are created.</p> 
+        <p>With <code>+media-up()</code> and <code>breakpoint-infix()</code> you can create you own responsive utilities. This example shows how standard <nuxt-link to="/flex">flex utilities</nuxt-link> are created.</p> 
         <source-code :height="7"><code class="stylus">for $breakpoint in keys($grid-breakpoints)
-    +media-breakpoint-up($breakpoint)
+    +media-up($breakpoint)
       $infix = breakpoint-infix($breakpoint, $grid-breakpoints)
         .flex{$infix}-row            { flex-direction: row !important; }
         .flex{$infix}-column         { flex-direction: column !important; }

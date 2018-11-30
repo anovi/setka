@@ -64,7 +64,7 @@ breakpoint-infix($name, $breakpoints = $grid-breakpoints)
 
 // Media of at least the minimum breakpoint width. No query for the smallest breakpoint.
 // Makes the @content apply to the given breakpoint and wider.
-media-breakpoint-up($name, $breakpoints = $grid-breakpoints)
+media-up($name, $breakpoints = $grid-breakpoints)
   $min = breakpoint-min($name, $breakpoints);
   if $min
     @media (min-width: $min) {
@@ -75,7 +75,7 @@ media-breakpoint-up($name, $breakpoints = $grid-breakpoints)
 
 // Media of at most the maximum breakpoint width. No query for the largest breakpoint.
 // Makes the @content apply to the given breakpoint and narrower.
-media-breakpoint-down($name, $breakpoints = $grid-breakpoints)
+media-down($name, $breakpoints = $grid-breakpoints)
   $max = breakpoint-max($name, $breakpoints);
   if $max
     @media (max-width: $max) {
@@ -86,7 +86,7 @@ media-breakpoint-down($name, $breakpoints = $grid-breakpoints)
 
 // Media that spans multiple breakpoint widths.
 // Makes the @content apply between the min and max breakpoints
-media-breakpoint-between($lower, $upper, $breakpoints = $grid-breakpoints)
+media-between($lower, $upper, $breakpoints = $grid-breakpoints)
   $min = breakpoint-min($lower, $breakpoints);
   $max = breakpoint-max($upper, $breakpoints);
 
@@ -95,16 +95,16 @@ media-breakpoint-between($lower, $upper, $breakpoints = $grid-breakpoints)
       {block}
     }
   else if $max == null
-    +media-breakpoint-up($lower, $breakpoints)
+    +media-up($lower, $breakpoints)
       {block}
   else if $min == null
-    +media-breakpoint-down($upper, $breakpoints)
+    +media-down($upper, $breakpoints)
       {block}
 
 // Media between the breakpoint's minimum and maximum widths.
 // No minimum for the smallest breakpoint, and no maximum for the largest one.
 // Makes the @content apply only to the given breakpoint, not viewports any wider or narrower.
-media-breakpoint-only($name, $breakpoints = $grid-breakpoints)
+media-only($name, $breakpoints = $grid-breakpoints)
   $min = breakpoint-min($name, $breakpoints);
   $max = breakpoint-max($name, $breakpoints);
 
@@ -113,8 +113,8 @@ media-breakpoint-only($name, $breakpoints = $grid-breakpoints)
       {block}
     }
   else if $max == null
-    +media-breakpoint-up($name, $breakpoints)
+    +media-up($name, $breakpoints)
       {block}
   else if $min == null
-    +media-breakpoint-down($name, $breakpoints)
+    +media-down($name, $breakpoints)
       {block}

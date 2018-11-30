@@ -14,7 +14,7 @@ make-container() {
 // For each breakpoint, define the maximum width of the container in a media query
 make-container-max-widths($max-widths = $container-max-widths, $breakpoints = $grid-breakpoints)
   for $breakpoint, $container-max-width in $max-widths
-    +media-breakpoint-up($breakpoint, $breakpoints)
+    +media-up($breakpoint, $breakpoints)
       max-width: var(unquote('--container-' + $breakpoint))
 
 make-row() {

@@ -3,7 +3,7 @@
 // Margin and Padding
 make-spacing()
   for $breakpoint in keys($grid-breakpoints)
-    +media-breakpoint-up($breakpoint)
+    +media-up($breakpoint)
       $infix = breakpoint-infix($breakpoint, $grid-breakpoints)
       params = {
         margin: m,

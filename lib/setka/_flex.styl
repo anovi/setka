@@ -6,7 +6,7 @@
 // Custom styles for additional flex alignment options.
 make-flex()
   for $breakpoint in keys($grid-breakpoints)
-    +media-breakpoint-up($breakpoint)
+    +media-up($breakpoint)
       $infix = breakpoint-infix($breakpoint, $grid-breakpoints)
 
       .flex{$infix}-row            { flex-direction: row !important; }

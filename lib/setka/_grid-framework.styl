@@ -26,7 +26,7 @@ make-grid-columns($columns = $grid-columns, $breakpoints = $grid-breakpoints)
       @extends $grid-column;
     }
 
-    +media-breakpoint-up($breakpoint, $breakpoints)
+    +media-up($breakpoint, $breakpoints)
       // Provide basic `.col-{bp}` classes for equal-width flexbox columns
       .col{$infix} {
         flex-basis: 0;
