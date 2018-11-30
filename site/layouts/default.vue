@@ -25,7 +25,7 @@
           <div class=""><a class="color-text" :href="$store.state.data.github" target="_blank">Github page</a></div>
         </nav>
       </div>
-      <div class="col-md-9 col-lg-9 offset-lg-0" ref="content">
+      <div class="col-md-9 col-lg-9 offset-lg-0 pb-3" ref="content">
         <nuxt />
       </div>
     </div>

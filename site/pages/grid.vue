@@ -815,7 +815,7 @@
     <Header :level="2" name="nesting">Nesting</Header>
     <p>To nest your content with the default grid, add a new <code class="highlighter-rouge">.row</code> and set of <code class="highlighter-rouge">.col-sm-*</code> columns within an existing <code class="highlighter-rouge">.col-sm-*</code> column. Nested rows should include a set of columns that add up to 12 or fewer (it is not required that you use all 12 available columns).</p>
     <div class="container">
-        <div class="row mb-4">
+        <div class="row">
             <div class="col-sm-9 example">
             Level 1: .col-sm-9
             <div class="row">

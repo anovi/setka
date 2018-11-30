@@ -64,7 +64,7 @@
 &lt;/div&gt;</code></source-code>
 
         <p>Without the clearfix the wrapping div would not span around the buttons which would cause a broken layout.</p>
-        <div class="example mb-4">
+        <div class="example">
             <div class="bg-2 float-left">Example Button floated left</div>
             <div class="bg-2 float-right">Example Button floated right</div>
         </div>
