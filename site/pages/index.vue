@@ -45,7 +45,7 @@
           
           <div class="col-sm-5 offset-sm-1">
             <!-- <h3 class="mt-0">Why</h3> -->
-            <p><strong>Why to use?</strong> If you like Bootstrap's grid and CSS-utilities, but you don't need it's widgets, javascript and decoration styles. If you prefer Stylus over Saas. Or if you don't want to mess with preprocessors at all, but still need a customization.</p>
+            <p class="mt-0"><strong>Why to use?</strong> If you like Bootstrap's grid and CSS-utilities, but you don't need it's widgets, javascript and decoration styles. If you prefer Stylus over Saas. Or if you don't want to mess with preprocessors at all, but still need a customization.</p>
           </div>
 
           <div class="col">

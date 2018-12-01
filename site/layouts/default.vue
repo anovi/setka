@@ -2,17 +2,18 @@
   <EmptyLayout>
     
     <div class="row">
-      <div class="col-md-3 col-lg-3 pb-2 pb-md-0 menu__wrapper">
+      <div class="col-md-3 col-lg-3 pb-0 pb-md-0 menu__wrapper">
         <nav class="menu col-md-3 col-lg-3">
           <nuxt-link to="/">
             <Logo class="logo d-none d-md-block mt-01 mb-1" letter />
-            <Logo class="logo d-md-none mt-01 mb-1" />
+            <Logo class="logo d-md-none mt-01 mb-1" :animation="2" />
           </nuxt-link>
-          <div class="row flex-column flex-md-row menu__row">
+          <div class="row flex-nowrap flex-md-wrap flex-md-row menu__row">
             <div v-for="(item, i) in menu" :key="i" :class="item.class">
               <div class="menu__title" v-if="item.title">{{item.title}}</div>
               <div v-for="(item, i) in item.items" :key="i">
-                <nuxt-link v-if="item.url" class="menu__item" :to="item.url">{{item.title}}</nuxt-link>
+                <nuxt-link v-if="item.url && !item.url.match(/^https?:/)" class="menu__item" :to="item.url">{{item.title}}</nuxt-link>
+                <a v-if="item.url && item.url.match(/^https?:/)" class="menu__item" target="_blank" :href="item.url">{{item.title}}</a>
                 <div v-if="navigationItems.length && isCurrent(item.url)" class="menu__toc d-none d-md-block mb-01">
                   <div v-for="(_item, i) in navigationItems" :key="i">
                     <nuxt-link class="menu__item __anchor __no-active" :class="{ 'ml-01': _item.level === 3, 'd-none': _item.level > 3 }" :to="'#' + _item.link">{{_item.text}}</nuxt-link>
@@ -22,7 +23,6 @@
               </div>
             </div>
           </div>
-          <div class=""><a class="color-text" :href="$store.state.data.github" target="_blank">Github page</a></div>
         </nav>
       </div>
       <div class="col-md-9 col-lg-9 offset-lg-0 pb-3" ref="content">
@@ -90,7 +90,7 @@
       }
     },
 
-    data() {
+    data(vm) {
       return {
         menu: [{
           class: 'col-auto mb-1 mb-md-01 col-md-12',
@@ -121,7 +121,7 @@
           class: 'sss'
         }, {
           title: 'Utilities',
-          class: 'col-auto mb-1 mb-md-01 col-md-12 order-12 order-md-0',
+          class: 'col-auto mb-1 mb-md-01 col-md-12',
           items: [{
             title: 'Sizing',
             url: '/sizing'
@@ -156,6 +156,12 @@
           }, {
             title: 'Mixins',
             url: '/mixins'
+          }]
+        }, {
+          class: 'col-auto mb-1 mb-md-01 col-md-12',
+          items: [{
+            title: 'GitHub',
+            url: vm.$store.state.data.github
           }]
         }]
       }
@@ -249,7 +255,11 @@ $menu-width = 250px
     max-width: $menu-width
 
 .menu__row
-  height: gu(28)
+  // height: gu(17)
+  max-width: 100vw
+  overflow: auto
+  +media-down('md')
+    margin-right: calc(var(--grid-gutter-width) * -1.5)
   +media-up('md')
     height: auto
 
