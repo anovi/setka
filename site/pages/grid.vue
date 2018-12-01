@@ -3,42 +3,93 @@
 
     <Header :level="1" class="mb-1">Grid</Header>
 
+    <p class="mt-0">Available classes:</p>
     <div class="row">
         <div class="col-auto">
-            <format-table :items="$store.state.classes.grid.container" class="mb-0" />
+            <format-table :items="$store.state.classes.grid.container" class="mt-0" />
         </div>
         <div class="col-auto">
-            <format-table :items="$store.state.classes.grid.row" class="mb-0" />
+            <format-table :items="$store.state.classes.grid.row" class="mt-0" />
         </div>
     </div>
     <div class="row">
         <div class="col-auto">
-            <format-table :items="$store.state.classes.grid.cols" class="mb-0" />
+            <format-table :items="$store.state.classes.grid.cols" class="mt-0" />
         </div>
         <div class="col-auto">
-            <format-table :items="$store.state.classes.grid.offset" class="mb-0" />
+            <format-table :items="$store.state.classes.grid.offset" class="mt-0" />
         </div>
     </div>
 
 
     <Header :level="2" name="how-it-works">How it works</Header>
-    <p>Grid system uses a series of containers, rows, and columns to layout and align content. It’s built with <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox">flexbox</a> and is fully responsive. If you want to learn about flexbox, <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/#flexbox-background">read this CSS Tricks flexbox guide</a>. Below is an example of how all of this work together.</p>
+    <p>Grid system uses a series of containers, rows, and columns to layout and align content. It’s built with <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox">flexbox</a> and is fully responsive. If you want to learn about flexbox, <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/#flexbox-background">read this CSS Tricks flexbox guide</a>.
 
-    <div class="container">
-        <div class="row">
-            <div class="col-sm example">
+    <h3>Container</h3>
+    <p>Containers provide a means to center and horizontally pad your site’s contents. Use <code class="">.container</code> for a responsive pixel width or <code class="">.container-fluid</code> for <code class="">width: 100%</code> across all viewport and device sizes.</p>
+
+    <div class="mb-01">
+      <div class="gu1 view-padding-1"></div> <small>padding</small>
+    </div>
+
+    <div class="container example show-padding">
+    </div>
+
+    <source-code :height="3"><code class="html">&lt;div class="container"&gt;
+    &lt;!-- Content here --&gt;
+&lt;/div&gt;</code></source-code>
+
+
+    <h3>Row</h3>
+
+    <p>Rows are wrappers for columns. Only columns may be immediate children of rows. Rows have negative margins equal to container's paddings.  </p>
+
+    <div class="mb-01">
+      <div class="gu1 view-padding-1"></div> <small>padding</small>
+      <div class="gu1 colored-row2"></div> <small>row</small>
+    </div>
+    <div class="container example show-padding">
+        <p class="mt-0 mb-01">Content outside collumns can be placed here!</p>
+        <div class="row example colored-row2">
+        </div>
+    </div>
+
+    <source-code :height="4"><code class="html">&lt;div class=&quot;container&quot;&gt;
+  &lt;p&gt;Content outside collumns can be placed here!&lt;/p&gt;
+  &lt;div class=&quot;row&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</code></source-code>
+
+
+    <h3>Columns</h3>
+    <!-- <p>In a grid layout, content must be placed within columns and only columns may be immediate children of rows.</p> -->
+    <p>Columns are containers for content. Each column has horizontal <code class="">padding</code> (called a gutter) for controlling the space between them. This <code class="">padding</code> is then counteracted with negative margins of rows. This way, all the content in your columns is visually aligned down the left side.</p>
+
+    
+    <!-- <p>Breaking it down, here’s how it works:</p> -->
+    <div class="mb-01">
+      <div class="gu1 view-padding-1"></div> <small>padding</small>
+      <div class="gu1 colored-row2"></div> <small>row</small>
+      <div class="gu1 bg-yellow"></div> <small>columns</small>
+      <div class="gu1 view-padding-2"></div> <small>columns' padding (gutter)</small>
+    </div>
+
+    <div class="container example show-padding">
+        <p class="mt-0 mb-01">Content outside collumns can be placed here!</p>
+        <div class="row example colored-row2">
+            <div class="col-sm py-01 show-padding color-2 bg-yellow">
             One of three columns
             </div>
-            <div class="col-sm example">
+            <div class="col-sm py-01 show-padding color-2 bg-yellow">
             One of three columns
             </div>
-            <div class="col-sm example">
+            <div class="col-sm py-01 show-padding color-2 bg-yellow">
             One of three columns
             </div>
         </div>
     </div>
 
-    <source-code :height="13"><code class="html">&lt;div class=&quot;<em>container</em>&quot;&gt;
+    <source-code :height="14"><code class="html">&lt;div class=&quot;<em>container</em>&quot;&gt;
+  &lt;p&gt;Content outside collumns can be placed here!&lt;/p&gt;
   &lt;div class=&quot;<em>row</em>&quot;&gt;
     &lt;div class=&quot;<em>col-sm</em>&quot;&gt;
       One of three columns
@@ -52,13 +103,9 @@
   &lt;/div&gt;
 &lt;/div&gt;</code></source-code>
 
-    <p>The above example creates three equal-width columns on small, medium, large, and extra large devices using our predefined grid classes. Those columns are centered in the page with the parent <code class="">.container</code>.</p>
-    <p>Breaking it down, here’s how it works:</p>
+<p>How this works:</p>
 
     <ul>
-        <li>Containers provide a means to center and horizontally pad your site’s contents. Use <code class="">.container</code> for a responsive pixel width or <code class="">.container-fluid</code> for <code class="">width: 100%</code> across all viewport and device sizes.</li>
-        <li>Rows are wrappers for columns. Each column has horizontal <code class="">padding</code> (called a gutter) for controlling the space between them. This <code class="">padding</code> is then counteracted on the rows with negative margins. This way, all the content in your columns is visually aligned down the left side.</li>
-        <li>In a grid layout, content must be placed within columns and only columns may be immediate children of rows.</li>
         <li>Thanks to flexbox, grid columns without a specified <code class="">width</code> will automatically layout as equal width columns. For example, four instances of <code class="">.col-sm</code> will each automatically be 25% wide from the small breakpoint and up. See the <nuxt-link to="#auto-layout-columns">auto-layout columns</nuxt-link> section for more examples.</li>
         <li>Column classes indicate the number of columns you’d like to use out of the possible 12 per row. So, if you want three equal-width columns across, you can use <code class="">.col-4</code>.</li>
         <li>Column <code class="">width</code>s are set in percentages, so they’re always fluid and sized relative to their parent element.</li>
@@ -620,7 +667,7 @@
     
     
     <Header :level="3" name="no-gutters">No gutters</Header>
-    <p>The gutters between columns in our predefined grid classes can be removed with <code class="highlighter-rouge">.no-gutters</code>. This removes the negative <code class="highlighter-rouge">margin</code>s from <code class="highlighter-rouge">.row</code> and the horizontal <code class="highlighter-rouge">padding</code> from all immediate children columns.</p>
+    <p>The gutters between columns can be removed with <code class="highlighter-rouge">.no-gutters</code>. This removes the negative <code class="highlighter-rouge">margin</code>s from <code class="highlighter-rouge">.row</code> and the horizontal <code class="highlighter-rouge">padding</code> from all immediate children columns.</p>
 
     <div class="container">
         <div class="row no-gutters">
@@ -829,6 +876,19 @@
             </div>
         </div>
     </div>
+    <source-code :height="13"><code class="html">&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-sm-9&quot;&gt;
+    Level 1: .col-sm-9
+    &lt;div class=&quot;row&quot;&gt;
+      &lt;div class=&quot;col-8 col-sm-6&quot;&gt;
+        Level 2: .col-8 .col-sm-6
+      &lt;/div&gt;
+      &lt;div class=&quot;col-4 col-sm-6&quot;&gt;
+        Level 2: .col-4 .col-sm-6
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></source-code>
 
 
 

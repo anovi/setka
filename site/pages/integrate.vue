@@ -49,7 +49,7 @@ module: {
 
         <Header :level="3" name="webpack-css">Importing CSS</Header>
 
-        <p>Alternatively, you may use Bootstrap’s ready-to-use CSS by simply adding this line to your project’s entry point:</p>
+        <p>Alternatively, you may use Setka's compiled CSS by simply adding this line to your project’s entry point:</p>
 
         <source-code :height="1"><code class="javascript">import 'setka/dist/setka.min.css';</code></source-code>
 
