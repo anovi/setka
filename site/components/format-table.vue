@@ -12,10 +12,12 @@
                 }"
                 class="format__cell text-nowrap flex-shrink-0"
             >
-                <div class="format__header" v-if="x === 0">prop</div>
-                <div class="format__header" v-if="x === 1">breakpoint</div>
-                <div class="format__header" v-if="x === 2">value</div>
-                <div class="format__header" v-if="x === 3">additional</div>
+                
+                <div class="format__header" v-if="item.title">{{item.title}}</div>
+                <div class="format__header" v-else-if="x === 0">prop</div>
+                <div class="format__header" v-else-if="x === 1">breakpoint</div>
+                <div class="format__header" v-else-if="x === 2">value</div>
+                <div class="format__header" v-else-if="x === 3">additional</div>
                 <div v-if="item.text" class="format__text">{{item.text}}</div>
                 <div
                     v-for="(rule, y) in item.items"

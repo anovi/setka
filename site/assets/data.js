@@ -13,99 +13,99 @@ export const classes = {
             {items: ['.container','.container-fluid']}
         ],
         row: [
-            {items: ['.row']}
+            {items: ['.row']},
+            {items: ['.no-gutters'], title:'additional'}
         ],
         cols: [
-            {items: ['.col-']},
-            {items: [null,'sm-','md-','lg-','xl-']},
-            {items: ['1','2','3','4','5','6','7','8','9','10','11','12']},
-            {items: ['.no-gutters']}
+            {items: ['.col']},
+            {items: [null,'-sm','-md','-lg','-xl']},
+            {items: ['-1','-2','-3','-4','-5','-6','-7','-8','-9','-10','-11','-12']}
         ],
         offset: [
             {items: ['.offset-']},
-            {items: [null,'sm-','md-','lg-','xl-']},
-            {items: ['0', '1','2','3','4','5','6','7','8','9','10','11']}
+            {items: [null,'-sm','-md','-lg','-xl']},
+            {items: ['-0', '-1','-2','-3','-4','-5','-6','-7','-8','-9','-10','-11']}
         ]
     },
 
     display: {
         title: 'Display property',
         classes: [
-            {items: ['.d-']},
-            {items: [null, 'sm-','md-','lg-','xl-']},
-            {items: ['none','inline','inline-block','block','table','table-cell','table-row','flex','inline-flex']}
+            {items: ['.d']},
+            {items: [null, '-sm','-md','-lg','-xl']},
+            {items: ['-none','-inline','-inline-block','-block','-table','-table-cell','-table-row','-flex','-inline-flex']}
         ]
     },
 
     flex: {
         title: 'Flex',
         flexOrder: [
-            { items: ['.flex-'] },
-            { items: [ null, 'sm-', 'md-', 'lg-', 'xl-'] },
-            { items: ['row','column','row-reverse','column-reverse'] }
+            { items: ['.flex'] },
+            { items: [ null, '-sm', '-md', '-lg', '-xl'] },
+            { items: ['-row','-column','-row-reverse','-column-reverse'] }
         ],
         
         flexWrap: [
-            { items: ['.flex-'] },
-            { items: [ null, 'sm-', 'md-', 'lg-', 'xl-'] },
-            { items: ['wrap','nowrap','wrap-reverse'] }
+            { items: ['.flex'] },
+            { items: [ null, '-sm', '-md', '-lg', '-xl'] },
+            { items: ['-wrap','-nowrap','-wrap-reverse'] }
         ],
         
         flexFill: [
-            { items: ['.flex-'] },
-            { items: [ null, 'sm-', 'md-', 'lg-', 'xl-'] },
-            { items: ['fill'] }
+            { items: ['.flex'] },
+            { items: [ null, '-sm', '-md', '-lg', '-xl'] },
+            { items: ['-fill'] }
         ],
 
         flexGrow: [
-            { items: ['.flex-'] },
-            { items: [ null, 'sm-', 'md-', 'lg-', 'xl-'] },
-            { items: ['grow-0', 'grow-1'] }
+            { items: ['.flex'] },
+            { items: [ null, '-sm', '-md', '-lg', '-xl'] },
+            { items: ['-grow-0', '-grow-1'] }
         ],
 
         flexShrink: [
-            { items: ['.flex-'] },
-            { items: [ null, 'sm-', 'md-', 'lg-', 'xl-'] },
-            { items: ['shrink-0', 'shrink-1'] }
+            { items: ['.flex'] },
+            { items: [ null, '-sm', '-md', '-lg', '-xl'] },
+            { items: ['-shrink-0', '-shrink-1'] }
         ],
 
         flexJustify: [
-            { items: ['.justify-content-'] },
-            { items: [ null, 'sm-', 'md-', 'lg-', 'xl-'] },
-            { items: [ 'start','end','center','between','around'] }
+            { items: ['.justify-content'] },
+            { items: [ null, '-sm', '-md', '-lg', '-xl'] },
+            { items: [ '-start','-end','-center','-between','-around'] }
         ],
 
         flexAlign: [
-            { items: ['.align-items-'] },
-            { items: [ null, 'sm-', 'md-', 'lg-', 'xl-'] },
-            { items: ['start','end','center','baseline','stretch'] }
+            { items: ['.align-items'] },
+            { items: [ null, '-sm', '-md', '-lg', '-xl'] },
+            { items: ['-start','-end','-center','-baseline','-stretch'] }
         ],
         
         flexAlignContent: [
-            { items: ['.align-content-'] },
-            { items: [ null, 'sm-', 'md-', 'lg-', 'xl-'] },
-            { items: ['start','end','center','between','around','stretch'] }
+            { items: ['.align-content'] },
+            { items: [ null, '-sm', '-md', '-lg', '-xl'] },
+            { items: ['-start','-end','-center','-between','-around','-stretch'] }
         ],
 
         flexAlignSelf: [
-            { items: ['.align-self-'] },
-            { items: [ null, 'sm-', 'md-', 'lg-', 'xl-'] },
-            { items: ['auto','start','end','center','baseline','stretch'] }
+            { items: ['.align-self'] },
+            { items: [ null, '-sm', '-md', '-lg', '-xl'] },
+            { items: ['-auto','-start','-end','-center','-baseline','-stretch'] }
         ],
 
         order: [
-            { items: ['.order-'] },
-            { items: [ null, 'sm-', 'md-', 'lg-', 'xl-'] },
-            { items: ['0','1','2','3','4','5','6','7','8','9','10','11','12'] }
+            { items: ['.order'] },
+            { items: [ null, '-sm', '-md', '-lg', '-xl'] },
+            { items: ['-0','-1','-2','-3','-4','-5','-6','-7','-8','-9','-10','-11','-12'] }
         ]
     },
 
     float: {
         title: 'Float',
         classes: [
-            { items: ['.float-'] },
-            { items: [ null, 'sm-', 'md-', 'lg-', 'xl-'] },
-            { items: ['left','right','none'] }
+            { items: ['.float'] },
+            { items: [ null, '-sm', '-md', '-lg', '-xl'] },
+            { items: ['-left','-right','-none'] }
         ],
         clearfix: [
             { items: ['.clearfix'] }
@@ -115,8 +115,8 @@ export const classes = {
     sizing: {
         title: 'Sizing',
         widths: [
-            {items: ['.w-','.h-']},
-            {items: ['25','50','75','100','auto']}
+            {items: ['.w','.h']},
+            {items: ['-25','-50','-75','-100','-auto']}
         ],
         maxWidths: [
             {items: ['.mw-100','.mh-100']}
@@ -126,14 +126,14 @@ export const classes = {
     spacing: {
         title: 'Spacing',
         margins: [
-            {items: ['.m-', '.mt-','.mb-','.ml-','.mr-','.mx-','.my-'], align: 'right'},
-            {items: [null,'sm-','md-','lg-','xl-']},
-            {items: ['0','01','1','2','3','4','5','auto']}
+            {items: ['.m', '.mt','.mb','.ml','.mr','.mx','.my'], align: 'right'},
+            {items: [null,'-sm','-md','-lg','-xl']},
+            {items: ['-0','-01','-1','-2','-3','-4','-5','-auto']}
         ],
         paddings: [
-            {items: ['.p-', '.pt-','.pb-','.pl-','.pr-','.px-','.py-'],  align: 'right'},
-            {items: [null,'sm-','md-','lg-','xl-']},
-            {items: ['0','01','1','2','3','4','5']}
+            {items: ['.p','.pt','.pb','.pl','.pr','.px','.py'],  align: 'right'},
+            {items: [null,'-sm','-md','-lg','-xl']},
+            {items: ['-0','-01','-1','-2','-3','-4','-5']}
         ]
     },
 
