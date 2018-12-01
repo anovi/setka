@@ -1,7 +1,7 @@
 <template>
     <main class="">
         <h1 class="mb-01" id="content">Overview</h1>
-        <p class="subheader mt-0">Components and options for laying out your Setka project, including wrapping containers, a powerful grid system, a flexible media object, and responsive utility classes.</p>
+        <p class="subheader mt-0">Options for laying out your Setka project, including wrapping containers, a powerful grid system, and responsive utility classes.</p>
 
         <Header :level="2" name="containers">Containers</Header>
         
@@ -76,9 +76,9 @@
             </tbody>
         </table>
 
-        <p>Since Setka is developed to be mobile first, we use a handful of <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries">media queries</a> to create sensible breakpoints for our layouts and interfaces. These breakpoints are mostly based on minimum viewport widths and allow us to scale up elements as the viewport changes.</p>
+        <p>Since Setka is mobile first, it uses <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries">media queries</a> to create sensible breakpoints for our layouts. These breakpoints are mostly based on minimum viewport widths and allow us to scale up elements as the viewport changes.</p>
 
-        <p>Setka primarily uses the following media query ranges—or breakpoints—in our source Stylus files for our layout, grid system, and components.</p>
+        <p>Setka primarily uses the following media query ranges—or breakpoints—in our source Stylus files for grid system and utilities.</p>
 
         <source-code :height="14"><code class="css">/* Extra small devices (portrait phones, less than 576px) */
 /* No media query since this is the default in Setka */
