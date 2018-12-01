@@ -15,7 +15,7 @@
                 
                 <div class="format__header" v-if="item.title">{{item.title}}</div>
                 <div class="format__header" v-else-if="x === 0">prop</div>
-                <div class="format__header" v-else-if="x === 1">breakpoint</div>
+                <div class="format__header" v-else-if="x === 1">[breakpoint]</div>
                 <div class="format__header" v-else-if="x === 2">value</div>
                 <div class="format__header" v-else-if="x === 3">additional</div>
                 <div v-if="item.text" class="format__text">{{item.text}}</div>
@@ -174,6 +174,7 @@ $psw
     bottom: 0
     width: 1px
     background white
+    box-shadow: 0 1px 0 var(--color-link), 0 -1px 0 var(--color-link)
 .format__item
     position relative
     &.__selectable
@@ -182,7 +183,6 @@ $psw
             code
                 color: var(--color-link)
         &.__selected
-            // box-shadow: 0 1px 0 0 var(--color-link), 0 -1px 0 0 var(--color-link)
             outline: 1px solid var(--color-link)
             position relative
             
