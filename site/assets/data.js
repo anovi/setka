@@ -14,7 +14,7 @@ export const classes = {
         ],
         row: [
             {items: ['.row']},
-            {items: ['.no-gutters'], title:'additional'}
+            {items: ['.no-gutters'], title:'[additional]'}
         ],
         cols: [
             {items: ['.col']},
@@ -22,7 +22,7 @@ export const classes = {
             {items: ['-1','-2','-3','-4','-5','-6','-7','-8','-9','-10','-11','-12', '-auto'], title: '[value]'},
         ],
         offset: [
-            {items: ['.offset-']},
+            {items: ['.offset']},
             {items: [null,'-sm','-md','-lg','-xl']},
             {items: ['-0', '-1','-2','-3','-4','-5','-6','-7','-8','-9','-10','-11']}
         ]
@@ -134,6 +134,32 @@ export const classes = {
             {items: ['.p','.pt','.pb','.pl','.pr','.px','.py'],  align: 'right'},
             {items: [null,'-sm','-md','-lg','-xl']},
             {items: ['-0','-01','-1','-2','-3','-4','-5']}
+        ]
+    },
+
+    text: {
+        title: 'Text',
+        text: [
+            {items: ['.text-justify', '.text-wrap', '.text-nowrap', '.text-truncate' ]},
+        ],
+        paddings: [
+            {items: ['.text'],  align: 'right'},
+            {items: [null,'-sm','-md','-lg','-xl']},
+            {items: ['-left','-center','-right']}
+        ]
+    },
+
+    align: {
+        title: 'Vertical align',
+        classes: [
+            {items: [
+                '.align-baseline',
+                '.align-top',
+                '.align-middle',
+                '.align-bottom',
+                '.align-text-bottom',
+                '.align-text-top',
+            ]},
         ]
     },
 
