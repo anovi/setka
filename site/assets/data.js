@@ -18,8 +18,8 @@ export const classes = {
         ],
         cols: [
             {items: ['.col']},
-            {items: [null,'-sm','-md','-lg','-xl']},
-            {items: ['-1','-2','-3','-4','-5','-6','-7','-8','-9','-10','-11','-12']}
+            {items: [null,'-sm','-md','-lg','-xl'], title: '[breakpoint]'},
+            {items: ['-1','-2','-3','-4','-5','-6','-7','-8','-9','-10','-11','-12', '-auto'], title: '[value]'},
         ],
         offset: [
             {items: ['.offset-']},
@@ -116,7 +116,7 @@ export const classes = {
         title: 'Sizing',
         widths: [
             {items: ['.w','.h']},
-            {items: ['-25','-50','-75','-100','-auto']}
+            {items: ['-25','-50','-75','-100','-auto'], title: 'value'}
         ],
         maxWidths: [
             {items: ['.mw-100','.mh-100']}
