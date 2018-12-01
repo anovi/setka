@@ -210,6 +210,7 @@ td
 
 .bg-yellow
   background: #deffae
+  box-shadow: inset 0 0 0 1px #b9e07d
 
 .view-padding-1
   box-shadow: inset 0 0 0 1px green
@@ -234,17 +235,18 @@ $psw
   bottom: 0
 
 .show-padding
-  position relative
-  &:before
-    @extend $psw
-    left: 0
-  &:after
-    @extend $psw
-    right: 0
-  &.color-2
+  :not(.no-gutters) > &
+    position relative
     &:before
+      @extend $psw
+      left: 0
     &:after
-      @extend .view-padding-2
+      @extend $psw
+      right: 0
+    &.color-2
+      &:before
+      &:after
+        @extend .view-padding-2
 
 .colored-row
   margin-top: gu(2)
