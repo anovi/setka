@@ -6,6 +6,13 @@ const autoprefixer = require('gulp-autoprefixer');
 const src = './lib/setka/setka.styl'
 const csso = require('gulp-csso');
 const sourcemaps = require('gulp-sourcemaps');
+const headerComment = require('gulp-header-comment');
+const comment = `
+Setka CSS Library v<%= pkg.version %>
+Author: Alexey Novichkov
+License: MIT (https://github.com/anovi/setka/blob/master/LICENSE)
+Generated on <%= moment().format('YYYY-MM-DD') %>
+`
 
 // Get one .styl file and render
 gulp.task('build', function () {
@@ -15,6 +22,7 @@ gulp.task('build', function () {
     .pipe(autoprefixer({
       cascade: false
     }))
+    .pipe(headerComment(comment))
     .pipe(rename("setka.css"))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('./dist'));
@@ -32,6 +40,7 @@ gulp.task('build-mini', function () {
       sourceMap: true,
       debug: true
     }))
+    .pipe(headerComment(comment))
     .pipe(rename("setka.min.css"))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('./dist'));
