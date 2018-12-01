@@ -7,6 +7,9 @@ const src = './lib/setka/setka.styl'
 const csso = require('gulp-csso');
 const sourcemaps = require('gulp-sourcemaps');
 const headerComment = require('gulp-header-comment');
+const zip = require('gulp-zip');
+var fs = require('fs');
+var pkg = JSON.parse(fs.readFileSync('./package.json'));
 const comment = `
 Setka CSS Library v<%= pkg.version %>
 Author: Alexey Novichkov
@@ -46,6 +49,12 @@ gulp.task('build-mini', function () {
     .pipe(gulp.dest('./dist'));
 });
 
+gulp.task('zip', () =>
+  gulp.src('dist/*')
+    .pipe(zip(`setka-${pkg.version}-dist.zip`))
+    .pipe(gulp.dest('./'))
+);
+
 gulp.task('test', function () {
   return gulp.src('./test/test-import.styl')
     .pipe(stylus({
@@ -55,4 +64,4 @@ gulp.task('test', function () {
     .pipe(gulp.dest('./dist'));
 });
 
-gulp.task('default', [ 'build', 'build-mini' ]);
+gulp.task('default', [ 'build', 'build-mini', 'zip' ]);

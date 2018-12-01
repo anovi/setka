@@ -20,6 +20,7 @@
     "gulp-rename": "1.4.0",
     "gulp-sourcemaps": "2.6.4",
     "gulp-stylus": "2.7.0",
+    "gulp-zip": "4.2.0",
     "nuxt": "2.2.0",
     "stylus-loader": "3.0.2"
   },
