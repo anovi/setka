@@ -1,4 +1,5 @@
 import meta from './site/assets/meta'
+import data from './site/assets/data'
 
 module.exports = {
 
@@ -64,8 +65,14 @@ module.exports = {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1, shrink-to-fit=no' },
       ...meta({
-        'description': 'Setka CSS project'
-        // 'og:title': 'La la la'
+        'description': 'Easily control website\'s layout, vertical rythm, responsivness',
+        'keywords': 'css, css library, layout, responsive, mobile first, bootstrap, stylus, grid, baseline grid',
+
+        "og:title": 'Setka CSS library',
+        "og:type": 'website',
+        // "og:url": data.url,
+        "og:image": 'setka-css-share.png',
+        "og:description": 'Easily control website\'s layout, vertical rythm, responsivness',
       })
     ],
     link: [
