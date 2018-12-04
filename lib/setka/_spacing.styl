@@ -1,6 +1,6 @@
 
 // Margin and Padding
-make-spacing()
+setka-spacing()
   for $breakpoint in keys($grid-breakpoints)
     +media-up($breakpoint)
       $infix = breakpoint-infix($breakpoint, $grid-breakpoints)

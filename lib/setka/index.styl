@@ -6,40 +6,23 @@
 @import '_sizing.styl'
 @import '_spacing.styl'
 @require '_styles.styl'
-@import '_utilities.styl'
 @import '_display.styl'
 @import '_align.styl'
 @import '_float.styl'
 @import '_visibility.styl'
 @import '_text.styl'
+@import '_debug.styl'  
 
 // Generated library styles
-// $options: {
-//   grid 
-//   flex
-//   sizing
-//   spacing
-// }
-setka($options = {grid: true, flex: true, sizing: true, spacing: true})
-  make-base-styles()
-  make-debug-styles()
-  make-display()
-  make-float()
-  make-visibility()
-  make-align()
-  make-text()
-
-  if $options.spacing or $options.sizing
-    make-base-font()
-
-  if $options.grid
-    make-grid()
-
-  if $options.flex
-    make-flex()
-
-  if $options.sizing
-    make-sizing()
-
-  if $options.spacing
-    make-spacing()
+setka()
+    setka-base-styles()
+    setka-debug()
+    setka-grid()
+    setka-display()
+    setka-float()
+    setka-flex()
+    setka-sizing()
+    setka-spacing()
+    setka-align()
+    setka-text()
+    setka-visibility()

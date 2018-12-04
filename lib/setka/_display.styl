@@ -1,5 +1,5 @@
 
-make-display()
+setka-display()
   for $breakpoint in keys($grid-breakpoints)
     +media-up($breakpoint)
       $infix = breakpoint-infix($breakpoint, $grid-breakpoints)

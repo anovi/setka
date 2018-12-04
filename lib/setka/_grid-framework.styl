@@ -3,7 +3,7 @@
 // Used only by Bootstrap to generate the correct number of grid classes given
 // any value of `$grid-columns`.
 
-make-grid-columns($columns = $grid-columns, $breakpoints = $grid-breakpoints)
+setka-grid-columns($columns = $grid-columns, $breakpoints = $grid-breakpoints)
   // Common properties for all breakpoints
   $grid-column {
     position: relative;
@@ -41,7 +41,7 @@ make-grid-columns($columns = $grid-columns, $breakpoints = $grid-breakpoints)
 
       for $i in (1..$columns)
         .col{$infix}-{$i} {
-          make-col($i, $columns)
+          setka-col($i, $columns)
         }
 
       .order{$infix}-first {
@@ -62,5 +62,5 @@ make-grid-columns($columns = $grid-columns, $breakpoints = $grid-breakpoints)
       for $i in (0..$xxx)
         unless $infix == "" and $i == 0 // Avoid emitting useless .offset-0
           .offset{$infix}-{$i} {
-            make-col-offset($i, $columns)
+            setka-col-offset($i, $columns)
           }
