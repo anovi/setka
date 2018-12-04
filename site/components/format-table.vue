@@ -207,7 +207,5 @@ $psw
 .format__text
     font-size: 0.8em
     color: #888
-
-.format__source
-    margin-top: 1px
+    
 </style>
