@@ -6,7 +6,7 @@
 
         <Header :level="2" name="show-columns">Show columns</Header>
         <p>
-            If you need to paint grid columns for developers needs, add <code>.show-cols</code> class to <code>.container</code> or <code>.row</code> element:
+            If you need to paint grid columns for development needs, add <code>.show-cols</code> class to a <code>.container</code> or a <code>.row</code> element:
         </p>
         
         <div class="row show-cols justify-content-start">
