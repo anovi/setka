@@ -124,7 +124,7 @@ export default {
             ],
             flexShrinkExample: [
                 { class: "example p-01", text: '1' },
-                { class: "example p-01", text: 'Lorem ipsum, dolor sit amet', value: true },
+                { class: "example p-01", text: 'Lorem ipsum, dolor sit', value: true },
                 { class: "example p-01", text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae ab ipsam sapiente ut, voluptas possimus perferendis ea nesciunt rerum quasi.' },
             ],
             flexJustifyExample: [

@@ -154,8 +154,8 @@
             title: 'Stylus variables',
             url: '/vars'
           }, {
-            title: 'Mixins',
-            url: '/mixins'
+            title: 'Stylus tools',
+            url: '/stylus'
           }]
         }, {
           class: 'col-auto mb-1 mb-md-01 col-md-12',

@@ -4,11 +4,12 @@
         <p class="subheader">With stylus you can change number of grid columns, breapoints ans other utilities.</p>
         <p>These are all available Stylus variables.</p>
 
-<source-code :height="40"><code class="stylus">// Amount of columns in grid 
+<source-code :height="43"><code class="stylus">// Amount of columns in grid 
 // Example: if you set it to 16, than classes like .col-16 .col-sm-16 will be available
 $grid-columns = 12
 
-// Amount of columns in grid.
+// Grid tiers
+// Breakpoints' and screen's min-width value for each of them
 $grid-breakpoints = {
     xs: 0,     // Extra small screen / phone
     sm: 576px, // Small screen / phone
@@ -17,6 +18,8 @@ $grid-breakpoints = {
     xl: 1200px // Extra large screen / wide desktop
 }
 
+// max-width of .container at every breakpoint except `xs`
+// on `xs` the width of .container will be 100%
 $container-max-widths = {
     sm: 540px,
     md: 720px,
@@ -24,7 +27,7 @@ $container-max-widths = {
     xl: 1140px
 }
 
-// Sized for width (.w-50) and height (.h-100) utilities
+// Settings for width (.w-50) and height (.h-100) utilities
 $sizes = {
     '25': 25%,
     '50': 50%,

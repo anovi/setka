@@ -1,6 +1,6 @@
 <template>
     <main class="">
-        <h1>Stylus mixins</h1>
+        <h1>Stylus tools</h1>
 
         <Header :level="2" name="styles-generation">Styles generation</Header>
         
@@ -22,10 +22,10 @@ setka-visibility()</code></source-code>
 
         <Header :level="2" name="utilities">Utilities</Header>
 
-        <p>Gets size of unit of <nuxt-link to="/baseline">baseline grid</nuxt-link>.</p>
+        <p>Gets the size of unit of <nuxt-link to="/baseline">baseline grid</nuxt-link>.</p>
         <source-code :height="1"><code class="stylus">gu(1)</code></source-code>
 
-        <p>Gets height of line of base text.</p>
+        <p>Gets the height of line of body text.</p>
         <source-code :height="1"><code class="stylus">line(1)</code></source-code>
 
         <p>Do the same as <nuxt-link to="/float#clearfix">.clearfix</nuxt-link> class.</p>
