@@ -19,11 +19,11 @@ Generated on <%= moment().format('YYYY-MM-DD') %>
 
 // Get one .styl file and render
 gulp.task('build', function () {
-  return gulp.src(src)
+    return gulp.src(src)
     .pipe(sourcemaps.init())
     .pipe(stylus())
     .pipe(autoprefixer({
-      cascade: false
+        cascade: false
     }))
     .pipe(headerComment(comment))
     .pipe(rename("setka.css"))
@@ -32,16 +32,16 @@ gulp.task('build', function () {
 });
 
 gulp.task('build-mini', function () {
-  return gulp.src(src)
+    return gulp.src(src)
     .pipe(sourcemaps.init())
     .pipe(stylus({}))
     .pipe(autoprefixer({
-      cascade: false
+        cascade: false
     }))
     .pipe(csso({
-      restructure: false,
-      sourceMap: true,
-      debug: true
+        restructure: false,
+        sourceMap: true,
+        debug: true
     }))
     .pipe(headerComment(comment))
     .pipe(rename("setka.min.css"))
@@ -50,15 +50,15 @@ gulp.task('build-mini', function () {
 });
 
 gulp.task('zip', () =>
-  gulp.src('dist/*')
+    gulp.src('dist/*')
     .pipe(zip(`setka-${pkg.version}-dist.zip`))
     .pipe(gulp.dest('./'))
 );
 
 gulp.task('test', function () {
-  return gulp.src('./test/test-import.styl')
+    return gulp.src('./test/test-import.styl')
     .pipe(stylus({
-      use: setka()
+        use: setka()
     }))
     .pipe(rename("test-setka.css"))
     .pipe(gulp.dest('./dist'));

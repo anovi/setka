@@ -35,7 +35,9 @@
     "css",
     "stylus",
     "grid",
-    "layout"
+    "baseline grid",
+    "layout",
+    "bootstrap"
   ],
   "license": "MIT",
   "bugs": {

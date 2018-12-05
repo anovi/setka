@@ -1,5 +1,5 @@
-var stylus = require('stylus'),
-    path = require('path');
+const stylus = require('stylus');
+const path = require('path');
 
 exports = module.exports = plugin;
 
@@ -20,7 +20,7 @@ exports.path = __dirname + '/lib';
  * @api public
  */
 function plugin() {
-  return function(style){
-    style.include(__dirname + '/lib');
-  };
+    return function(style){
+        style.include(__dirname + '/lib');
+    };
 }
