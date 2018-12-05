@@ -3,17 +3,17 @@
 // Get sizes from $sizes var
 
 setka-sizing()
-  obj = {
-    width: w,
-    height: h
-  }
+    obj = {
+        width: w,
+        height: h
+    }
 
-  // Width and height
-  for $prop, $abbrev in obj
-    for $size, $length in $sizes
-      .{$abbrev}-{$size} {
-        {$prop}: $length !important;
-      }
+    // Width and height
+    for $prop, $abbrev in obj
+        for $size, $length in $sizes
+            .{$abbrev}-{$size} {
+                {$prop}: $length !important;
+            }
 
-  .mw-100 { max-width: 100% !important; }
-  .mh-100 { max-height: 100% !important; }
+    .mw-100 { max-width: 100% !important; }
+    .mh-100 { max-height: 100% !important; }

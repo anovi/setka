@@ -2,65 +2,65 @@
 * > Grid
 */
 if $grid-columns is not defined
-  $grid-columns = 12
+    $grid-columns = 12
 
 if $grid-breakpoints is not defined
-  $grid-breakpoints = {
-    // Extra small screen / phone
-    xs: 0,
-    // Small screen / phone
-    sm: 576px,
-    // Medium screen / tablet
-    md: 768px,
-    // Large screen / desktop
-    lg: 992px,
-    // Extra large screen / wide desktop
-    xl: 1200px
-  }
+    $grid-breakpoints = {
+        // Extra small screen / phone
+        xs: 0,
+        // Small screen / phone
+        sm: 576px,
+        // Medium screen / tablet
+        md: 768px,
+        // Large screen / desktop
+        lg: 992px,
+        // Extra large screen / wide desktop
+        xl: 1200px
+    }
 
 if $container-max-widths is not defined
-  $container-max-widths = {
-    sm: 540px,
-    md: 720px,
-    lg: 960px,
-    xl: 1140px
-  }
+    $container-max-widths = {
+        sm: 540px,
+        md: 720px,
+        lg: 960px,
+        xl: 1140px
+    }
 
 
 /*
 * > Sizes
 */
 if $sizes is not defined
-  $sizes = {
-    '25': 25%,
-    '50': 50%,
-    '75': 75%,
-    '100': 100%,
-    auto: auto
-  }
+    $sizes = {
+        '25': 25%,
+        '50': 50%,
+        '75': 75%,
+        '100': 100%,
+        auto: auto
+    }
 
 
 /*
 * > Typography and Vertical rythm
 */
 gu($unit = 1)
-  return s('calc(var(--grid-unit) * %s)', $unit)
+    return s('calc(var(--grid-unit) * %s)', $unit)
 
 line($unit = 1)
-  return s('calc(var(--line-height) * %s)', $unit)
+    return s('calc(var(--line-height) * %s)', $unit)
 
 
 /*
 * > Spacers
 */
 if $spacers is not defined
-  $spacers = {
-    '0':    0,
-    '01':   gu(1),
-    '1':    var(--space-1),
-    '2':    var(--space-2),
-    '3':    var(--space-3),
-    '4':    var(--space-4),
-    '5':    var(--space-5)
-    'auto': s('auto')
-  }
+    $spacers = {
+        '0':    0,
+        '01':   gu(1),
+        '1':    var(--space-1),
+        '2':    var(--space-2),
+        '3':    var(--space-3),
+        '4':    var(--space-4),
+        '5':    var(--space-5)
+        'auto': s('auto')
+    }

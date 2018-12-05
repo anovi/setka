@@ -4,35 +4,35 @@
 
 
 clearfix() {
-  &::after {
-    display: block;
-    content: "";
-    clear: both;
-  }
+    &::after {
+        display: block;
+        content: "";
+        clear: both;
+    }
 }
 
 
 text-truncate() {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 
 setka-text()
 
-  // Alignment
-  .text-justify  { text-align: justify !important; }
-  .text-wrap     { white-space: normal !important; }
-  .text-nowrap   { white-space: nowrap !important; }
-  .text-truncate 
-    text-truncate()
+    // Alignment
+    .text-justify  { text-align: justify !important; }
+    .text-wrap     { white-space: normal !important; }
+    .text-nowrap   { white-space: nowrap !important; }
+    .text-truncate 
+        text-truncate()
 
-  // Responsive alignment
-  for $breakpoint in keys($grid-breakpoints)
-    +media-up($breakpoint)
-      $infix = breakpoint-infix($breakpoint, $grid-breakpoints)
+    // Responsive alignment
+    for $breakpoint in keys($grid-breakpoints)
+        +media-up($breakpoint)
+            $infix = breakpoint-infix($breakpoint, $grid-breakpoints)
 
-      .text{$infix}-left   { text-align: left !important; }
-      .text{$infix}-right  { text-align: right !important; }
-      .text{$infix}-center { text-align: center !important; }
+            .text{$infix}-left   { text-align: left !important; }
+            .text{$infix}-right  { text-align: right !important; }
+            .text{$infix}-center { text-align: center !important; }
