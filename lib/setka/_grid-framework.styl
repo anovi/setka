@@ -1,15 +1,81 @@
+
+
+/// Grid system
+//
+// Generate semantic grid columns with these mixins.
+make-container() {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+make-grids($breakpoints = $grid-breakpoints)
+    for $breakpoint in keys($breakpoints)
+        $infix = breakpoint-infix($breakpoint, $breakpoints);
+        +media-up($breakpoint, $breakpoints)
+            .grid{$infix}
+                display: grid
+                grid-column-gap: var(--grid-gutter-width)
+                grid-template-columns: 1fr
+            for $i in (2..12)
+                .grid{$infix}-{$i}
+                    display: grid
+                    grid-column-gap: var(--grid-gutter-width)
+                    grid-template-columns: repeat($i, 1fr)
+
+
+// For each breakpoint, define the maximum width of the container in a media query
+make-container-max-widths($max-widths = $container-max-widths, $breakpoints = $grid-breakpoints)
+    for $breakpoint, $container-max-width in $max-widths
+        +media-up($breakpoint, $breakpoints)
+            max-width: var(unquote('--container-' + $breakpoint))
+
+// Columns
+make-col-span($size, $columns = $grid-columns)
+    grid-column: span $size / span $size;
+
+make-col-start($size, $columns = $grid-columns)
+    $num = $size / $columns
+    if $num == 0
+        grid-column-start: auto !important
+    else
+        grid-column-start: $size !important
+
+make-col-end($size, $columns = $grid-columns)
+    $num = $size / $columns
+    if $num == 0
+        grid-column-end: auto !important
+    else
+        grid-column-end: $size !important
+
+// Rows
+make-row-span($size, $rows = $grid-rows)
+    grid-row: span $size / span $size !important
+
+make-row-start($size, $rows = $grid-rows)
+    $num = $size / $rows
+    if $num == 0
+        grid-row-start: auto !important
+    else
+        grid-row-start: $size !important
+
+make-row-end($size, $rows = $grid-rows)
+    $num = $size / $rows
+    if $num == 0
+        grid-row-end: auto !important
+    else
+        grid-row-end: $size !important
+
+
 // Framework grid generation
 //
-// Used only by Bootstrap to generate the correct number of grid classes given
+// Used only by Setka to generate the correct number of grid classes given
 // any value of `$grid-columns`.
-
 make-grid-columns($columns = $grid-columns, $breakpoints = $grid-breakpoints)
     // Common properties for all breakpoints
     $grid-column {
+        grid-column: 1 / -1;
         position: relative;
-        width: 100%;
-        padding-right: calc(var(--grid-gutter-width) / 2);
-        padding-left: calc(var(--grid-gutter-width) / 2);
     }
 
     for $breakpoint in keys($breakpoints)
@@ -21,35 +87,45 @@ make-grid-columns($columns = $grid-columns, $breakpoints = $grid-breakpoints)
                 @extends $grid-column;
             }
 
-        .col{$infix},
-        .col{$infix}-auto {
-            @extends $grid-column;
-        }
-
         +media-up($breakpoint, $breakpoints)
-            // Provide basic `.col-{bp}` classes for equal-width flexbox columns
             .col{$infix} {
-                flex-basis: 0;
-                flex-grow: 1;
-                max-width: 100%;
+                grid-column: 1 / -1;
             }
-            .col{$infix}-auto {
-                flex: 0 0 auto;
-                width: auto;
-                max-width: none; // Reset earlier grid tiers
+
+            .row{$infix} {
+                grid-row: 1 / -1;
             }
 
             for $i in (1..$columns)
                 .col{$infix}-{$i} {
-                    make-col($i, $columns)
+                    make-col-span($i, $columns)
                 }
+
+            for $i in (1..$grid-rows)
+                .row{$infix}-{$i} {
+                    make-row-span($i, $grid-rows)
+                }
+
+            .col-start{$infix} {
+                make-col-start(1, $columns)
+            }
+            .col-end{$infix} {
+                make-col-end(-1, $columns)
+            }
+
+            .row-start{$infix} {
+                make-row-start(1, $grid-rows)
+            }
+            .row-end{$infix} {
+                make-row-end(-1, $grid-rows)
+            }
 
             .order{$infix}-first {
                 order: -1;
             }
 
             .order{$infix}-last {
-                order: $columns + 1;
+                order: 9999;
             }
 
             for $i in (0..$columns)
@@ -57,10 +133,19 @@ make-grid-columns($columns = $grid-columns, $breakpoints = $grid-breakpoints)
                     order: $i;
                 }
 
-            // `$columns - 1` because offsetting by the width of an entire row isn't possible
-            $xxx = $columns - 1
-            for $i in (0..$xxx)
-                unless $infix == "" and $i == 0 // Avoid emitting useless .offset-0
-                    .offset{$infix}-{$i} {
-                        make-col-offset($i, $columns)
+            // `$columns + 1` because theese numbers adress grid lines, not columns
+            $gridLines = $columns + 1
+            for $i in (0..$gridLines)
+                unless $infix == "" and $i == 0 // Because line's index starts with 1
+                    .col-start{$infix}-{$i} {
+                        make-col-start($i, $columns)
+                    }
+                    .col-end{$infix}-{$i} {
+                        make-col-end($i, $columns)
+                    }
+                    .row-start{$infix}-{$i} {
+                        make-row-start($i, $grid-rows)
+                    }
+                    .row-end{$infix}-{$i} {
+                        make-row-end($i, $grid-rows)
                     }

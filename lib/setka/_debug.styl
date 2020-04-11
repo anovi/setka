@@ -6,8 +6,9 @@ show-cols()
         rgba(255,0,0,0.1) var(--grid-gutter-width)
     )
     background-repeat: repeat-x
-    background-size: (100% / $grid-columns) 100%
-    background-position: calc(var(--grid-gutter-width) / 2 * -1)
+    $grid-columns-gaps = $grid-columns - 1
+    background-size: s('calc((100% - %s * var(--grid-gutter-width)) / %s + var(--grid-gutter-width)) 100%', $grid-columns-gaps, $grid-columns)
+    background-position: calc(var(--grid-gutter-width) * -1)
 
 show-grid-bg()
     background-image: linear-gradient(to bottom, #0ff 0, rgba(255,255,255,0) 1px)

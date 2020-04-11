@@ -4,6 +4,9 @@
 if $grid-columns is not defined
     $grid-columns = 12
 
+if $grid-rows is not defined
+    $grid-rows = 6
+
 if $grid-breakpoints is not defined
     $grid-breakpoints = {
         // Extra small screen / phone
@@ -20,6 +23,7 @@ if $grid-breakpoints is not defined
 
 if $container-max-widths is not defined
     $container-max-widths = {
+        /* xs: do not have max width */
         sm: 540px,
         md: 720px,
         lg: 960px,
@@ -44,9 +48,15 @@ if $sizes is not defined
 * > Typography and Vertical rythm
 */
 gu($unit = 1)
+    if current-property
+        // polyfill to default params
+        add-property(current-property[0], (10px * $unit))
     return s('calc(var(--grid-unit) * %s)', $unit)
 
 line($unit = 1)
+    if current-property
+        // polyfill to default params
+        add-property(current-property[0], (20px * $unit))
     return s('calc(var(--line-height) * %s)', $unit)
 
 
