@@ -1,5 +1,4 @@
 import meta from './site/assets/meta'
-import data from './site/assets/data'
 
 module.exports = {
 
@@ -93,12 +92,15 @@ module.exports = {
     transition: false,
 
     modules: [
-        '@nuxtjs/style-resources',
         '~/modules/generate-after'
     ],
 
+    buildModules: [
+        '@nuxtjs/style-resources',
+    ],
+
     styleResources: {
-        stylus: ['./lib/setka/index.styl']
+        stylus: ['~~/lib/setka/index.styl']
     },
 
     plugins: [

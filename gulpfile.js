@@ -1,4 +1,6 @@
+const { series } = require('gulp');
 const gulp = require('gulp');
+
 const setka = require('./index.js');
 const stylus = require('gulp-stylus');
 const rename = require("gulp-rename");
@@ -18,7 +20,7 @@ Generated on <%= moment().format('YYYY-MM-DD') %>
 `
 
 // Get one .styl file and render
-gulp.task('build', function () {
+function build() {
     return gulp.src(src)
     .pipe(sourcemaps.init())
     .pipe(stylus())
@@ -29,9 +31,9 @@ gulp.task('build', function () {
     .pipe(rename("setka.css"))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('./dist'));
-});
+};
 
-gulp.task('build-mini', function () {
+function buildMini() {
     return gulp.src(src)
     .pipe(sourcemaps.init())
     .pipe(stylus({}))
@@ -47,21 +49,21 @@ gulp.task('build-mini', function () {
     .pipe(rename("setka.min.css"))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('./dist'));
-});
+};
 
-gulp.task('zip', () =>
+function makeZip() {
     gulp.src('dist/*')
     .pipe(zip(`setka-${pkg.version}-dist.zip`))
     .pipe(gulp.dest('./'))
-);
+};
 
-gulp.task('test', function () {
+function test() {
     return gulp.src('./test/test-import.styl')
     .pipe(stylus({
         use: setka()
     }))
     .pipe(rename("test-setka.css"))
     .pipe(gulp.dest('./dist'));
-});
+};
 
-gulp.task('default', [ 'build', 'build-mini', 'zip' ]);
+exports.default = series(build, buildMini, makeZip);
