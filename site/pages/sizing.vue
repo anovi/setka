@@ -2,7 +2,7 @@
     <main class="">
         <h1>Sizing</h1>
 
-        <div class="row">
+        <div class="grid-12">
             <div class="col-auto">
                 <p class="mt-0">
                     width and height

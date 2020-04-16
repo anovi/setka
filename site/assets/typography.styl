@@ -1,12 +1,8 @@
 
-
-$container-max-widths = {
-  sm: 100%,
-  md: 100%,
-  lg: 100%,
-  xl: 100%
-}
 setka()
+.container
+    max-width: 100%
+    padding: 0 15px
 
 
 :root
@@ -26,9 +22,11 @@ setka()
   
   --font-size: 16px
   --line-height: 22px
+  --grid-unit: 11px
   +media-up('md')
     --font-size: 20px
     --line-height: 28px
+    --grid-unit: 14px
     
 
 #__nuxt

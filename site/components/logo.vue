@@ -1,10 +1,10 @@
 <template>
     <div class="setka" :class="{__double: double, __letter: letter}">
-        <div class="row setka__letters no-gutters">
-            <div v-for="(letter, l) in setka" class="col setka__letter" :key="l">
-                <div v-for="(row, r) in letter" :class="{outline}" class="row no-gutters setka__letter-row" :key="r">
-                    <div v-for="(color, i) in row" class="col setka__letter-pixel" :class="{__color: color}" :key="i"></div>
-                    <div v-if="l !== setka.length - 1" class="col setka__letter-pixel" />
+        <div class="grid-5 setka__letters grid-gap-0">
+            <div v-for="(symbol, l) in setka" class="setka__letter" :class="{ col: letter }" :key="l">
+                <div v-for="(row, r) in symbol" :class="{outline}" class="grid-gap-0 setka__letter-row" :key="r">
+                    <div v-for="(color, i) in row" class="setka__letter-pixel" :class="{__color: color}" :key="i"></div>
+                    <div v-if="l !== setka.length - 1" class="setka__letter-pixel" />
                 </div>
             </div>
         </div>
@@ -29,6 +29,11 @@
 
 .setka__letter-row
     height: (100 / 7)%
+    display: grid
+    grid-template-columns: repeat(5, 1fr)
+
+    .setka.__letter &
+        grid-template-columns: repeat(4, 1fr)
 
 .setka__letter-pixel
     height: 100%

@@ -3,7 +3,7 @@
         <h1 class="mb-0">Float</h1>
         <p class="subheader mt-01">Toggle floats on any element, across any breakpoint.</p>
 
-        <div class="row">
+        <div class="grid-12">
             <div class="col-auto">
                 <format-table :items="$store.state.classes.float.classes" />
             </div>

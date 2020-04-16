@@ -5,7 +5,7 @@
 
         <p>Baseline grid originates from number of steps (2 by default) per one line-height of body text. It is regulated by <code>--grid-steps</code> and <code>--line-height</code> variables. I recommend use at least 2 steps or else you won't have enough options for choosing line heights.</p>
         
-        <div class="row">
+        <div class="grid-12">
             <div class="col-6">
                 <div class="bg-1 p-1 show-grid">
                     <h3 class="my-0 bg-2">Example header</h3>

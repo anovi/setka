@@ -45,7 +45,7 @@
     
 
         <Header :level=3 name="fill" class="">Fill</Header>
-        <div class="row">
+        <div class="grid-12">
             <div class="col-auto">
                 <format-table :items="$store.state.classes.flex.flexFill" class="mt-0" />
             </div>

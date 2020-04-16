@@ -1,14 +1,14 @@
 <template>
   <EmptyLayout>
     
-    <div class="row">
-      <div class="col-md-3 col-lg-3 pb-0 pb-md-0 menu__wrapper">
+    <div class="layout">
+      <div class="pb-0 pb-md-0 menu__wrapper">
         <nav class="menu col-md-3 col-lg-3">
           <nuxt-link to="/">
             <Logo class="logo d-none d-md-block mt-01 mb-1" letter />
             <Logo class="logo d-md-none mt-01 mb-1" :animation="2" />
           </nuxt-link>
-          <div class="row flex-nowrap flex-md-wrap flex-md-row menu__row">
+          <div class="d-flex d-md-grid grid-md-12 flex-nowrap flex-md-wrap flex-md-row menu__row">
             <div v-for="(item, i) in menu" :key="i" :class="item.class">
               <div class="menu__title" v-if="item.title">{{item.title}}</div>
               <div v-for="(item, i) in item.items" :key="i">
@@ -25,7 +25,7 @@
           </div>
         </nav>
       </div>
-      <div class="col-md-9 col-lg-9 offset-lg-0 pb-3" ref="content">
+      <div class="pb-3" ref="content">
         <nuxt />
       </div>
     </div>
@@ -93,7 +93,7 @@
     data(vm) {
       return {
         menu: [{
-          class: 'col-auto mb-1 mb-md-01 col-md-12',
+          class: 'mb-1 mb-md-01 col-md-12',
           items: [{
             title: 'Getting started',
             url: '/start'
@@ -106,7 +106,7 @@
           }]
         }, {
           title: 'Layout',
-          class: 'col-auto mb-1 mb-md-01 col-md-12',
+          class: 'mb-1 mb-md-01 col-md-12',
           items: [{
             title: 'Overview',
             url: '/overview'
@@ -121,7 +121,7 @@
           class: 'sss'
         }, {
           title: 'Utilities',
-          class: 'col-auto mb-1 mb-md-01 col-md-12',
+          class: 'mb-1 mb-md-01 col-md-12',
           items: [{
             title: 'Sizing',
             url: '/sizing'
@@ -146,7 +146,7 @@
           }]
         }, {
           title: 'Customize',
-          class: 'col-auto mb-1 mb-md-01 col-md-12',
+          class: 'mb-1 mb-md-01 col-md-12',
           items: [{
             title: 'CSS variables',
             url: '/css-vars'
@@ -158,7 +158,7 @@
             url: '/stylus'
           }]
         }, {
-          class: 'col-auto mb-1 mb-md-01 col-md-12',
+          class: 'mb-1 mb-md-01 col-md-12',
           items: [{
             title: 'GitHub',
             url: vm.$store.state.data.github
@@ -235,6 +235,11 @@
       height: gu(14)
 
 $menu-width = 250px
+.layout
+    +media-up('md')
+        display: grid
+        grid-template-columns: $menu-width 75%
+
 .menu__wrapper
   +media-down('md')
     box-shadow: 0 1px 0 0 rgba(0,0,0,0.1)
@@ -244,7 +249,6 @@ $menu-width = 250px
 .menu
   line-height: gu(2)
   font-family: var(--header-font)
-  margin-left: -15px
   +media-up('md')
     font-size: 0.8em
     position: fixed
@@ -270,6 +274,8 @@ $menu-width = 250px
   white-space: nowrap
   overflow: hidden
   text-overflow: ellipsis
+  margin-right: 30px
+
   &.nuxt-link-active:not(.__no-active)
   &.nuxt-link-exact-active:not(.__no-active)
     color: black

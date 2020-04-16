@@ -9,7 +9,7 @@
             If you need to paint grid columns for development needs, add <code>.show-cols</code> class to a <code>.container</code> or a <code>.row</code> element:
         </p>
         
-        <div class="row show-cols justify-content-start">
+        <div class="grid-12 show-cols justify-content-start">
             <div class="col-4">
             <div class="example p-1">
                 One of two columns
@@ -21,7 +21,7 @@
             </div>
             </div>
         </div>
-        <div class="row show-cols justify-content-center">
+        <div class="grid-12 show-cols justify-content-center">
             <div class="col-4">
             <div class="example p-1">
                 One of two columns
@@ -33,7 +33,7 @@
             </div>
             </div>
         </div>
-        <div class="row show-cols justify-content-end">
+        <div class="grid-12 show-cols justify-content-end">
             <div class="col-4">
             <div class="example p-1">
                 One of two columns
@@ -45,7 +45,7 @@
             </div>
             </div>
         </div>
-        <div class="row show-cols justify-content-around">
+        <div class="grid-12 show-cols justify-content-around">
             <div class="col-4">
             <div class="example p-1">
                 One of two columns
@@ -57,7 +57,7 @@
             </div>
             </div>
         </div>
-        <div class="row show-cols justify-content-between">
+        <div class="grid-12 show-cols justify-content-between">
             <div class="col-4">
             <div class="example p-1">
                 One of two columns
