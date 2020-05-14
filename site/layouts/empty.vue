@@ -1,6 +1,6 @@
 <template>
     <div class="layout__wrapper" :class="{ 'show-grid': grid, __grid: grid}">
-        <div class="container">
+        <div class="container container-docs">
             <nuxt v-if="!$slots.default" />
             <slot></slot>
             <div class="layout__grid"><div class="layout__grid-button" :class="{ __active: grid }" v-on:click="$store.commit('toggleGrid')" /><br><span class="layout__grid-title">Grid</span></div>

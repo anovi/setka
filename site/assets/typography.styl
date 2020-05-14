@@ -1,6 +1,6 @@
 
 setka()
-.container
+.container-docs
     max-width: 100%
     padding: 0 15px
 
@@ -23,6 +23,7 @@ setka()
   --font-size: 16px
   --line-height: 22px
   --grid-unit: 11px
+  --grid-steps: 2
   +media-up('md')
     --font-size: 20px
     --line-height: 28px
@@ -233,7 +234,7 @@ $psw
   bottom: 0
 
 .show-padding
-  :not(.no-gutters) > &
+  :not(.grid-gap-0) > &
     position relative
     &:before
       @extend $psw
@@ -245,6 +246,40 @@ $psw
       &:before
       &:after
         @extend .view-padding-2
+
+.show-gaps
+    position: relative
+    &:after
+        content: ''
+        display: block
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        z-index: 9999
+        pointer-events: none
+        $color = rgba(255, 0, 0, 0.2)
+        background-image: linear-gradient(to left, $color 0, $color 30px, rgba(255,255,255,0) 30px)
+        background-repeat: repeat-x
+        background-size: calc((100% - var(--grid-gutter-width) * 11) / 12 + var(--grid-gutter-width))
+
+.show-gaps2
+    position: relative
+    &:after
+        content: ''
+        display: block
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        z-index: 9999
+        pointer-events: none
+        $color = rgba(255, 0, 0, 0.2)
+        background-image: linear-gradient(to left, $color 0, $color 1px, rgba(255,255,255,0) 1px, rgba(255,255,255,0) 29px, $color 29px, $color 30px, rgba(255,255,255,0) 30px)
+        background-repeat: repeat-x
+        background-size: calc((100% - var(--grid-gutter-width) * 11) / 12 + var(--grid-gutter-width))
 
 .colored-row
   margin-top: gu(2)

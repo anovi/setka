@@ -14,19 +14,26 @@ export const classes = {
             {items: ['.container','.container-fluid']}
         ],
         row: [
-            {items: ['.row']},
-            {items: ['.no-gutters'], title:'[additional]'}
+            {items: ['.grid']},
+            {items: [null,'-sm','-md','-lg','-xl'], title: '[breakpoint]'},
+            {items: ['-2','-3','-4','-5','-6','-7','-8','-9','-10','-11','-12'], title: '[value]'},
+            {items: ['.grid-gap-0'], title:'[additional]'},
         ],
         cols: [
             {items: ['.col']},
             {items: [null,'-sm','-md','-lg','-xl'], title: '[breakpoint]'},
-            {items: ['-1','-2','-3','-4','-5','-6','-7','-8','-9','-10','-11','-12', '-auto'], title: '[value]'},
+            {items: [null,'-1','-2','-3','-4','-5','-6','-7','-8','-9','-10','-11','-12'], title: '[value]'},
         ],
-        offset: [
-            {items: ['.offset']},
+        start: [
+            {items: ['.col-start']},
             {items: [null,'-sm','-md','-lg','-xl']},
-            {items: ['-0', '-1','-2','-3','-4','-5','-6','-7','-8','-9','-10','-11']}
-        ]
+            {items: [null,'-1','-2','-3','-4','-5','-6','-7','-8','-9','-10','-11', '-12']}
+        ],
+        end: [
+            {items: ['.col-end']},
+            {items: [null,'-sm','-md','-lg','-xl']},
+            {items: [null,'-1','-2','-3','-4','-5','-6','-7','-8','-9','-10','-11', '-12']}
+        ],
     },
 
     display: {
