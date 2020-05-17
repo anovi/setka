@@ -32,7 +32,7 @@
 
     <h3>Grid classes</h3>
 
-    <format-table :items="$store.state.classes.grid.row" :initial="[0,0,3]" :example="gridRowExample" :wrapper="{value: true}" interactive />
+    <format-table :items="$store.state.classes.grid.row" :initial="[0,0,3]" :example="gridRowExample" :wrapper="{class: '', value: true}" interactive />
 
     <p>Grid classes are wrappers for columns. Immediate children of grids became columns. There are 11 grid classes by default. From <code>.grid-2</code> to <code>.grid-12</code>. Use <code>.container</code> as a wrapper if you want your content to have max-width and be aligned to the center.</p>
 
