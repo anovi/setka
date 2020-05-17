@@ -26,6 +26,10 @@
     <Header :level="2" name="how-it-works">How it works</Header>
     <p>The grid system is built with <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout" target="_blank">grid layout</a> and is fully responsive. It's better if you understand how grid layout works. To learn about grids, <a href="https://css-tricks.com/snippets/css/complete-guide-grid/">read this CSS Tricks grid guide</a>.
 
+    <figure class="text-center m-0 grid-image">
+        <img src="/grid-how.png" alt="" class="d-block mx-auto">
+    </figure>
+
     <h3>Grid classes</h3>
 
     <format-table :items="$store.state.classes.grid.row" :initial="[0,0,3]" :example="gridRowExample" :wrapper="{value: true}" interactive />
@@ -216,10 +220,6 @@
 
 
     <Header :level="2" name="grid-in-depth">Grid in-depth</Header>
-
-    <!-- <figure class="text-center m-0">
-        <img src="/grid-how.png" alt="" class="d-block mx-auto" style="height: calc(var(--grid-unit) * 70)">
-    </figure> -->
 
     <Header :level="3" name="col-start">Column start</Header>
 
@@ -749,12 +749,23 @@
 </template>
 
 
-<style>
-    .my-custom-grid {
-        display: grid;
-        grid-template-columns: 10% 15% auto 15% 10%;
-        gap: 20px;
-    }
+<style lang="stylus">
+    .my-custom-grid
+        display: grid
+        grid-template-columns: 10% 15% auto 15% 10%
+        gap: 20px
+
+    .grid-image
+        height: gu(50)
+        +media-up('sm')
+            height: gu(60)
+        +media-up('xl')
+            height: gu(70)
+
+        img
+            max-width: 100%
+            max-height: 100%
+            height: auto
 </style>
 
 
