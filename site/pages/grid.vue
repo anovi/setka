@@ -26,26 +26,17 @@
     <Header :level="2" name="how-it-works">How it works</Header>
     <p>The grid system is built with <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout" target="_blank">grid layout</a> and is fully responsive. It's better if you understand how grid layout works. To learn about grids, <a href="https://css-tricks.com/snippets/css/complete-guide-grid/">read this CSS Tricks grid guide</a>.
 
-    <h3>Container (optional)</h3>
-    <p>Containers provide a means to center and horizontally pad your site’s contents. Use <code class="">.container</code> for a responsive pixel width or <code class="">.container-fluid</code> for <code class="">width: 100%</code> across all viewport and device sizes. Container is optional.</p>
+    <h3>Grid classes</h3>
 
-    <div class="container-fluid example">
-    </div>
+    <format-table :items="$store.state.classes.grid.row" :initial="[0,0,3]" :example="gridRowExample" :wrapper="{value: true}" interactive />
 
-    <source-code :height="3"><code class="html">&lt;div class="container"&gt;
-    &lt;!-- Content here --&gt;
-&lt;/div&gt;</code></source-code>
-
-
-    <h3>Grid</h3>
-
-    <p>Grid classes are wrappers for columns. Immediate children of grids became columns. There are 11 grid classes by default. From <code>.grid-2</code> to <code>.grid-12</code>.</p>
+    <p>Grid classes are wrappers for columns. Immediate children of grids became columns. There are 11 grid classes by default. From <code>.grid-2</code> to <code>.grid-12</code>. Use <code>.container</code> as a wrapper if you want your content to have max-width and be aligned to the center.</p>
 
     <div class="mb-01">
       <!-- <div class="gu1 view-padding-1"></div> <small>padding</small> -->
       <div class="gu1 colored-row2"></div> <small>grid</small>
     </div>
-    <div class="container-fluid example">
+    <div class="container example">
         <p class="mt-0 mb-01">Content outside collumns can be placed here!</p>
         <div class="grid-12 example colored-row2">
         </div>
@@ -58,58 +49,17 @@
 
 
     <h3>Columns</h3>
-    <!-- <p>In a grid layout, content must be placed within columns and only columns may be immediate children of rows.</p> -->
-    <p>Columns are containers for content.</p>
+    <p>Columns are containers for content or are content blocks themselves. All immediate children of grid container are columns. Span of columns</p>
 
-    
-    <!-- <p>Breaking it down, here’s how it works:</p> -->
-    <div class="mb-01">
-      <div class="gu1 colored-row2"></div> <small>grid</small>
-      <div class="gu1 bg-yellow"></div> <small>columns</small>
-    </div>
+    <format-table :items="$store.state.classes.grid.cols" :initial="[0,0,3]" :example="gridColsExample" :wrapper="{class: 'grid-12'}" interactive />
 
-    <div class="container-fluid example">
-        <p class="mt-0 mb-01">Content outside collumns can be placed here!</p>
-        <div class="grid-12 example colored-row2">
-            <div class="col-sm-4 py-01 color-2 bg-yellow">
-            One of three columns
-            </div>
-            <div class="col-sm-4 py-01 color-2 bg-yellow">
-            One of three columns
-            </div>
-            <div class="col-sm-4 py-01 color-2 bg-yellow">
-            One of three columns
-            </div>
-        </div>
-    </div>
-
-    <source-code :height="14"><code class="html">&lt;div class=&quot;<em>container</em>&quot;&gt;
-  &lt;p&gt;Content outside collumns can be placed here!&lt;/p&gt;
-  &lt;div class=&quot;<em>grid-12</em>&quot;&gt;
-    &lt;div class=&quot;<em>col-sm-4</em>&quot;&gt;
-      One of three columns
-    &lt;/div&gt;
-    &lt;div class=&quot;<em>col-sm-4</em>&quot;&gt;
-      One of three columns
-    &lt;/div&gt;
-    &lt;div class=&quot;<em>col-sm-4</em>&quot;&gt;
-      One of three columns
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</code></source-code>
-
-<p>How this works:</p>
-
-    <ul>
-
-    </ul>
-
+    <p>How this works:</p>
     <ul>
         <li>All direct descendants of <code>.grid-12</code> are columns even without special classes. Their width is one track by default. This is how the grid layout behaves.</li>
-        <li>Column classes indicate the number of tracks you’d like to use out of the possible 12 per row. So, if you want three equal-width columns across, you can use <code class="">.col-4</code>.</li>
+        <li>Column classes indicate the number of tracks you’d like to use out of the possible 12 per row. So, if you want three equal-width columns across <code>.grid-12</code>, you can use <code class="">.col-4</code>.</li>
 
-        <li>There is a gap of 30px between columns by default. You can remove it for a grid container with <code>.grid-gap-0</code> on it.</li>
-        <li>To make the grid responsive, there are five grid breakpoints, one for each <nuxt-link to="/container#responsive-breakpoints">responsive breakpoint</nuxt-link>: all breakpoints (extra small), small, medium, large, and extra large.</li>
+        <li>There is a default gap of 30px between columns. You can remove it for a grid container with <code>.grid-gap-0</code> on it.</li>
+        <li>To make the grid responsive, there are five grid breakpoints, one for each <nuxt-link to="/overview#responsive-breakpoints">responsive breakpoint</nuxt-link>: all breakpoints (extra small), small, medium, large, and extra large.</li>
         <li>Grid breakpoints are based on minimum width media queries, meaning <strong>they apply to that one breakpoint and all those above it</strong> (e.g., <code class="">.col-sm-4</code> applies to small, medium, large, and extra large devices, but not the first <code class="">xs</code> breakpoint).</li>
     </ul>
 
@@ -813,8 +763,41 @@ export default {
     head: {
       title: 'Grid'
     },
+    data() {
+        return {
+            gridRowExample: [
+                { class: "example p-01", text: '1' },
+                { class: "example p-01", text: '2' },
+                { class: "example p-01", text: '3' },
+                { class: "example p-01", text: '4' },
+                { class: "example p-01", text: '5' },
+                { class: "example p-01", text: '6' },
+                { class: "example p-01", text: '7' },
+                { class: "example p-01", text: '8' },
+                { class: "example p-01", text: '9' },
+                { class: "example p-01", text: '10' },
+                { class: "example p-01", text: '11' },
+                { class: "example p-01", text: '12' },
+            ],
+            gridColsExample: [
+                { class: "example", value: true },
+                { class: "example", text: '2' },
+                { class: "example", text: '3' },
+                { class: "example", text: '4' },
+                { class: "example", text: '5' },
+                { class: "example", text: '6' },
+                { class: "example", text: '7' },
+                { class: "example", text: '8' },
+                { class: "example", text: '9' },
+                { class: "example", text: '10' },
+                { class: "example", text: '11' },
+                { class: "example", text: '12' },
+            ],
+        }
+    },
     mounted() {
         this.buildTOC()
     }
+    
 }
 </script>

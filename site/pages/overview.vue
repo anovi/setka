@@ -4,11 +4,7 @@
         <p class="subheader mt-0">Options for laying out your Setka project, including wrapping containers, a powerful grid system, and responsive utility classes.</p>
 
         <Header :level="2" name="containers">Containers</Header>
-        
-
-        <p>Containers are the most basic layout element in Setka and are <strong>required when using our default grid system</strong>. Choose from a responsive, fixed-width container (meaning its <code>max-width</code> changes at each breakpoint) or fluid-width (meaning it’s <code>100%</code> wide all the time).</p>
-
-        <p>While containers <em>can</em> be nested, most layouts do not require a nested container.</p>
+        <p>Containers provide a means to center and horizontally pad your site’s contents. It's not required when using grid system. Use <code class="">.container</code> for a responsive, fixed-width container (meaning its <code>max-width</code> changes at each breakpoint).</p>
 
         <div class="bd-example">
             <div class="container w-75 example">
@@ -20,8 +16,7 @@
     &lt;!-- Content here --&gt;
 &lt;/div&gt;</code></source-code>
 
-        <p>Use <code>.container-fluid</code> for a full width container, spanning the entire width of the viewport.</p>
-
+        <p>Use <code>.container-fluid</code> for a full width container, spanning 100% width across all viewport and device sizes.</p>
         <div class="bd-example">
             <div class="container-fluid example">
                 Fluid container
