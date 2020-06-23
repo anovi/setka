@@ -52,7 +52,7 @@ function buildMini() {
 };
 
 function makeZip() {
-    gulp.src('dist/*')
+    return gulp.src('dist/*')
     .pipe(zip(`setka-${pkg.version}-dist.zip`))
     .pipe(gulp.dest('./'))
 };

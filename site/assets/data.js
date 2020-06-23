@@ -1,7 +1,7 @@
 export default {
     cdnLink: 'https://cdn.jsdelivr.net/npm/setka/dist/setka.min.css',
-    distLink: 'https://github.com/anovi/setka/releases/download/v0.2.0/setka-0.2.0-dist.zip',
-    sourceLink: 'https://github.com/anovi/setka/archive/v0.2.0.zip',
+    distLink: 'https://github.com/anovi/setka/releases/download/v0.3.0/setka-0.3.0-dist.zip',
+    sourceLink: 'https://github.com/anovi/setka/archive/v0.3.0.zip',
     github: 'https://github.com/anovi/setka/',
     url: 'https://anovi.github.io/setka/'
 }

@@ -1,8 +1,8 @@
 /**
- * Setka CSS Library v0.3.0-rc.1
+ * Setka CSS Library v0.3.0
  * Author: Alexey Novichkov
  * License: MIT (https://github.com/anovi/setka/blob/master/LICENSE)
- * Generated on 2020-04-12
+ * Generated on 2020-06-23
  */
 
 * {
@@ -1911,6 +1911,9 @@ body {
 .d-inline-flex {
   display: inline-flex !important;
 }
+.d-grid {
+  display: grid !important;
+}
 @media (min-width: 576px) {
   .d-sm-none {
     display: none !important;
@@ -1938,6 +1941,9 @@ body {
   }
   .d-sm-inline-flex {
     display: inline-flex !important;
+  }
+  .d-sm-grid {
+    display: grid !important;
   }
 }
 @media (min-width: 768px) {
@@ -1968,6 +1974,9 @@ body {
   .d-md-inline-flex {
     display: inline-flex !important;
   }
+  .d-md-grid {
+    display: grid !important;
+  }
 }
 @media (min-width: 992px) {
   .d-lg-none {
@@ -1997,6 +2006,9 @@ body {
   .d-lg-inline-flex {
     display: inline-flex !important;
   }
+  .d-lg-grid {
+    display: grid !important;
+  }
 }
 @media (min-width: 1200px) {
   .d-xl-none {
@@ -2025,6 +2037,9 @@ body {
   }
   .d-xl-inline-flex {
     display: inline-flex !important;
+  }
+  .d-xl-grid {
+    display: grid !important;
   }
 }
 .clearfix::after {

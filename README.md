@@ -15,13 +15,13 @@
 Copy-paste the stylesheet `<link>` into your `<head>` before all other stylesheets to load our CSS.
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/setka@0.1.2/dist/setka.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/setka@0.3.0/dist/setka.min.css" crossorigin="anonymous">
 ```
 
 These download options are available:
 
-- [Download compiled CSS](https://github.com/anovi/setka/releases/download/v0.1.2/setka-0.1.2-dist.zip)
-- [Download source files](https://github.com/anovi/setka/archive/v0.1.2.zip)
+- [Download compiled CSS](https://github.com/anovi/setka/releases/download/v0.3.0/setka-0.3.0-dist.zip)
+- [Download source files](https://github.com/anovi/setka/archive/v0.3.0.zip)
 - Install with [npm](https://www.npmjs.com/): `npm install setka`
 - Clone the repo: `git clone https://github.com/anovi/setka.git`
 
