@@ -21,7 +21,7 @@
     "gulp-sourcemaps": "2.6.5",
     "gulp-stylus": "2.7.0",
     "gulp-zip": "5.0.1",
-    "highlight.js": "9.18.1",
+    "highlight.js": "10.1.2",
     "lodash": "4.17.15",
     "nuxt": "2.12.2",
     "stylus": "0.54.7",
