@@ -10,7 +10,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "gulp": "3.9.1",
+    "gulp": "4.0.2",
     "gulp-stylus": "2.7.0",
     "setka": "0.1.2"
   }
