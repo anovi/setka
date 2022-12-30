@@ -23,9 +23,9 @@
     "gulp-zip": "5.0.1",
     "highlight.js": "9.18.1",
     "lodash": "4.17.15",
-    "nuxt": "2.12.2",
+    "nuxt": "3.0.0",
     "stylus": "0.54.7",
-    "stylus-loader": "3.0.2",
+    "stylus-loader": "7.1.0",
     "vue-clipboard2": "0.3.1"
   },
   "directories": {
