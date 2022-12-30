@@ -11,10 +11,10 @@
   "license": "MIT",
   "dependencies": {
     "autoprefixer": "9.3.1",
-    "css-loader": "1.0.1",
-    "postcss-loader": "3.0.0",
+    "css-loader": "6.7.3",
+    "postcss-loader": "7.0.2",
     "setka": "0.1.2",
-    "style-loader": "0.23.1",
-    "stylus-loader": "3.0.2"
+    "style-loader": "3.3.1",
+    "stylus-loader": "7.1.0"
   }
 }
